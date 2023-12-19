@@ -34,7 +34,7 @@ And much more! To get all features DM: uavolunteer.faq@gmail.com
 
 ## Author
 
-- [Alexander Balla](https://www.github.com/aiexxash)
+- [Olexandr Balla](https://www.github.com/aiexxash)
 2 Years in IT, Senior iOS-developer, graphic designer, UI-UX designer.
 
 
