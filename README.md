@@ -34,7 +34,7 @@ And much more! To get all features DM: uavolunteer.faq@gmail.com
 
 ## Author
 
-- [Olexandr Balla](https://www.github.com/aiexxash)
+- [Oleksandr Balla](https://www.github.com/aiexxash)
 
 
 ## License
