@@ -67,15 +67,15 @@ See `contributing.md` for ways to get started or DM at uavoulunteer.faq@gmail.co
 
 - A: UAVolunteer is an iOS app designed to connect users with volunteer opportunities across Ukraine. The app provides a user-friendly interface to discover and participate in various volunteer services. Users can browse through a range of activities, select ones that match their interests, and easily sign up to contribute their time and skills to meaningful causes.
 
-#### Q: How can I find volunteer opportunities specific to my location or interests?
+#### 2. Q: How can I find volunteer opportunities specific to my location or interests?
 
 - A: UAVolunteer offers advanced search features to help you find the perfect volunteer opportunity. You can filter results based on your location, interests, and availability. The app's intelligent matching algorithm suggests volunteer opportunities tailored to your preferences, ensuring that you can contribute to causes that align with your passions and skills.
 
-#### Q: Can I track my volunteer hours and contributions using UAVolunteer?
+#### 3. Q: Can I track my volunteer hours and contributions using UAVolunteer?
 
 - A: Yes, UAVolunteer makes it easy to track your volunteer hours and contributions. The app includes a built-in tracking system that allows you to log the time you spend on each volunteer activity. This feature not only helps you keep a record of your impact but also allows organizations to recognize and appreciate your dedication to their causes.
 
-#### Q: How can organizations use UAVolunteer to recruit volunteers for their events?
+#### 4. Q: How can organizations use UAVolunteer to recruit volunteers for their events?
 
 - A: Organizations can leverage UAVolunteer to promote their volunteer opportunities and connect with potential contributors. By creating a profile and posting volunteer events on the app, organizations can reach a wide audience of users passionate about making a difference. The app's notification system ensures that users stay informed about upcoming events, increasing the chances of active participation in community initiatives.
 
