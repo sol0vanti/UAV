@@ -3,28 +3,41 @@
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22131"/>
+        <capability name="Map view configurations" minToolsVersion="14.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Item 2-->
+        <!--Events-->
         <scene sceneID="0ir-oJ-bHR">
             <objects>
                 <viewController id="ECE-QK-xhP" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="cjr-v5-huc">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="DvA-Qw-B9a">
+                                <rect key="frame" x="0.0" y="59" width="393" height="710"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="BUb-eA-Nnr"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="BUb-eA-Nnr" firstAttribute="trailing" secondItem="DvA-Qw-B9a" secondAttribute="trailing" id="5uL-eT-flP"/>
+                            <constraint firstItem="DvA-Qw-B9a" firstAttribute="leading" secondItem="BUb-eA-Nnr" secondAttribute="leading" id="JbZ-aR-2bT"/>
+                            <constraint firstItem="BUb-eA-Nnr" firstAttribute="bottom" secondItem="DvA-Qw-B9a" secondAttribute="bottom" id="m6R-KA-r05"/>
+                            <constraint firstItem="DvA-Qw-B9a" firstAttribute="top" secondItem="BUb-eA-Nnr" secondAttribute="top" id="wHV-NY-icC"/>
+                        </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item 2" id="BaC-c8-tEg"/>
+                    <tabBarItem key="tabBarItem" title="Events" image="list.dash" catalog="system" id="BaC-c8-tEg"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="16L-W3-iCq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-259" y="133"/>
         </scene>
-        <!--Item-->
+        <!--Profile-->
         <scene sceneID="Zc4-Iy-uRk">
             <objects>
                 <viewController id="f9J-Hb-Bmk" sceneMemberID="viewController">
@@ -34,23 +47,47 @@
                         <viewLayoutGuide key="safeArea" id="Kym-ss-QiY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="z2T-MQ-lZg"/>
+                    <tabBarItem key="tabBarItem" title="Profile" image="person.crop.circle.fill" catalog="system" id="z2T-MQ-lZg"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="plB-07-p8a" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1260" y="825"/>
         </scene>
-        <!--Item 1-->
+        <!--Map-->
         <scene sceneID="oTi-9a-PVH">
             <objects>
                 <viewController id="2zR-rW-Eul" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="IaK-vt-vDd">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dnu-gw-obn">
+                                <rect key="frame" x="0.0" y="0.0" width="393" height="769"/>
+                                <standardMapConfiguration key="preferredConfiguration"/>
+                            </mapView>
+                            <containerView hidden="YES" opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PKl-qV-aLK">
+                                <rect key="frame" x="50" y="279" width="293" height="450"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="450" id="w4h-X5-rdj"/>
+                                </constraints>
+                                <connections>
+                                    <segue destination="tBr-KK-ccp" kind="embed" id="yml-lO-mLy"/>
+                                </connections>
+                            </containerView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="yib-VB-kIL"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="yib-VB-kIL" firstAttribute="bottom" secondItem="PKl-qV-aLK" secondAttribute="bottom" constant="40" id="Afa-AA-9pq"/>
+                            <constraint firstItem="dnu-gw-obn" firstAttribute="leading" secondItem="IaK-vt-vDd" secondAttribute="leading" id="Bre-bi-vTO"/>
+                            <constraint firstItem="dnu-gw-obn" firstAttribute="bottom" secondItem="yib-VB-kIL" secondAttribute="bottom" id="DQ0-TN-cGv"/>
+                            <constraint firstAttribute="trailing" secondItem="dnu-gw-obn" secondAttribute="trailing" id="Pdf-pv-VQs"/>
+                            <constraint firstItem="PKl-qV-aLK" firstAttribute="leading" secondItem="yib-VB-kIL" secondAttribute="leading" constant="50" id="Zcu-zx-xXq"/>
+                            <constraint firstItem="yib-VB-kIL" firstAttribute="trailing" secondItem="PKl-qV-aLK" secondAttribute="trailing" constant="50" id="iXh-RJ-o1F"/>
+                            <constraint firstItem="dnu-gw-obn" firstAttribute="top" secondItem="IaK-vt-vDd" secondAttribute="top" id="yB9-OY-Rf6"/>
+                        </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item 1" id="AcJ-y3-3ca"/>
+                    <tabBarItem key="tabBarItem" title="Map" image="map.fill" catalog="system" id="AcJ-y3-3ca"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4qo-0Z-FfL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -161,6 +198,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="tintColor" systemColor="systemOrangeColor"/>
+                        <color key="selectedImageTintColor" systemColor="systemOrangeColor"/>
                     </tabBar>
                     <connections>
                         <segue destination="2zR-rW-Eul" kind="relationship" relationship="viewControllers" id="HiS-uW-Vjl"/>
@@ -172,6 +211,47 @@
             </objects>
             <point key="canvasLocation" x="-1260" y="132"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="2GZ-og-Hfe">
+            <objects>
+                <viewController id="tBr-KK-ccp" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ZIP-hh-ujH">
+                        <rect key="frame" x="0.0" y="0.0" width="293" height="450"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cJW-lu-jFc">
+                                <rect key="frame" x="46" y="381" width="201" height="35"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="35" id="QTe-OX-eCM"/>
+                                </constraints>
+                                <color key="tintColor" systemColor="systemOrangeColor"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Записатися">
+                                    <fontDescription key="titleFontDescription" type="system" weight="semibold" pointSize="14"/>
+                                    <color key="baseBackgroundColor" systemColor="systemOrangeColor"/>
+                                </buttonConfiguration>
+                            </button>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="zbj-nI-tKH">
+                                <rect key="frame" x="16" y="59" width="261" height="312"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="cJW-lu-jFc" firstAttribute="top" secondItem="zbj-nI-tKH" secondAttribute="bottom" constant="10" id="Ctd-3i-OY1"/>
+                            <constraint firstItem="zbj-nI-tKH" firstAttribute="leading" secondItem="ZIP-hh-ujH" secondAttribute="leadingMargin" id="MLr-mX-Az4"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="zbj-nI-tKH" secondAttribute="trailing" id="Ntf-01-td4"/>
+                            <constraint firstItem="zbj-nI-tKH" firstAttribute="top" secondItem="ZIP-hh-ujH" secondAttribute="topMargin" id="OOt-S6-KHt"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="cJW-lu-jFc" secondAttribute="trailing" constant="30" id="RGv-ol-PbE"/>
+                            <constraint firstItem="cJW-lu-jFc" firstAttribute="leading" secondItem="ZIP-hh-ujH" secondAttribute="leadingMargin" constant="30" id="ipY-m9-zaJ"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="cJW-lu-jFc" secondAttribute="bottom" id="o4a-aN-EjI"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xih-Ng-bGc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="495" y="-535"/>
+        </scene>
     </scenes>
     <resources>
         <image name="Google-Emblem" width="3840" height="2160"/>
@@ -179,11 +259,17 @@
         <image name="Twitter-Emblem" width="3840" height="2160"/>
         <image name="Yahoo-Emblem" width="3840" height="2160"/>
         <image name="iCloud-Emblem" width="3840" height="2160"/>
+        <image name="list.dash" catalog="system" width="128" height="85"/>
+        <image name="map.fill" catalog="system" width="128" height="110"/>
+        <image name="person.crop.circle.fill" catalog="system" width="128" height="123"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="systemGrayColor">
             <color red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemOrangeColor">
+            <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
