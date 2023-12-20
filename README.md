@@ -46,7 +46,7 @@ And much more! To get all features DM: uavolunteer.faq@gmail.com
 To get started with UAVolunteer, follow these steps:
 
 1. **Clone the repository:**
-    - git clone https://github.com/your-username/uavolunteer.git
+    - git clone https://github.com/aiexxash/uavolunteer.git
 2. **Install dependencies:**
     - pod install
 3. **Open the Xcode workspace:**
@@ -58,7 +58,7 @@ To get started with UAVolunteer, follow these steps:
 
 Contributions are always welcome!
 
-See `contributing.md` for ways to get started or DM at uavoulunteer.faq@gmail.com
+See `contributing.md` for ways to get started or DM at uavolunteer.faq@gmail.com
 
 ## FAQ
 
