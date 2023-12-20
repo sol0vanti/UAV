@@ -93,10 +93,10 @@
             </objects>
             <point key="canvasLocation" x="-260" y="-535"/>
         </scene>
-        <!--Account View Controller-->
+        <!--View Controller-->
         <scene sceneID="5bG-y1-fgD">
             <objects>
-                <viewController id="n9o-Z8-gNh" customClass="AccountViewController" customModule="UAVolunteer" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="n9o-Z8-gNh" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="1B4-6a-Fmk">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -117,9 +117,6 @@
                                 <buttonConfiguration key="configuration" style="tinted">
                                     <backgroundConfiguration key="background" image="iCloud-Emblem" imageContentMode="scaleAspectFit"/>
                                 </buttonConfiguration>
-                                <connections>
-                                    <action selector="icloudButtonClicked:" destination="n9o-Z8-gNh" eventType="touchUpInside" id="G7s-FF-cZf"/>
-                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7cH-3L-6jL">
                                 <rect key="frame" x="20" y="221" width="353" height="70"/>
@@ -131,9 +128,6 @@
                                 <buttonConfiguration key="configuration" style="tinted">
                                     <backgroundConfiguration key="background" image="Google-Emblem" imageContentMode="scaleAspectFit"/>
                                 </buttonConfiguration>
-                                <connections>
-                                    <action selector="googleButtonClicked:" destination="n9o-Z8-gNh" eventType="touchUpInside" id="2mf-yO-sS8"/>
-                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fs8-Cu-hcN">
                                 <rect key="frame" x="20" y="296" width="353" height="70"/>
@@ -145,9 +139,6 @@
                                 <buttonConfiguration key="configuration" style="tinted">
                                     <backgroundConfiguration key="background" image="Microsoft-Emblem" imageContentMode="scaleAspectFit"/>
                                 </buttonConfiguration>
-                                <connections>
-                                    <action selector="microsoftButtonClicked:" destination="n9o-Z8-gNh" eventType="touchUpInside" id="ZeI-pA-sgU"/>
-                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Ux-gp-XHu">
                                 <rect key="frame" x="20" y="371" width="353" height="70"/>
@@ -159,9 +150,6 @@
                                 <buttonConfiguration key="configuration" style="tinted">
                                     <backgroundConfiguration key="background" image="Twitter-Emblem" imageContentMode="scaleAspectFit"/>
                                 </buttonConfiguration>
-                                <connections>
-                                    <action selector="twitterButtonClicked:" destination="n9o-Z8-gNh" eventType="touchUpInside" id="ItW-MX-8E0"/>
-                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ztt-FZ-j0q">
                                 <rect key="frame" x="20" y="446" width="353" height="70"/>
@@ -173,9 +161,6 @@
                                 <buttonConfiguration key="configuration" style="tinted">
                                     <backgroundConfiguration key="background" image="Yahoo-Emblem" imageContentMode="scaleAspectFit"/>
                                 </buttonConfiguration>
-                                <connections>
-                                    <action selector="yahooButtonClicked:" destination="n9o-Z8-gNh" eventType="touchUpInside" id="YmY-7H-8Qk"/>
-                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="917-69-4YM"/>
@@ -200,13 +185,6 @@
                             <constraint firstItem="917-69-4YM" firstAttribute="trailing" secondItem="Fs8-Cu-hcN" secondAttribute="trailing" constant="20" id="xfz-hp-HR3"/>
                         </constraints>
                     </view>
-                    <connections>
-                        <outlet property="googleButton" destination="7cH-3L-6jL" id="mLn-eh-qI2"/>
-                        <outlet property="icloudButton" destination="Vpo-8f-xxd" id="Ymt-cb-jKC"/>
-                        <outlet property="microsoftButton" destination="Fs8-Cu-hcN" id="nvy-FS-yy4"/>
-                        <outlet property="twitterButton" destination="4Ux-gp-XHu" id="RqB-s4-zgt"/>
-                        <outlet property="yahooButton" destination="ztt-FZ-j0q" id="GhM-Cn-WXw"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ymk-HI-4Qe" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -258,7 +236,6 @@
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
                         </subviews>
-                        <viewLayoutGuide key="safeArea" id="kzZ-gz-Mm8"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="cJW-lu-jFc" firstAttribute="top" secondItem="zbj-nI-tKH" secondAttribute="bottom" constant="10" id="Ctd-3i-OY1"/>
