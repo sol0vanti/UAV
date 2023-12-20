@@ -1,5 +1,8 @@
 import UIKit
 import AuthenticationServices
+import FirebaseCore
+import FirebaseAuth
+import GoogleSignIn
 import Firebase
 
 class AccountViewController: UIViewController, ASAuthorizationControllerDelegate, ASAuthorizationControllerPresentationContextProviding {
@@ -13,7 +16,6 @@ class AccountViewController: UIViewController, ASAuthorizationControllerDelegate
     func authorizationController(controller: ASAuthorizationController, didCompleteWithAuthorization authorization: ASAuthorization) {
         if let appleIDCredential = authorization.credential as? ASAuthorizationAppleIDCredential {
             let userIdentifier = appleIDCredential.user
-            let fullName = appleIDCredential.fullName
             let email = appleIDCredential.email
             let db = Firestore.firestore()
             db.collection("users").addDocument(data: ["email": email!, "uid": userIdentifier]) { (error) in
@@ -59,7 +61,33 @@ class AccountViewController: UIViewController, ASAuthorizationControllerDelegate
         controller.presentationContextProvider = self
         controller.performRequests()
     }
+    
     @IBAction func googleButtonClicked(_ sender: UIButton) {
+        guard let clientID = FirebaseApp.app()?.options.clientID else { return }
+
+        let config = GIDConfiguration(clientID: clientID)
+        GIDSignIn.sharedInstance.configuration = config
+
+        GIDSignIn.sharedInstance.signIn(withPresenting: self) { result, error in
+          guard error == nil else {
+            return
+          }
+
+          guard let user = result?.user,
+            let idToken = user.idToken?.tokenString
+          else {
+            return
+          }
+
+          let credential = GoogleAuthProvider.credential(withIDToken: idToken, accessToken: user.accessToken.tokenString)
+            Auth.auth().signIn(with: credential) { result, error in
+                if error != nil{
+                    print(error!)
+                    let destVC = UIStoryboard(name: "Main", bundle:nil).instantiateViewController(withIdentifier: "MapViewController") as! MapViewController
+                    self.navigationController?.setViewControllers([destVC], animated: true)
+                }
+            }
+        }
     }
     @IBAction func microsoftButtonClicked(_ sender: UIButton) {
     }
