@@ -1,24 +1,189 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22155" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="n9o-Z8-gNh">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22131"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
-        <scene sceneID="tne-QT-ifu">
+        <!--Item 2-->
+        <scene sceneID="0ir-oJ-bHR">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                <viewController id="ECE-QK-xhP" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="cjr-v5-huc">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <viewLayoutGuide key="safeArea" id="BUb-eA-Nnr"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Item 2" id="BaC-c8-tEg"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="16L-W3-iCq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-259" y="133"/>
+        </scene>
+        <!--Item-->
+        <scene sceneID="Zc4-Iy-uRk">
+            <objects>
+                <viewController id="f9J-Hb-Bmk" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5Eg-E1-uin">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="Kym-ss-QiY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Item" id="z2T-MQ-lZg"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="plB-07-p8a" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1260" y="825"/>
+        </scene>
+        <!--Item 1-->
+        <scene sceneID="oTi-9a-PVH">
+            <objects>
+                <viewController id="2zR-rW-Eul" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="IaK-vt-vDd">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="yib-VB-kIL"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Item 1" id="AcJ-y3-3ca"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4qo-0Z-FfL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-260" y="-535"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="5bG-y1-fgD">
+            <objects>
+                <viewController id="n9o-Z8-gNh" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="1B4-6a-Fmk">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ласкаво просимо до UAVolunteer!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BoN-Ah-t18">
+                                <rect key="frame" x="48" y="84" width="297" height="22"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vpo-8f-xxd">
+                                <rect key="frame" x="20" y="146" width="353" height="70"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="70" id="xlc-Ro-o5Q"/>
+                                </constraints>
+                                <color key="tintColor" systemColor="systemGrayColor"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="tinted">
+                                    <backgroundConfiguration key="background" image="iCloud-Emblem" imageContentMode="scaleAspectFit"/>
+                                </buttonConfiguration>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7cH-3L-6jL">
+                                <rect key="frame" x="20" y="221" width="353" height="70"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="70" id="Fcb-HV-EpP"/>
+                                </constraints>
+                                <color key="tintColor" systemColor="systemGrayColor"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="tinted">
+                                    <backgroundConfiguration key="background" image="Google-Emblem" imageContentMode="scaleAspectFit"/>
+                                </buttonConfiguration>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fs8-Cu-hcN">
+                                <rect key="frame" x="20" y="296" width="353" height="70"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="70" id="ooH-P6-x8e"/>
+                                </constraints>
+                                <color key="tintColor" systemColor="systemGrayColor"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="tinted">
+                                    <backgroundConfiguration key="background" image="Microsoft-Emblem" imageContentMode="scaleAspectFit"/>
+                                </buttonConfiguration>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Ux-gp-XHu">
+                                <rect key="frame" x="20" y="371" width="353" height="70"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="70" id="RZ1-Wa-Ehd"/>
+                                </constraints>
+                                <color key="tintColor" systemColor="systemGrayColor"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="tinted">
+                                    <backgroundConfiguration key="background" image="Twitter-Emblem" imageContentMode="scaleAspectFit"/>
+                                </buttonConfiguration>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ztt-FZ-j0q">
+                                <rect key="frame" x="20" y="446" width="353" height="70"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="70" id="PgG-MW-sAP"/>
+                                </constraints>
+                                <color key="tintColor" systemColor="systemGrayColor"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="tinted">
+                                    <backgroundConfiguration key="background" image="Yahoo-Emblem" imageContentMode="scaleAspectFit"/>
+                                </buttonConfiguration>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="917-69-4YM"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="7cH-3L-6jL" firstAttribute="top" secondItem="Vpo-8f-xxd" secondAttribute="bottom" constant="5" id="1xn-Fa-f8W"/>
+                            <constraint firstItem="4Ux-gp-XHu" firstAttribute="top" secondItem="Fs8-Cu-hcN" secondAttribute="bottom" constant="5" id="20r-c5-Eth"/>
+                            <constraint firstItem="BoN-Ah-t18" firstAttribute="centerX" secondItem="1B4-6a-Fmk" secondAttribute="centerX" id="2DA-RO-F9Y"/>
+                            <constraint firstItem="4Ux-gp-XHu" firstAttribute="leading" secondItem="917-69-4YM" secondAttribute="leading" constant="20" id="3AS-uj-Qj4"/>
+                            <constraint firstItem="Vpo-8f-xxd" firstAttribute="leading" secondItem="917-69-4YM" secondAttribute="leading" constant="20" id="8Ix-dE-hES"/>
+                            <constraint firstItem="7cH-3L-6jL" firstAttribute="leading" secondItem="917-69-4YM" secondAttribute="leading" constant="20" id="FzS-bb-181"/>
+                            <constraint firstItem="BoN-Ah-t18" firstAttribute="top" secondItem="917-69-4YM" secondAttribute="top" constant="25" id="Lle-VD-wU9"/>
+                            <constraint firstItem="Fs8-Cu-hcN" firstAttribute="top" secondItem="7cH-3L-6jL" secondAttribute="bottom" constant="5" id="OLq-qf-784"/>
+                            <constraint firstItem="917-69-4YM" firstAttribute="trailing" secondItem="4Ux-gp-XHu" secondAttribute="trailing" constant="20" id="QjU-3w-7Wq"/>
+                            <constraint firstItem="917-69-4YM" firstAttribute="trailing" secondItem="7cH-3L-6jL" secondAttribute="trailing" constant="20" id="TI8-sd-0oV"/>
+                            <constraint firstItem="917-69-4YM" firstAttribute="trailing" secondItem="Vpo-8f-xxd" secondAttribute="trailing" constant="20" id="X7P-Ut-QIw"/>
+                            <constraint firstItem="Fs8-Cu-hcN" firstAttribute="leading" secondItem="917-69-4YM" secondAttribute="leading" constant="20" id="adq-lm-qeb"/>
+                            <constraint firstItem="ztt-FZ-j0q" firstAttribute="top" secondItem="4Ux-gp-XHu" secondAttribute="bottom" constant="5" id="b6C-No-2Uy"/>
+                            <constraint firstItem="917-69-4YM" firstAttribute="trailing" secondItem="ztt-FZ-j0q" secondAttribute="trailing" constant="20" id="cMW-f5-lhe"/>
+                            <constraint firstItem="ztt-FZ-j0q" firstAttribute="leading" secondItem="917-69-4YM" secondAttribute="leading" constant="20" id="rFw-H1-gSk"/>
+                            <constraint firstItem="Vpo-8f-xxd" firstAttribute="top" secondItem="BoN-Ah-t18" secondAttribute="bottom" constant="40" id="sO9-bZ-4Pn"/>
+                            <constraint firstItem="917-69-4YM" firstAttribute="trailing" secondItem="Fs8-Cu-hcN" secondAttribute="trailing" constant="20" id="xfz-hp-HR3"/>
+                        </constraints>
                     </view>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ymk-HI-4Qe" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="-2021" y="132"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="wDb-Tf-uoP">
+            <objects>
+                <tabBarController id="Gqv-2M-7p2" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="VCK-ll-vsy">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="2zR-rW-Eul" kind="relationship" relationship="viewControllers" id="HiS-uW-Vjl"/>
+                        <segue destination="ECE-QK-xhP" kind="relationship" relationship="viewControllers" id="dBg-zi-1in"/>
+                        <segue destination="f9J-Hb-Bmk" kind="relationship" relationship="viewControllers" id="o6k-3H-UPC"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="MCy-MC-UD1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1260" y="132"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Google-Emblem" width="3840" height="2160"/>
+        <image name="Microsoft-Emblem" width="3840" height="2160"/>
+        <image name="Twitter-Emblem" width="3840" height="2160"/>
+        <image name="Yahoo-Emblem" width="3840" height="2160"/>
+        <image name="iCloud-Emblem" width="3840" height="2160"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGrayColor">
+            <color red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
 </document>
