@@ -93,10 +93,10 @@
             </objects>
             <point key="canvasLocation" x="-260" y="-535"/>
         </scene>
-        <!--View Controller-->
+        <!--Account View Controller-->
         <scene sceneID="5bG-y1-fgD">
             <objects>
-                <viewController id="n9o-Z8-gNh" sceneMemberID="viewController">
+                <viewController id="n9o-Z8-gNh" customClass="AccountViewController" customModule="UAVolunteer" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="1B4-6a-Fmk">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -236,6 +236,7 @@
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="kzZ-gz-Mm8"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="cJW-lu-jFc" firstAttribute="top" secondItem="zbj-nI-tKH" secondAttribute="bottom" constant="10" id="Ctd-3i-OY1"/>
