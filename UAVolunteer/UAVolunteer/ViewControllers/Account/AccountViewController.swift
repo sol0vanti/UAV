@@ -7,8 +7,7 @@ import Firebase
 
 class AccountViewController: UIViewController, ASAuthorizationControllerDelegate, ASAuthorizationControllerPresentationContextProviding {
     @IBOutlet weak var yahooButton: UIButton!
-    @IBOutlet weak var twitterButton: UIButton!
-    @IBOutlet weak var microsoftButton: UIButton!
+    @IBOutlet weak var otherButton: UIButton!
     @IBOutlet weak var googleButton: UIButton!
     @IBOutlet weak var icloudButton: UIButton!
     let defaults = UserDefaults.standard
@@ -89,10 +88,7 @@ class AccountViewController: UIViewController, ASAuthorizationControllerDelegate
             }
         }
     }
-    @IBAction func microsoftButtonClicked(_ sender: UIButton) {
-    }
-    @IBAction func twitterButtonClicked(_ sender: UIButton) {
-    }
+    
     @IBAction func yahooButtonClicked(_ sender: UIButton) {
     }
 }

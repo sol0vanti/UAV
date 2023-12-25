@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		700481692B39AC4400672DB4 /* EmailLogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 700481682B39AC4400672DB4 /* EmailLogViewController.swift */; };
+		7004816B2B39ADF200672DB4 /* EmailSignViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7004816A2B39ADF200672DB4 /* EmailSignViewController.swift */; };
 		7062A20E2B33290800BDD02A /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 7062A20D2B33290800BDD02A /* FirebaseAuth */; };
 		7062A2102B33290800BDD02A /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = 7062A20F2B33290800BDD02A /* FirebaseDatabase */; };
 		7062A2122B33290800BDD02A /* FirebaseDatabaseSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 7062A2112B33290800BDD02A /* FirebaseDatabaseSwift */; };
@@ -48,6 +50,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		700481682B39AC4400672DB4 /* EmailLogViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailLogViewController.swift; sourceTree = "<group>"; };
+		7004816A2B39ADF200672DB4 /* EmailSignViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailSignViewController.swift; sourceTree = "<group>"; };
 		7062A21B2B33343400BDD02A /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		7062A21D2B333A0400BDD02A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		7070CE8A2B32094E00F8B450 /* UAVolunteer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UAVolunteer.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -104,6 +108,8 @@
 			isa = PBXGroup;
 			children = (
 				7070CE912B32094E00F8B450 /* AccountViewController.swift */,
+				700481682B39AC4400672DB4 /* EmailLogViewController.swift */,
+				7004816A2B39ADF200672DB4 /* EmailSignViewController.swift */,
 			);
 			path = Account;
 			sourceTree = "<group>";
@@ -361,8 +367,10 @@
 			files = (
 				7070CE922B32094E00F8B450 /* AccountViewController.swift in Sources */,
 				7070CE8E2B32094E00F8B450 /* AppDelegate.swift in Sources */,
+				7004816B2B39ADF200672DB4 /* EmailSignViewController.swift in Sources */,
 				7070CE902B32094E00F8B450 /* SceneDelegate.swift in Sources */,
 				7062A21C2B33343400BDD02A /* MapViewController.swift in Sources */,
+				700481692B39AC4400672DB4 /* EmailLogViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
