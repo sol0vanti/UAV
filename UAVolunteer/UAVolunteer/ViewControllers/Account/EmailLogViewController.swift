@@ -36,4 +36,11 @@ class EmailLogViewController: UIViewController {
             }
         }
     }
+    
+    @IBAction func signButtonClicked(_ sender: UIButton) {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        if let signUpViewController = storyboard.instantiateViewController(withIdentifier: "EmailSignViewController") as? EmailSignViewController {
+            navigationController?.pushViewController(signUpViewController, animated: true)
+        }
+    }
 }

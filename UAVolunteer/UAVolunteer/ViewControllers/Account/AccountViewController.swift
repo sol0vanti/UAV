@@ -84,6 +84,13 @@ class AccountViewController: UIViewController, ASAuthorizationControllerDelegate
     
     @IBAction func yahooButtonClicked(_ sender: UIButton) {
     }
+    
+    @IBAction func otherButtonClicked(_ sender: UIButton) {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        if let signUpViewController = storyboard.instantiateViewController(withIdentifier: "EmailSignViewController") as? EmailSignViewController {
+            navigationController?.pushViewController(signUpViewController, animated: true)
+        }
+    }
 }
 
 extension UIViewController {
