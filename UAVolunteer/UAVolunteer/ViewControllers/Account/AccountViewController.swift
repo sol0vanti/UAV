@@ -96,6 +96,6 @@ class AccountViewController: UIViewController, ASAuthorizationControllerDelegate
 extension UIViewController {
      func navigateTo(_ viewController: UIViewController.Type) {
         let destVC = UIStoryboard(name: "Main", bundle:nil).instantiateViewController(withIdentifier: "\(viewController)")
-        self.navigationController?.pushViewController(destVC, animated: true)
+        self.navigationController?.setViewControllers([destVC], animated: true)
     }
 }
