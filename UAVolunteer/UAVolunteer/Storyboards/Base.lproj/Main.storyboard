@@ -162,7 +162,6 @@
                                     <color key="baseForegroundColor" systemColor="linkColor"/>
                                 </buttonConfiguration>
                                 <connections>
-                                    <action selector="otherButtonClicked:" destination="n9o-Z8-gNh" eventType="touchUpInside" id="hrb-1b-RRJ"/>
                                     <action selector="yahooButtonClicked:" destination="n9o-Z8-gNh" eventType="touchUpInside" id="dT9-Ps-GYk"/>
                                     <segue destination="So1-U5-htx" kind="popoverPresentation" popoverAnchorView="e0t-Sa-q3a" id="no1-Hd-zeP">
                                         <popoverArrowDirection key="popoverArrowDirection" up="YES"/>
@@ -330,7 +329,7 @@
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yDB-Tl-Ug5">
                                 <rect key="frame" x="20" y="341.33333333333331" width="353" height="190.99999999999994"/>
-                                <mutableString key="text">Реєструючись у нашій програмі, ви погоджуєтеся дотримуватися наших Умов використання. Використання програми підлягає нашій політиці конфіденційності. Ви надаєте згоду на отримання повідомлень від нас. Зловживання або порушення може призвести до припинення облікового запису. Ми залишаємо за собою право змінювати умови. Ознайомтеся з повним текстом Умов використання для деталей.</mutableString>
+                                <string key="text">Реєструючись у нашій програмі, ви погоджуєтеся дотримуватися наших Умов використання. Використання програми підлягає нашій політиці конфіденційності. Ви надаєте згоду на отримання повідомлень від нас. Зловживання або порушення може призвести до припинення облікового запису. Ми залишаємо за собою право змінювати умови. Ознайомтеся з повним текстом Умов використання для деталей.</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -462,7 +461,7 @@
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O04-1d-Dw6">
                                 <rect key="frame" x="20" y="269.66666666666669" width="353" height="191"/>
-                                <mutableString key="text">Реєструючись у нашій програмі, ви погоджуєтеся дотримуватися наших Умов використання. Використання програми підлягає нашій політиці конфіденційності. Ви надаєте згоду на отримання повідомлень від нас. Зловживання або порушення може призвести до припинення облікового запису. Ми залишаємо за собою право змінювати умови. Ознайомтеся з повним текстом Умов використання для деталей.</mutableString>
+                                <string key="text">Реєструючись у нашій програмі, ви погоджуєтеся дотримуватися наших Умов використання. Використання програми підлягає нашій політиці конфіденційності. Ви надаєте згоду на отримання повідомлень від нас. Зловживання або порушення може призвести до припинення облікового запису. Ми залишаємо за собою право змінювати умови. Ознайомтеся з повним текстом Умов використання для деталей.</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -537,7 +536,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="H7D-zz-Fq5"/>
+        <segue reference="no1-Hd-zeP"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="Google-Emblem" width="3840" height="2160"/>
@@ -547,22 +546,22 @@
         <image name="map.fill" catalog="system" width="128" height="110"/>
         <image name="person.crop.circle.fill" catalog="system" width="128" height="123"/>
         <systemColor name="linkColor">
-            <color red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="systemGray6Color">
-            <color red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemGrayColor">
-            <color red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemOrangeColor">
-            <color red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemRedColor">
-            <color red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

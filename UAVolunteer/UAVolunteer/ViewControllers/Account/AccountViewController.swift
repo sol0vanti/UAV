@@ -17,7 +17,7 @@ class AccountViewController: UIViewController, ASAuthorizationControllerDelegate
             let userIdentifier = appleIDCredential.user
             let email = appleIDCredential.email
             let db = Firestore.firestore()
-            db.collection("users").addDocument(data: ["email": email!, "uid": userIdentifier]) { (error) in
+            db.collection("users").addDocument(data: ["idToken": appleIDCredential, "uid": userIdentifier]) { (error) in
                 if error != nil {
                     let ac = UIAlertController(title: "Помилка", message: "Помилка сервера. Спробуйте ще раз пізніше.", preferredStyle: .alert)
                     ac.addAction(UIAlertAction(title: "ОК", style: .default))
@@ -25,9 +25,8 @@ class AccountViewController: UIViewController, ASAuthorizationControllerDelegate
                     return
                 }
             }
-            self.defaults.set(email, forKey: "email")
-            let destVC = UIStoryboard(name: "Main", bundle:nil).instantiateViewController(withIdentifier: "MapViewController") as! MapViewController
-            self.navigationController?.setViewControllers([destVC], animated: true)
+            self.defaults.set(appleIDCredential, forKey: "idToken")
+            navigateTo(MapViewController.self)
         }
     }
     
@@ -44,9 +43,9 @@ class AccountViewController: UIViewController, ASAuthorizationControllerDelegate
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        guard defaults.string(forKey: "email") == nil else {
-            let destVC = UIStoryboard(name: "Main", bundle:nil).instantiateViewController(withIdentifier: "MapViewController") as! MapViewController
-            self.navigationController?.setViewControllers([destVC], animated: true)
+        navigateTo(MapViewController.self)
+        guard defaults.string(forKey: "idToken") == nil else {
+            navigateTo(MapViewController.self)
             return
         }
     }
@@ -68,27 +67,27 @@ class AccountViewController: UIViewController, ASAuthorizationControllerDelegate
         GIDSignIn.sharedInstance.configuration = config
 
         GIDSignIn.sharedInstance.signIn(withPresenting: self) { result, error in
-          guard error == nil else {
-            return
-          }
-
-          guard let user = result?.user,
-            let idToken = user.idToken?.tokenString
-          else {
-            return
-          }
-
-          let credential = GoogleAuthProvider.credential(withIDToken: idToken, accessToken: user.accessToken.tokenString)
-            Auth.auth().signIn(with: credential) { result, error in
-                if error != nil{
-                    print(error!)
-                    let destVC = UIStoryboard(name: "Main", bundle:nil).instantiateViewController(withIdentifier: "MapViewController") as! MapViewController
-                    self.navigationController?.setViewControllers([destVC], animated: true)
-                }
+            guard error == nil else {
+                return
             }
+
+            guard let user = result?.user,
+            let idToken = user.idToken?.tokenString
+            else {
+                return
+            }
+            self.defaults.set(idToken, forKey: "idToken")
+            self.navigateTo(MapViewController.self)
         }
     }
     
     @IBAction func yahooButtonClicked(_ sender: UIButton) {
+    }
+}
+
+extension UIViewController {
+     func navigateTo(_ viewController: UIViewController.Type) {
+        let destVC = UIStoryboard(name: "Main", bundle:nil).instantiateViewController(withIdentifier: "\(viewController)")
+        self.navigationController?.pushViewController(destVC, animated: true)
     }
 }
