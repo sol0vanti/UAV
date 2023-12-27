@@ -1,4 +1,4 @@
-<div align="center"> <img src="https://github.com/aiexxash/UAV/blob/main/UAV-images/UAV-Header.png"> </div>
+<div align="center"> <img src="https://github.com/aiexxash/UAV/blob/main/UAV-images/Header.png"> </div>
 
 # UAV
 
