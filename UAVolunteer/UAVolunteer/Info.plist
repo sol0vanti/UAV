@@ -16,9 +16,7 @@
 			<key>CFBundleTypeRole</key>
 			<string>Editor</string>
 			<key>CFBundleURLSchemes</key>
-			<array>
-				<string>uavolunteer-4505f</string>
-			</array>
+			<array/>
 		</dict>
 	</array>
 	<key>UIApplicationSceneManifest</key>
