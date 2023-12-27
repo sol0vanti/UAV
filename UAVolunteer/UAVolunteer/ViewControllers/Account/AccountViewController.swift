@@ -25,6 +25,7 @@ class AccountViewController: UIViewController, ASAuthorizationControllerDelegate
                     return
                 }
             }
+            UserDefaults.resetStandardUserDefaults()
             self.defaults.set(appleIDCredential, forKey: "idToken")
             navigateTo(MapViewController.self)
         }
@@ -43,8 +44,7 @@ class AccountViewController: UIViewController, ASAuthorizationControllerDelegate
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        navigateTo(MapViewController.self)
-        guard defaults.string(forKey: "idToken") == nil else {
+        guard defaults.string(forKey: "idToken") == nil || defaults.string(forKey: "email") == nil else {
             navigateTo(MapViewController.self)
             return
         }
@@ -76,6 +76,7 @@ class AccountViewController: UIViewController, ASAuthorizationControllerDelegate
             else {
                 return
             }
+            UserDefaults.resetStandardUserDefaults()
             self.defaults.set(idToken, forKey: "idToken")
             self.navigateTo(MapViewController.self)
         }

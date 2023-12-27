@@ -26,11 +26,11 @@
 		7070CE902B32094E00F8B450 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7070CE8F2B32094E00F8B450 /* SceneDelegate.swift */; };
 		7070CE922B32094E00F8B450 /* AccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7070CE912B32094E00F8B450 /* AccountViewController.swift */; };
 		7070CE952B32094E00F8B450 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7070CE932B32094E00F8B450 /* Main.storyboard */; };
-		7070CE972B32094F00F8B450 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7070CE962B32094F00F8B450 /* Assets.xcassets */; };
 		7070CE9A2B32094F00F8B450 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7070CE982B32094F00F8B450 /* LaunchScreen.storyboard */; };
 		7070CEA52B32094F00F8B450 /* UAVolunteerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7070CEA42B32094F00F8B450 /* UAVolunteerTests.swift */; };
 		7070CEAF2B32094F00F8B450 /* UAVolunteerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7070CEAE2B32094F00F8B450 /* UAVolunteerUITests.swift */; };
 		7070CEB12B32094F00F8B450 /* UAVolunteerUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7070CEB02B32094F00F8B450 /* UAVolunteerUITestsLaunchTests.swift */; };
+		70B531CA2B3C5D7200634106 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 70B531C92B3C5D7200634106 /* Assets.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,7 +61,6 @@
 		7070CE8F2B32094E00F8B450 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		7070CE912B32094E00F8B450 /* AccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountViewController.swift; sourceTree = "<group>"; };
 		7070CE942B32094E00F8B450 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		7070CE962B32094F00F8B450 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7070CE992B32094F00F8B450 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7070CE9B2B32094F00F8B450 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7070CEA02B32094F00F8B450 /* UAVolunteerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UAVolunteerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -69,6 +68,7 @@
 		7070CEAA2B32094F00F8B450 /* UAVolunteerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UAVolunteerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7070CEAE2B32094F00F8B450 /* UAVolunteerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UAVolunteerUITests.swift; sourceTree = "<group>"; };
 		7070CEB02B32094F00F8B450 /* UAVolunteerUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UAVolunteerUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		70B531C92B3C5D7200634106 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -211,7 +211,7 @@
 		7070CEC02B32098300F8B450 /* Assets */ = {
 			isa = PBXGroup;
 			children = (
-				7070CE962B32094F00F8B450 /* Assets.xcassets */,
+				70B531C92B3C5D7200634106 /* Assets.xcassets */,
 				7062A21D2B333A0400BDD02A /* GoogleService-Info.plist */,
 				7004816C2B39AF6A00672DB4 /* General.swift */,
 			);
@@ -342,7 +342,7 @@
 			files = (
 				7070CE9A2B32094F00F8B450 /* LaunchScreen.storyboard in Resources */,
 				7062A21E2B333A0400BDD02A /* GoogleService-Info.plist in Resources */,
-				7070CE972B32094F00F8B450 /* Assets.xcassets in Resources */,
+				70B531CA2B3C5D7200634106 /* Assets.xcassets in Resources */,
 				7070CE952B32094E00F8B450 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
