@@ -88,6 +88,9 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="XzB-GM-fxy"/>
+                    <connections>
+                        <outlet property="mapView" destination="dnu-gw-obn" id="FxR-MJ-1Us"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4qo-0Z-FfL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
