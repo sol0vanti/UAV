@@ -89,6 +89,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="XzB-GM-fxy"/>
                     <connections>
+                        <outlet property="detailView" destination="PKl-qV-aLK" id="5Fx-su-oAu"/>
                         <outlet property="mapView" destination="dnu-gw-obn" id="FxR-MJ-1Us"/>
                     </connections>
                 </viewController>
