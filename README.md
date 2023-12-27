@@ -2,87 +2,87 @@
 
 # UAV
 
-UAVolunteer: Unite, Assist, Volunteer – Connecting Hearts, Transforming Lives in Ukraine!
+UAVolunteer: Об'єднуй, Допомагай, Волонтер – З'єднує серця, Трансформує життя в Україні!
 
 
-* [Features](#Features)
-* [Authors](#Authors)
-* [License](#License)
-* [Getting Started](#Getting-Started)
-* [Contibution](#Contibution)
-* [FAQ](#FAQ)
-* [Screenshots](#Screenshots)
-* [Feedback](#Feedback)
+* [Особливості](#Особливості)
+* [Автори](#Автори)
+* [Ліцензія](#Ліцензія)
+* [Початок роботи](#Початок-роботи)
+* [Сприяння](#Сприяння)
+* [Часті питання](#Часті-питання)
+* [Скріншоти](#Скріншоти)
+* [Зворотний зв'язок](#Зворотний-звязок)
 
-## Features
+## Особливості
 
-#### User Authentication:
-- Allow users to create accounts, log in securely, and personalize their volunteer preferences.
-#### Map Integration:
-- Utilize Apple's MapKit to provide a visual representation of volunteer opportunities across Ukraine. Users can easily explore and locate nearby volunteer services.
-#### SoundKit for Enhanced Experience:
-- Enhance the user experience with SoundKit integration, providing meaningful audio cues and notifications to keep volunteers informed and engaged.
-#### Firebase Integration:
-- Leverage Google's Firebase for a robust backend infrastructure, including Firestore for seamless data storage and retrieval.
-#### Search and Discovery
-- Implement a powerful search functionality to help users discover volunteer opportunities based on their preferences and interests.
-#### Real-time Updates
-- Keep users informed about the latest volunteer opportunities and updates using Firebase's real-time database capabilities.
+#### Аутентифікація користувача:
+- Дозволяє користувачам створювати облікові записи, безпечно входити та налаштовувати свої волонтерські вподобання.
+#### Інтеграція карт:
+- Використовуйте MapKit від Apple для візуального відображення можливостей волонтерства по всій Україні. Користувачі легко можуть досліджувати та знаходити поблизу волонтерські послуги.
+#### SoundKit для покращеного досвіду:
+- Покращуйте користувацький досвід інтеграцією SoundKit, надаючи значущі аудіо сигнали та сповіщення, щоб утримувати волонтерів інформованими та залученими.
+#### Інтеграція Firebase:
+- Використовуйте Firebase від Google для міцної інфраструктури на боці сервера, включаючи Firestore для безшовного зберігання та витягування даних.
+#### Пошук та відкриття:
+- Впроваджуйте потужну функціональність пошуку, щоб допомогти користувачам відкривати волонтерські можливості на основі їхніх вподобань та інтересів.
+#### Оновлення в реальному часі:
+- Тримайте користувачів в курсі останніх можливостей для волонтерства та оновлень за допомогою можливостей реальної бази даних Firebase.
 
-And much more! To get all features DM: uavolunteer.faq@gmail.com
-
-
-## Author
-
-- [Oleksandr Balla](https://www.github.com/aiexxash)
+І багато іншого! Щоб отримати всі функції, звертайтеся: uavolunteer.faq@gmail.com
 
 
-## License
+## Автор
+
+- [Олександр Балла](https://www.github.com/aiexxash)
+
+
+## Ліцензія
 
 [GNU GENERAL PUBLIC LICENSE](https://github.com/aiexxash/UAV/blob/main/LICENSE)
 
-## Getting Started
+## Початок роботи
 
-To get started with UAVolunteer, follow these steps:
+Щоб розпочати роботу з UAVolunteer, дотримуйтеся цих кроків:
 
-1. **Clone the repository:**
+1. **Клонувати репозиторій:**
     - git clone https://github.com/aiexxash/uavolunteer.git
-2. **Install dependencies:**
+2. **Встановити залежності:**
     - pod install
-3. **Open the Xcode workspace:**
+3. **Відкрити робочий простір Xcode:**
     - open UAVolunteer.xcworkspace
-4. **Build and run the app on your iOS device or simulator.**
+4. **Зібрати та запустити додаток на своєму пристрої iOS або симуляторі.**
 
 
-## Contributing
+## Сприяння
 
-Contributions are always welcome!
+Внески завжди вітаються!
 
-See `contributing.md` for ways to get started or DM at uavolunteer.faq@gmail.com
+Дивіться `contributing.md` для початку або пишіть DM за адресою uavolunteer.faq@gmail.com
 
-## FAQ
+## Часті питання
 
-#### 1. Q: What is UAVolunteer, and how does it work?
+#### 1. П: Що таке UAVolunteer і як воно працює?
 
-- A: UAVolunteer is an iOS app designed to connect users with volunteer opportunities across Ukraine. The app provides a user-friendly interface to discover and participate in various volunteer services. Users can browse through a range of activities, select ones that match their interests, and easily sign up to contribute their time and skills to meaningful causes.
+- В: UAVolunteer - це iOS-додаток, призначений для з'єднання користувачів з можливостями волонтерства по всій Україні. Додаток надає дружелюбний інтерфейс для відкриття та участі в різноманітних волонтерських послугах. Користувачі можуть переглядати різні види діяльностей, обирати ті, які відповідають їхнім інтересам, та легко записуватися, щоб внести свій час та навички в значущі справи.
 
-#### 2. Q: How can I find volunteer opportunities specific to my location or interests?
+#### 2. П: Як я можу знайти волонтерські можливості, специфічні для мого розташування чи інтересів?
 
-- A: UAVolunteer offers advanced search features to help you find the perfect volunteer opportunity. You can filter results based on your location, interests, and availability. The app's intelligent matching algorithm suggests volunteer opportunities tailored to your preferences, ensuring that you can contribute to causes that align with your passions and skills.
+- В: UAVolunteer надає розширені функції пошуку, щоб вам було легко знайти ідеальну волонтерську можливість. Ви можете фільтрувати результати за вашим розташуванням, інтересами та доступністю. Розумний алгоритм відбору волонтерських можливостей пропонує події, що відповідають вашим уподобанням, забезпечуючи можливість внесення вкладу в справи, які відповідають вашим страстям та навичкам.
 
-#### 3. Q: Can I track my volunteer hours and contributions using UAVolunteer?
+#### 3. П: Чи можу я відстежувати години волонтерської роботи та свої внески за допомогою UAVolunteer?
 
-- A: Yes, UAVolunteer makes it easy to track your volunteer hours and contributions. The app includes a built-in tracking system that allows you to log the time you spend on each volunteer activity. This feature not only helps you keep a record of your impact but also allows organizations to recognize and appreciate your dedication to their causes.
+- В: Так, UAVolunteer полегшує відстеження ваших годин волонтерської роботи та внесків. Додаток має вбудовану систему відстеження, яка дозволяє вам реєструвати час, який ви витрачаєте на кожну волонтерську діяльність. Ця функція не лише допомагає вам вести запис свого впливу, але й дозволяє організаціям визнавати та цінувати вашу присвяченість їхнім справам.
 
-#### 4. Q: How can organizations use UAVolunteer to recruit volunteers for their events?
+#### 4. П: Як організації можуть використовувати UAVolunteer для набору волонтерів на свої події?
 
-- A: Organizations can leverage UAVolunteer to promote their volunteer opportunities and connect with potential contributors. By creating a profile and posting volunteer events on the app, organizations can reach a wide audience of users passionate about making a difference. The app's notification system ensures that users stay informed about upcoming events, increasing the chances of active participation in community initiatives.
+- В: Організації можуть використовувати UAVolunteer для просування своїх можливостей волонтерства та залучення потенційних учасників. Створивши профіль і розмістивши волонтерські події в додатку, організації можуть звертатися до широкого кола користувачів, які пасіоновані до змін. Система сповіщень додатку гарантує, що користувачі будуть інформовані про надходження подій, що збільшує ймовірність активної участі в ініціативах громади.
 
-## Screenshots
+## Скріншоти
 
-![App Screenshot](https://via.placeholder.com/468x300?text=App+Screenshot+Here)
+![Скріншот додатка](https://via.placeholder.com/468x300?text=Скріншот+додатка+тут)
 
+## Зворотний зв'язок
 
-## Feedback
+Якщо у вас є які-небудь зауваження чи пропозиції, будь ласка, звертайтеся до нас за адресою uavolunteer.faq@gmail.com
 
-If you have any feedback, please reach out to us at uavolunteer.faq@gmail.com
