@@ -1,10 +1,3 @@
-//
-//  EmailSignViewController.swift
-//  UAVolunteer
-//
-//  Created by Alex Balla on 25.12.2023.
-//
-
 import UIKit
 
 class EmailSignViewController: UIViewController {
@@ -16,8 +9,6 @@ class EmailSignViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
     }
     
     @IBAction func addButtonClicked(_ sender: UIButton) {
