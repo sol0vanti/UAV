@@ -4,33 +4,35 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22131"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Launch Screen-->
         <scene sceneID="EHf-IW-A2E">
             <objects>
-                <viewController id="01J-lp-oVM" sceneMemberID="viewController">
+                <viewController id="01J-lp-oVM" userLabel="Launch Screen" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Logo-no-bg" translatesAutoresizingMaskIntoConstraints="NO" id="3WC-DT-aik">
-                                <rect key="frame" x="71.666666666666686" y="301" width="250" height="250"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Logo-Splash" translatesAutoresizingMaskIntoConstraints="NO" id="3WC-DT-aik">
+                                <rect key="frame" x="134" y="363.66666666666669" width="125" height="125"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="250" id="Ffo-iS-2jg"/>
-                                    <constraint firstAttribute="height" constant="250" id="FhP-Nx-4AP"/>
+                                    <constraint firstAttribute="width" constant="125" id="Ffo-iS-2jg"/>
+                                    <constraint firstAttribute="height" constant="125" id="FhP-Nx-4AP"/>
                                 </constraints>
                             </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" red="0.86028661705392073" green="0.87105995502634981" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstItem="3WC-DT-aik" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="UjQ-GX-XR6"/>
                             <constraint firstItem="3WC-DT-aik" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="i9O-8e-bIY"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="logo" destination="3WC-DT-aik" id="og6-ck-cBz"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -38,9 +40,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Logo-no-bg" width="1024" height="1024"/>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
+        <image name="Logo-Splash" width="1024" height="1024"/>
     </resources>
 </document>

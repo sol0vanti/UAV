@@ -26,7 +26,7 @@ class AccountViewController: UIViewController, ASAuthorizationControllerDelegate
                 }
             }
             self.defaults.set(appleIDCredential, forKey: "idToken")
-            navigateTo(MapViewController.self)
+            navigateTo(MainTabBarController.self)
         }
     }
     
@@ -43,9 +43,8 @@ class AccountViewController: UIViewController, ASAuthorizationControllerDelegate
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        navigateTo(MapViewController.self)
-        guard defaults.string(forKey: "idToken") == nil else {
-            navigateTo(MapViewController.self)
+        guard defaults.string(forKey: "idToken") == nil || defaults.string(forKey: "email") == nil else {
+            navigateTo(MainTabBarController.self)
             return
         }
     }
@@ -77,17 +76,24 @@ class AccountViewController: UIViewController, ASAuthorizationControllerDelegate
                 return
             }
             self.defaults.set(idToken, forKey: "idToken")
-            self.navigateTo(MapViewController.self)
+            self.navigateTo(MainTabBarController.self)
         }
     }
     
     @IBAction func yahooButtonClicked(_ sender: UIButton) {
+    }
+    
+    @IBAction func otherButtonClicked(_ sender: UIButton) {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        if let signUpViewController = storyboard.instantiateViewController(withIdentifier: "EmailSignViewController") as? EmailSignViewController {
+            navigationController?.pushViewController(signUpViewController, animated: true)
+        }
     }
 }
 
 extension UIViewController {
      func navigateTo(_ viewController: UIViewController.Type) {
         let destVC = UIStoryboard(name: "Main", bundle:nil).instantiateViewController(withIdentifier: "\(viewController)")
-        self.navigationController?.pushViewController(destVC, animated: true)
+        self.navigationController?.setViewControllers([destVC], animated: true)
     }
 }
