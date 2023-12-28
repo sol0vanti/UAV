@@ -53,16 +53,16 @@
             </objects>
             <point key="canvasLocation" x="593.12977099236639" y="824.64788732394368"/>
         </scene>
-        <!--Map View Controller-->
+        <!--Map Screen View Controller-->
         <scene sceneID="oTi-9a-PVH">
             <objects>
-                <viewController storyboardIdentifier="MapViewController" id="2zR-rW-Eul" customClass="MapViewController" customModule="UAVolunteer" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MapScreenViewController" id="2zR-rW-Eul" customClass="MapScreenViewController" customModule="UAVolunteer" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="IaK-vt-vDd">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dnu-gw-obn">
-                                <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                                <rect key="frame" x="0.0" y="0.0" width="393" height="769"/>
                                 <standardMapConfiguration key="preferredConfiguration"/>
                             </mapView>
                             <containerView hidden="YES" opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PKl-qV-aLK">
@@ -80,7 +80,7 @@
                         <constraints>
                             <constraint firstItem="yib-VB-kIL" firstAttribute="bottom" secondItem="PKl-qV-aLK" secondAttribute="bottom" constant="40" id="Afa-AA-9pq"/>
                             <constraint firstItem="dnu-gw-obn" firstAttribute="leading" secondItem="IaK-vt-vDd" secondAttribute="leading" id="Bre-bi-vTO"/>
-                            <constraint firstItem="dnu-gw-obn" firstAttribute="bottom" secondItem="IaK-vt-vDd" secondAttribute="bottom" id="DQ0-TN-cGv"/>
+                            <constraint firstItem="dnu-gw-obn" firstAttribute="bottom" secondItem="yib-VB-kIL" secondAttribute="bottom" id="DQ0-TN-cGv"/>
                             <constraint firstAttribute="trailing" secondItem="dnu-gw-obn" secondAttribute="trailing" id="Pdf-pv-VQs"/>
                             <constraint firstItem="PKl-qV-aLK" firstAttribute="leading" secondItem="yib-VB-kIL" secondAttribute="leading" constant="50" id="Zcu-zx-xXq"/>
                             <constraint firstItem="yib-VB-kIL" firstAttribute="trailing" secondItem="PKl-qV-aLK" secondAttribute="trailing" constant="50" id="iXh-RJ-o1F"/>
@@ -194,10 +194,10 @@
             </objects>
             <point key="canvasLocation" x="-1095.4198473282443" y="131.69014084507043"/>
         </scene>
-        <!--Tab Bar Controller-->
+        <!--Main Tab Bar Controller-->
         <scene sceneID="wDb-Tf-uoP">
             <objects>
-                <tabBarController id="Gqv-2M-7p2" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="MainTabBarController" id="Gqv-2M-7p2" customClass="MainTabBarController" customModule="UAVolunteer" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="VCK-ll-vsy">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -512,11 +512,10 @@
         <!--Map-->
         <scene sceneID="FdI-MG-4gt">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="g9m-30-JIN" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="g9m-30-JIN" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Map" image="map.fill" catalog="system" id="AcJ-y3-3ca"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="hqn-Ex-UNm">
-                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
