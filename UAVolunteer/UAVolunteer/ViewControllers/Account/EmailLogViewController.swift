@@ -29,7 +29,7 @@ class EmailLogViewController: UIViewController {
                 General.showError(text: error!.localizedDescription, label: self.errorLabel, textFields: [self.emailField, self.passwordField])
             }
             else {
-                let destVC = UIStoryboard(name: "Main", bundle:nil).instantiateViewController(withIdentifier: "MapViewController") as! MapViewController
+                let destVC = UIStoryboard(name: "Main", bundle:nil).instantiateViewController(withIdentifier: "MainTabBarController")
                 UserDefaults.resetStandardUserDefaults()
                 self.defaults.set(self.emailField.text!, forKey: "email")
                 self.navigationController?.setViewControllers([destVC], animated: true)
