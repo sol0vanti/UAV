@@ -7,7 +7,6 @@ protocol MapScreenDelegate: AnyObject {
 
 class DetailViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, MapScreenDelegate {
     func didSelectAnnotation(title: String?) {
-        print("===============================")
         print(title ?? fatalError("unable to dequeue title while selecting annotation"))
         self.navigationItem.title = title
     }
