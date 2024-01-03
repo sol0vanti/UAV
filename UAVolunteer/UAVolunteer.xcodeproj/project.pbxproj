@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		700481692B39AC4400672DB4 /* EmailLogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 700481682B39AC4400672DB4 /* EmailLogViewController.swift */; };
 		7004816B2B39ADF200672DB4 /* EmailSignViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7004816A2B39ADF200672DB4 /* EmailSignViewController.swift */; };
-		7004816D2B39AF6A00672DB4 /* General.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7004816C2B39AF6A00672DB4 /* General.swift */; };
 		70161F932B459B9700E343A9 /* EventsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70161F922B459B9700E343A9 /* EventsTableViewController.swift */; };
 		70161F952B459C1300E343A9 /* EventTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70161F942B459C1300E343A9 /* EventTableViewCell.swift */; };
 		70161F972B459C2700E343A9 /* EventDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70161F962B459C2700E343A9 /* EventDetailViewController.swift */; };
@@ -59,7 +58,6 @@
 /* Begin PBXFileReference section */
 		700481682B39AC4400672DB4 /* EmailLogViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailLogViewController.swift; sourceTree = "<group>"; };
 		7004816A2B39ADF200672DB4 /* EmailSignViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailSignViewController.swift; sourceTree = "<group>"; };
-		7004816C2B39AF6A00672DB4 /* General.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = General.swift; sourceTree = "<group>"; };
 		70161F922B459B9700E343A9 /* EventsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsTableViewController.swift; sourceTree = "<group>"; };
 		70161F942B459C1300E343A9 /* EventTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventTableViewCell.swift; sourceTree = "<group>"; };
 		70161F962B459C2700E343A9 /* EventDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventDetailViewController.swift; sourceTree = "<group>"; };
@@ -228,7 +226,6 @@
 			children = (
 				70B531C92B3C5D7200634106 /* Assets.xcassets */,
 				7062A21D2B333A0400BDD02A /* GoogleService-Info.plist */,
-				7004816C2B39AF6A00672DB4 /* General.swift */,
 			);
 			path = Assets;
 			sourceTree = "<group>";
@@ -419,7 +416,6 @@
 				7070CE902B32094E00F8B450 /* SceneDelegate.swift in Sources */,
 				7076240D2B3D64C200CF6703 /* MainTabBarController.swift in Sources */,
 				7062A21C2B33343400BDD02A /* MapScreenViewController.swift in Sources */,
-				7004816D2B39AF6A00672DB4 /* General.swift in Sources */,
 				70161F932B459B9700E343A9 /* EventsTableViewController.swift in Sources */,
 				707624112B3DC5C700CF6703 /* DetailCollectionViewCell.swift in Sources */,
 				700481692B39AC4400672DB4 /* EmailLogViewController.swift in Sources */,

@@ -10,7 +10,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Events-->
+        <!--Nearest events-->
         <scene sceneID="0ir-oJ-bHR">
             <objects>
                 <viewController id="ECE-QK-xhP" customClass="EventsTableViewController" customModule="UAVolunteer" customModuleProvider="target" sceneMemberID="viewController">
@@ -19,7 +19,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="DvA-Qw-B9a">
-                                <rect key="frame" x="0.0" y="59" width="393" height="710"/>
+                                <rect key="frame" x="0.0" y="103" width="393" height="666"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="eventCell" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="120" id="yvx-Zq-ocv" customClass="EventTableViewCell" customModule="UAVolunteer" customModuleProvider="target">
@@ -88,14 +88,14 @@
                             <constraint firstItem="DvA-Qw-B9a" firstAttribute="top" secondItem="BUb-eA-Nnr" secondAttribute="top" id="wHV-NY-icC"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Events" image="list.dash" catalog="system" id="BaC-c8-tEg"/>
+                    <navigationItem key="navigationItem" title="Nearest events" largeTitleDisplayMode="always" id="uCo-eG-uMu"/>
                     <connections>
                         <outlet property="tableView" destination="DvA-Qw-B9a" id="rjN-gm-LpZ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="16L-W3-iCq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="666.41221374045801" y="132.3943661971831"/>
+            <point key="canvasLocation" x="1421" y="132"/>
         </scene>
         <!--Profile-->
         <scene sceneID="Zc4-Iy-uRk">
@@ -267,7 +267,7 @@
                     </tabBar>
                     <connections>
                         <segue destination="g9m-30-JIN" kind="relationship" relationship="viewControllers" id="HiS-uW-Vjl"/>
-                        <segue destination="ECE-QK-xhP" kind="relationship" relationship="viewControllers" id="dBg-zi-1in"/>
+                        <segue destination="bKo-Zg-43S" kind="relationship" relationship="viewControllers" id="dBg-zi-1in"/>
                         <segue destination="f9J-Hb-Bmk" kind="relationship" relationship="viewControllers" id="o6k-3H-UPC"/>
                     </connections>
                 </tabBarController>
@@ -712,6 +712,59 @@
             </objects>
             <point key="canvasLocation" x="1420.6106870229007" y="-535.21126760563379"/>
         </scene>
+        <!--Event Detail View Controller-->
+        <scene sceneID="peH-hb-fgB">
+            <objects>
+                <viewController storyboardIdentifier="EventDetailViewController" id="QtN-cR-vHr" customClass="EventDetailViewController" customModule="UAVolunteer" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Glu-2I-XKD">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="UdA-UG-LY9"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="JvZ-84-LwC"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zcj-ZB-seT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2976" y="132"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="PuW-4b-nGg">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="aPB-D8-RlZ" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="bjR-jB-wnq">
+                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="QtN-cR-vHr" kind="relationship" relationship="rootViewController" id="cxo-PP-xr4"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ea7-bg-fZA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2192" y="132"/>
+        </scene>
+        <!--Events-->
+        <scene sceneID="41t-b7-grQ">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="bKo-Zg-43S" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Events" image="list.dash" catalog="system" id="BaC-c8-tEg"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="tfY-W4-n07">
+                        <rect key="frame" x="0.0" y="59" width="393" height="96"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="ECE-QK-xhP" kind="relationship" relationship="rootViewController" id="74a-Ud-5yo"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4AJ-Vb-ZN2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="666.41221374045801" y="132.3943661971831"/>
+        </scene>
     </scenes>
     <resources>
         <image name="Google-Emblem" width="3840" height="2160"/>
@@ -721,22 +774,22 @@
         <image name="map.fill" catalog="system" width="128" height="110"/>
         <image name="person.crop.circle.fill" catalog="system" width="128" height="123"/>
         <systemColor name="linkColor">
-            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="systemGray6Color">
-            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemGrayColor">
-            <color red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemOrangeColor">
-            <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemRedColor">
-            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

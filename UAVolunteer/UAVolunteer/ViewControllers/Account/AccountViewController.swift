@@ -15,7 +15,7 @@ class AccountViewController: UIViewController, ASAuthorizationControllerDelegate
     override func viewDidLoad() {
         super.viewDidLoad()
         guard defaults.string(forKey: "email") == nil else {
-            navigateTo(MainTabBarController.self)
+            setVCTo(MainTabBarController.self)
             return
         }
     }
@@ -34,7 +34,7 @@ class AccountViewController: UIViewController, ASAuthorizationControllerDelegate
                 }
             }
             self.defaults.set(email, forKey: "email")
-            navigateTo(MainTabBarController.self)
+            setVCTo(MainTabBarController.self)
         }
     }
     
@@ -75,7 +75,7 @@ class AccountViewController: UIViewController, ASAuthorizationControllerDelegate
                 return
             }
             self.defaults.set(idToken, forKey: "idToken")
-            self.navigateTo(MainTabBarController.self)
+            self.setVCTo(MainTabBarController.self)
         }
     }
     
@@ -83,16 +83,41 @@ class AccountViewController: UIViewController, ASAuthorizationControllerDelegate
     }
     
     @IBAction func otherButtonClicked(_ sender: UIButton) {
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        if let signUpViewController = storyboard.instantiateViewController(withIdentifier: "EmailSignViewController") as? EmailSignViewController {
-            navigationController?.pushViewController(signUpViewController, animated: true)
-        }
+        pushVCTo(EmailSignViewController.self)
     }
 }
 
 extension UIViewController {
-     func navigateTo(_ viewController: UIViewController.Type) {
+     func setVCTo(_ viewController: UIViewController.Type) {
         let destVC = UIStoryboard(name: "Main", bundle:nil).instantiateViewController(withIdentifier: "\(viewController)")
         self.navigationController?.setViewControllers([destVC], animated: true)
+    }
+    
+    func pushVCTo(_ viewController: UIViewController.Type){
+        let destVC = UIStoryboard(name: "Main", bundle:nil).instantiateViewController(withIdentifier: "\(viewController)")
+        self.navigationController?.pushViewController(destVC, animated: true)
+    }
+    
+    func checkTextFields(errorLabel: UILabel, textFields: [UITextField], confirmationField: UITextField? = nil, passwordTextField: UITextField? = nil) -> String? {
+        for textField in textFields {
+            if textField.text!.count <= 2 {
+                return "Refill the highlighted text fields."
+            }
+        }
+        guard confirmationField != nil else { return nil }
+        
+        if confirmationField?.text != passwordTextField?.text {
+            return "Your password does not match two times, please try again later"
+        }
+        return nil
+    }
+    
+    func showError(text: String, label: UILabel, textFields: [UITextField]){
+        label.isHidden = false
+        label.text = text
+        for textField in textFields {
+            textField.layer.borderWidth = 1.0
+            textField.layer.borderColor = UIColor.systemPink.cgColor
+        }
     }
 }

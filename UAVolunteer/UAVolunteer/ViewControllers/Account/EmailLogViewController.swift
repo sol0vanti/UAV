@@ -16,10 +16,10 @@ class EmailLogViewController: UIViewController {
     }
     
     @IBAction func logButtonClicked(_ sender: UIButton) {
-        let error = General.checkTextFields(errorLabel: errorLabel, textFields: [emailField, passwordField])
+        let error = checkTextFields(errorLabel: errorLabel, textFields: [emailField, passwordField])
                  
         guard error == nil else {
-            General.showError(text: error!, label: errorLabel, textFields: [emailField,passwordField])
+            showError(text: error!, label: errorLabel, textFields: [emailField,passwordField])
             return
         }
                  
@@ -27,7 +27,7 @@ class EmailLogViewController: UIViewController {
         let password = passwordField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
         Auth.auth().signIn(withEmail: email, password: password) { (result, error) in
             if error != nil {
-                General.showError(text: error!.localizedDescription, label: self.errorLabel, textFields: [self.emailField, self.passwordField])
+                self.showError(text: error!.localizedDescription, label: self.errorLabel, textFields: [self.emailField, self.passwordField])
             }
             else {
                 let destVC = UIStoryboard(name: "Main", bundle:nil).instantiateViewController(withIdentifier: "MainTabBarController")

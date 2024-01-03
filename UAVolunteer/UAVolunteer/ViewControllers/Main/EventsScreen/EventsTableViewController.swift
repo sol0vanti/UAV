@@ -14,6 +14,7 @@ class EventsTableViewController: UIViewController, UITableViewDelegate, UITableV
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+        pushVCTo(EventDetailViewController.self)
     }
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
@@ -36,11 +37,6 @@ class EventsTableViewController: UIViewController, UITableViewDelegate, UITableV
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "eventCell", for: indexPath) as? EventTableViewCell else {
             fatalError("unable to dequeue cell")
         }
-        
-        
-
         return cell
     }
-    
-    
 }
