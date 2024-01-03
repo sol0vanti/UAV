@@ -12,6 +12,7 @@ class EmailLogViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationController?.navigationBar.tintColor = .systemOrange
     }
     
     @IBAction func logButtonClicked(_ sender: UIButton) {

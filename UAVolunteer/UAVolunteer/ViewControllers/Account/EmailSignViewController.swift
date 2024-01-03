@@ -14,10 +14,11 @@ class EmailSignViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationController?.navigationBar.tintColor = .systemOrange
     }
     
     @IBAction func addButtonClicked(_ sender: UIButton) {
-        let error = General.checkTextFields(errorLabel: errorLabel, textFields: [emailField], confirmationField: confirmField, passwordTextField: passwordField)
+        let error = General.checkTextFields(errorLabel: errorLabel, textFields: [emailField, confirmField, passwordField], confirmationField: confirmField, passwordTextField: passwordField)
         guard error == nil else {
             General.showError(text: error!, label: errorLabel, textFields: [emailField, passwordField, confirmField])
             return

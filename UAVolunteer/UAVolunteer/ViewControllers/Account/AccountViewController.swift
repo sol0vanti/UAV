@@ -12,6 +12,14 @@ class AccountViewController: UIViewController, ASAuthorizationControllerDelegate
     @IBOutlet weak var icloudButton: UIButton!
     let defaults = UserDefaults.standard
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        guard defaults.string(forKey: "email") == nil else {
+            navigateTo(MainTabBarController.self)
+            return
+        }
+    }
+    
     func authorizationController(controller: ASAuthorizationController, didCompleteWithAuthorization authorization: ASAuthorization) {
         if let appleIDCredential = authorization.credential as? ASAuthorizationAppleIDCredential {
             let userIdentifier = appleIDCredential.user
@@ -25,7 +33,7 @@ class AccountViewController: UIViewController, ASAuthorizationControllerDelegate
                     return
                 }
             }
-            self.defaults.set(appleIDCredential, forKey: "idToken")
+            self.defaults.set(email, forKey: "email")
             navigateTo(MainTabBarController.self)
         }
     }
@@ -39,14 +47,6 @@ class AccountViewController: UIViewController, ASAuthorizationControllerDelegate
     
     func presentationAnchor(for controller: ASAuthorizationController) -> ASPresentationAnchor {
         return self.view.window ?? ASPresentationAnchor()
-    }
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        guard defaults.string(forKey: "idToken") == nil || defaults.string(forKey: "email") == nil else {
-            navigateTo(MainTabBarController.self)
-            return
-        }
     }
     
     @IBAction func icloudButtonClicked(_ sender: UIButton) {
@@ -69,9 +69,8 @@ class AccountViewController: UIViewController, ASAuthorizationControllerDelegate
             guard error == nil else {
                 return
             }
-
             guard let user = result?.user,
-            let idToken = user.idToken?.tokenString
+                  let idToken = user.idToken?.tokenString
             else {
                 return
             }

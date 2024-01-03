@@ -31,6 +31,8 @@
 		7070CEAF2B32094F00F8B450 /* UAVolunteerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7070CEAE2B32094F00F8B450 /* UAVolunteerUITests.swift */; };
 		7070CEB12B32094F00F8B450 /* UAVolunteerUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7070CEB02B32094F00F8B450 /* UAVolunteerUITestsLaunchTests.swift */; };
 		7076240D2B3D64C200CF6703 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7076240C2B3D64C200CF6703 /* MainTabBarController.swift */; };
+		7076240F2B3DC5AD00CF6703 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7076240E2B3DC5AD00CF6703 /* DetailViewController.swift */; };
+		707624112B3DC5C700CF6703 /* DetailCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 707624102B3DC5C700CF6703 /* DetailCollectionViewCell.swift */; };
 		70B531CA2B3C5D7200634106 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 70B531C92B3C5D7200634106 /* Assets.xcassets */; };
 /* End PBXBuildFile section */
 
@@ -70,6 +72,8 @@
 		7070CEAE2B32094F00F8B450 /* UAVolunteerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UAVolunteerUITests.swift; sourceTree = "<group>"; };
 		7070CEB02B32094F00F8B450 /* UAVolunteerUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UAVolunteerUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		7076240C2B3D64C200CF6703 /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
+		7076240E2B3DC5AD00CF6703 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		707624102B3DC5C700CF6703 /* DetailCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailCollectionViewCell.swift; sourceTree = "<group>"; };
 		70B531C92B3C5D7200634106 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -227,6 +231,8 @@
 			isa = PBXGroup;
 			children = (
 				7062A21B2B33343400BDD02A /* MapScreenViewController.swift */,
+				7076240E2B3DC5AD00CF6703 /* DetailViewController.swift */,
+				707624102B3DC5C700CF6703 /* DetailCollectionViewCell.swift */,
 			);
 			path = MapScreen;
 			sourceTree = "<group>";
@@ -395,6 +401,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7076240F2B3DC5AD00CF6703 /* DetailViewController.swift in Sources */,
 				7070CE922B32094E00F8B450 /* AccountViewController.swift in Sources */,
 				7070CE8E2B32094E00F8B450 /* AppDelegate.swift in Sources */,
 				7004816B2B39ADF200672DB4 /* EmailSignViewController.swift in Sources */,
@@ -402,6 +409,7 @@
 				7076240D2B3D64C200CF6703 /* MainTabBarController.swift in Sources */,
 				7062A21C2B33343400BDD02A /* MapScreenViewController.swift in Sources */,
 				7004816D2B39AF6A00672DB4 /* General.swift in Sources */,
+				707624112B3DC5C700CF6703 /* DetailCollectionViewCell.swift in Sources */,
 				700481692B39AC4400672DB4 /* EmailLogViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
