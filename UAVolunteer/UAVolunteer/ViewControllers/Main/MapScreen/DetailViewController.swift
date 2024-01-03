@@ -53,4 +53,8 @@ class DetailViewController: UIViewController, UICollectionViewDelegate, UICollec
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: collectionView.bounds.width, height: 72)
     }
+    
+    @IBAction func signUpButtonClicked(_ sender: UIButton) {
+        pushVCTo(EventDetailViewController.self)
+    }
 }

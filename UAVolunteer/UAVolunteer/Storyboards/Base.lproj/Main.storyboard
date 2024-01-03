@@ -294,6 +294,9 @@
                                     <fontDescription key="titleFontDescription" type="system" weight="semibold" pointSize="14"/>
                                     <color key="baseBackgroundColor" systemColor="systemOrangeColor"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <action selector="signUpButtonClicked:" destination="tBr-KK-ccp" eventType="touchUpInside" id="fvD-kz-err"/>
+                                </connections>
                             </button>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="kOD-ol-ZQz">
                                 <rect key="frame" x="10" y="113" width="273" height="238"/>
@@ -719,8 +722,74 @@
                     <view key="view" contentMode="scaleToFill" id="Glu-2I-XKD">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7sR-p8-h94">
+                                <rect key="frame" x="0.0" y="103" width="393" height="646"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="IlC-NG-NKr">
+                                        <rect key="frame" x="15" y="0.0" width="363" height="100"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Logo-splash" translatesAutoresizingMaskIntoConstraints="NO" id="vqU-eV-Nbh">
+                                                <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="100" id="VQs-dl-XA9"/>
+                                                </constraints>
+                                            </imageView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Povernysʹ Zhyvym" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ynh-gY-Zhc">
+                                                <rect key="frame" x="125" y="33.333333333333343" width="238" height="33.666666666666657"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="28"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="100" id="jjm-MY-rRd"/>
+                                        </constraints>
+                                    </stackView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rto-0t-oa7">
+                                        <rect key="frame" x="15" y="115" width="363" height="20.333333333333343"/>
+                                        <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="hWl-PY-C2h" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="rto-0t-oa7" secondAttribute="bottom" constant="15" id="41N-83-rHX"/>
+                                    <constraint firstItem="hWl-PY-C2h" firstAttribute="trailing" secondItem="IlC-NG-NKr" secondAttribute="trailing" constant="15" id="7lg-Cs-6k4"/>
+                                    <constraint firstItem="IlC-NG-NKr" firstAttribute="leading" secondItem="hWl-PY-C2h" secondAttribute="leading" constant="15" id="GA3-js-kRH"/>
+                                    <constraint firstItem="IlC-NG-NKr" firstAttribute="top" secondItem="hWl-PY-C2h" secondAttribute="top" id="XH1-ee-VO7"/>
+                                    <constraint firstItem="rto-0t-oa7" firstAttribute="top" secondItem="IlC-NG-NKr" secondAttribute="bottom" constant="15" id="kDm-fW-c6w"/>
+                                    <constraint firstItem="hWl-PY-C2h" firstAttribute="trailing" secondItem="rto-0t-oa7" secondAttribute="trailing" constant="15" id="r2e-19-B1G"/>
+                                    <constraint firstItem="rto-0t-oa7" firstAttribute="leading" secondItem="hWl-PY-C2h" secondAttribute="leading" constant="15" id="yf9-wm-jc1"/>
+                                </constraints>
+                                <viewLayoutGuide key="contentLayoutGuide" id="8aO-Fs-H0L"/>
+                                <viewLayoutGuide key="frameLayoutGuide" id="hWl-PY-C2h"/>
+                            </scrollView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3mR-sv-r4Z">
+                                <rect key="frame" x="25" y="763" width="343" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="ZAl-S3-tyr"/>
+                                </constraints>
+                                <color key="tintColor" systemColor="systemOrangeColor"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Записатися">
+                                    <fontDescription key="titleFontDescription" type="system" weight="semibold" pointSize="14"/>
+                                    <color key="baseBackgroundColor" systemColor="systemOrangeColor"/>
+                                </buttonConfiguration>
+                            </button>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="UdA-UG-LY9"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="UdA-UG-LY9" firstAttribute="trailing" secondItem="3mR-sv-r4Z" secondAttribute="trailing" constant="25" id="AtW-D6-oOj"/>
+                            <constraint firstItem="3mR-sv-r4Z" firstAttribute="top" secondItem="7sR-p8-h94" secondAttribute="bottom" constant="15" id="HZJ-YH-LKS"/>
+                            <constraint firstItem="7sR-p8-h94" firstAttribute="leading" secondItem="UdA-UG-LY9" secondAttribute="leading" id="UD7-ii-fTq"/>
+                            <constraint firstItem="7sR-p8-h94" firstAttribute="leading" secondItem="Glu-2I-XKD" secondAttribute="leading" id="Wyk-nF-kA8"/>
+                            <constraint firstItem="3mR-sv-r4Z" firstAttribute="leading" secondItem="UdA-UG-LY9" secondAttribute="leading" constant="25" id="ZJI-Ed-blr"/>
+                            <constraint firstItem="7sR-p8-h94" firstAttribute="top" secondItem="UdA-UG-LY9" secondAttribute="top" id="flJ-Oj-TYA"/>
+                            <constraint firstItem="UdA-UG-LY9" firstAttribute="bottom" secondItem="3mR-sv-r4Z" secondAttribute="bottom" constant="15" id="hQa-d4-USs"/>
+                            <constraint firstItem="7sR-p8-h94" firstAttribute="trailing" secondItem="UdA-UG-LY9" secondAttribute="trailing" id="qJi-SC-HoR"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="JvZ-84-LwC"/>
                 </viewController>
@@ -750,7 +819,7 @@
         <scene sceneID="41t-b7-grQ">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="bKo-Zg-43S" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Events" image="list.dash" catalog="system" id="BaC-c8-tEg"/>
+                    <tabBarItem key="tabBarItem" title="Events" image="list.bullet.clipboard.fill" catalog="system" id="BaC-c8-tEg"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="tfY-W4-n07">
                         <rect key="frame" x="0.0" y="59" width="393" height="96"/>
@@ -768,28 +837,29 @@
     </scenes>
     <resources>
         <image name="Google-Emblem" width="3840" height="2160"/>
+        <image name="Logo-splash" width="1024" height="1024"/>
         <image name="Yahoo-Emblem" width="3840" height="2160"/>
         <image name="iCloud-Emblem" width="3840" height="2160"/>
-        <image name="list.dash" catalog="system" width="128" height="85"/>
+        <image name="list.bullet.clipboard.fill" catalog="system" width="98" height="128"/>
         <image name="map.fill" catalog="system" width="128" height="110"/>
         <image name="person.crop.circle.fill" catalog="system" width="128" height="123"/>
         <systemColor name="linkColor">
-            <color red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="systemGray6Color">
-            <color red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemGrayColor">
-            <color red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemOrangeColor">
-            <color red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemRedColor">
-            <color red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
