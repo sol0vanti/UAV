@@ -14,12 +14,13 @@ class EmailSignViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationController?.navigationBar.tintColor = .black
     }
     
     @IBAction func addButtonClicked(_ sender: UIButton) {
-        let error = General.checkTextFields(errorLabel: errorLabel, textFields: [emailField], confirmationField: confirmField, passwordTextField: passwordField)
+        let error = checkTextFields(errorLabel: errorLabel, textFields: [emailField, confirmField, passwordField], confirmationField: confirmField, passwordTextField: passwordField)
         guard error == nil else {
-            General.showError(text: error!, label: errorLabel, textFields: [emailField, passwordField, confirmField])
+            showError(text: error!, label: errorLabel, textFields: [emailField, passwordField, confirmField])
             return
         }
                         
@@ -28,13 +29,13 @@ class EmailSignViewController: UIViewController {
                         
         Auth.auth().createUser(withEmail: email, password: password) { (result, err) in
             if err != nil {
-                General.showError(text: "Error creating user", label: self.errorLabel, textFields: [])
+                self.showError(text: "Error creating user", label: self.errorLabel, textFields: [])
             } else {
                 let db = Firestore.firestore()
                         
                 db.collection("users").addDocument(data: ["email": email, "uid": result!.user.uid ]) { (error) in
                     if error != nil {
-                        General.showError(text: "Error saving user data", label: self.errorLabel, textFields: [])
+                        self.showError(text: "Error saving user data", label: self.errorLabel, textFields: [])
                     }
                     UserDefaults.resetStandardUserDefaults()
                     self.defaults.set(self.emailField.text!, forKey: "email")
