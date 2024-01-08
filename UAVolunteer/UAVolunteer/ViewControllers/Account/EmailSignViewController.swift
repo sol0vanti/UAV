@@ -14,7 +14,7 @@ class EmailSignViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.navigationController?.navigationBar.tintColor = .systemOrange
+        self.navigationController?.navigationBar.tintColor = .black
     }
     
     @IBAction func addButtonClicked(_ sender: UIButton) {
