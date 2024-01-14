@@ -30,9 +30,6 @@
                             <constraint firstItem="3WC-DT-aik" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="i9O-8e-bIY"/>
                         </constraints>
                     </view>
-                    <connections>
-                        <outlet property="logo" destination="3WC-DT-aik" id="og6-ck-cBz"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

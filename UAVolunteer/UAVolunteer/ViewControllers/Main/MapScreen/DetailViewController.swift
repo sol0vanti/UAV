@@ -6,19 +6,10 @@ protocol MapScreenDelegate: AnyObject {
 }
 
 class DetailViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, MapScreenDelegate {
-    func didSelectAnnotation(title: String?) {
-        print(title ?? fatalError("unable to dequeue title while selecting annotation"))
-        self.navigationItem.title = title
-    }
-    
     @IBOutlet weak var collectionView: UICollectionView!
     static var centerName: String?
     static var centerDetail: [[String: String]]?
     
-    func updateCollectionViewData() {
-        collectionView.reloadData()
-    }
-
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpVC()
@@ -28,6 +19,15 @@ class DetailViewController: UIViewController, UICollectionViewDelegate, UICollec
         collectionView.delegate = self
         collectionView.dataSource = self
         collectionView.register(DetailCollectionViewCell.self, forCellWithReuseIdentifier: "cell")
+    }
+    
+    func updateCollectionViewData() {
+        collectionView.reloadData()
+    }
+    
+    func didSelectAnnotation(title: String?) {
+        print(title ?? fatalError("unable to dequeue title while selecting annotation"))
+        self.navigationItem.title = title
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
