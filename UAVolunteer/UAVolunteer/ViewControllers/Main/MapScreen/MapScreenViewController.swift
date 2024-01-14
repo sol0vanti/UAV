@@ -23,12 +23,11 @@ class MapScreenViewController: UIViewController, MKMapViewDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        getData()
+        getAnnotationData()
         setUpVC()
-        setUpAnnotations()
     }
     
-    func getData(){
+    func getAnnotationData(){
         let database = Firestore.firestore()
         database.collection("locations").getDocuments() {(snapshot, error) in
             if error != nil {
@@ -38,6 +37,20 @@ class MapScreenViewController: UIViewController, MKMapViewDelegate {
                     DispatchQueue.main.async {
                         self.requests = snapshot.documents.map { d in
                             return Request(id: d.documentID, address: d["address"] as! String, contact_phone: d["contact_phone"] as! String, description: d["description"] as! String, latitude: d["latitude"] as! String, longitude: d["longitude"] as! String, name: d["name"] as! String, website: d["website"] as! String)
+                        }
+                        guard self.requests != nil else {
+                            print("Requests is nil")
+                            return
+                        }
+                        
+                        for request in self.requests {
+                            let requestAnnotation = CustomAnnotation(coordinate: CLLocationCoordinate2D(latitude: CLLocationDegrees(request.latitude)!, longitude: CLLocationDegrees(request.longitude)!), title: request.name, desc: [
+                                ["title": "Опис", "detail": "\(request.description)"],
+                                ["title": "Адреса", "detail": "\(request.address)"],
+                                ["title": "Телефон", "detail": "\(request.contact_phone)"],
+                                ["title": "Веб-сайт", "detail": "\(request.website)"]
+                            ])
+                            self.addAnnotation(requestAnnotation)
                         }
                         self.mapScreenDelegate?.updateCollectionViewData()
                     }
@@ -55,23 +68,6 @@ class MapScreenViewController: UIViewController, MKMapViewDelegate {
 
     func addAnnotation(_ annotation: MKAnnotation) {
         mapView.addAnnotation(annotation)
-    }
-    
-    func setUpAnnotations(){
-        guard requests != nil else {
-            print("Requests is nil")
-            return
-        }
-        
-        for request in requests {
-            let requestAnnotation = CustomAnnotation(coordinate: CLLocationCoordinate2D(latitude: CLLocationDegrees(request.latitude)!, longitude: CLLocationDegrees(request.longitude)!), title: request.name, desc: [
-                ["title": "Опис", "detail": "\(request.description)"],
-                ["title": "Адреса", "detail": "\(request.address)"],
-                ["title": "Телефон", "detail": "\(request.contact_phone)"],
-                ["title": "Веб-сайт", "detail": "\(request.website)"]
-            ])
-            addAnnotation(requestAnnotation)
-        }
     }
 
     func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
