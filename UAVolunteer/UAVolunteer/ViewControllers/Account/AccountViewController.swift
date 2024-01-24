@@ -69,12 +69,12 @@ class AccountViewController: UIViewController, ASAuthorizationControllerDelegate
             guard error == nil else {
                 return
             }
-            guard let user = result?.user,
-                  let idToken = user.idToken?.tokenString
-            else {
+            guard let user = result?.user else {
                 return
             }
-            self.defaults.set(idToken, forKey: "idToken")
+            
+            let userEmail = user.profile?.email
+            self.defaults.set(userEmail!, forKey: "email")
             self.setVCTo(MainTabBarController.self)
         }
     }
