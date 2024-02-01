@@ -19,7 +19,7 @@ class MapScreenViewController: UIViewController, MKMapViewDelegate {
     @IBOutlet weak var mapView: MKMapView!
     weak var mapScreenDelegate: MapScreenDelegate?
     let defaults = UserDefaults.standard
-    var requests: [Request]!
+    var requests: [CenterRequest]!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,7 +36,7 @@ class MapScreenViewController: UIViewController, MKMapViewDelegate {
                 if let snapshot = snapshot {
                     DispatchQueue.main.async {
                         self.requests = snapshot.documents.map { d in
-                            return Request(id: d.documentID, address: d["address"] as! String, contact_phone: d["contact_phone"] as! String, description: d["description"] as! String, latitude: d["latitude"] as! String, longitude: d["longitude"] as! String, name: d["name"] as! String, website: d["website"] as! String)
+                            return CenterRequest(id: d.documentID, address: d["address"] as! String, contact_phone: d["contact_phone"] as! String, description: d["description"] as! String, latitude: d["latitude"] as! String, longitude: d["longitude"] as! String, name: d["name"] as! String, website: d["website"] as! String)
                         }
                         guard self.requests != nil else {
                             print("Requests is nil")

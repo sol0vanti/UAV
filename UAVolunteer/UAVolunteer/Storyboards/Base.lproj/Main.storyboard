@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22155" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="1bz-Ly-pc0">
-    <device id="retina6_12" orientation="portrait" appearance="dark"/>
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22131"/>
         <capability name="Map view configurations" minToolsVersion="14.0"/>
@@ -207,6 +207,9 @@
                     <navigationItem key="navigationItem" title="My Profile" id="xra-bP-sSo"/>
                     <connections>
                         <outlet property="accountButton" destination="AUM-f8-YPO" id="oe7-GD-yeW"/>
+                        <outlet property="accountLogo" destination="4EC-JK-xJO" id="6G8-0o-qwM"/>
+                        <outlet property="accountType" destination="XVw-T3-A6Q" id="OMB-Z9-HYg"/>
+                        <outlet property="accountUsername" destination="c4u-Bw-PPg" id="oGl-nt-Wd6"/>
                         <outlet property="passwordButton" destination="ITq-ge-iDd" id="wE5-kx-5Qs"/>
                         <outlet property="profileImageView" destination="4EC-JK-xJO" id="bYH-ol-A3o"/>
                         <outlet property="secureButton" destination="mx8-7J-wmp" id="0hN-GY-EFv"/>
