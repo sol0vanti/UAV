@@ -75,6 +75,12 @@ class AccountViewController: UIViewController, ASAuthorizationControllerDelegate
             
             let userEmail = user.profile?.email
             self.defaults.set(userEmail!, forKey: "email")
+            let db = Firestore.firestore()
+            db.collection("users").addDocument(data: ["email": "\(userEmail!)", "uid": user.userID!, "account_creation_date": "\(Date().string(format: "yyyy-MM-dd"))", "account_type": "user", "full_name": user.profile?.name ?? ""]) { (error) in
+                if error != nil {
+                    fatalError("Error to save email on G")
+                }
+            }
             self.setVCTo(MainTabBarController.self)
         }
     }
@@ -119,5 +125,13 @@ extension UIViewController {
             textField.layer.borderWidth = 1.0
             textField.layer.borderColor = UIColor.systemPink.cgColor
         }
+    }
+}
+
+extension Date {
+    func string(format: String) -> String {
+        let formatter = DateFormatter()
+        formatter.dateFormat = format
+        return formatter.string(from: self)
     }
 }
