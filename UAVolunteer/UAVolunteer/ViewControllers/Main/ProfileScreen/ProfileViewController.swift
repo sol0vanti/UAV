@@ -17,6 +17,7 @@ class ProfileViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.alpha = 0
         getAccountData()
         profileImageView.layer.cornerRadius = 75
         passwordButton.setIconImage(UIImage(systemName: "ellipsis.rectangle")!)
@@ -43,7 +44,7 @@ class ProfileViewController: UIViewController {
                 if let snapshot = snapshot {
                     DispatchQueue.main.async {
                         self.request = snapshot.documents.map { d in
-                            return UserRequest(id: d.documentID, first_name: d["first_name"] as! String, last_name: d["last_name"] as! String, account_creation_date: d["account_creation_date"] as! String, account_type: d["account_type"] as! String)
+                            return UserRequest(id: d.documentID, full_name: d["full_name"] as! String, account_creation_date: d["account_creation_date"] as! String, account_type: d["account_type"] as! String)
                         }
                         
                         guard self.request != nil else {
@@ -56,13 +57,15 @@ class ProfileViewController: UIViewController {
                         }
                         
                         for request in self.request {
-                            self.accountUsername.text = "\(request.first_name) \(request.last_name)"
+                            self.accountUsername.text = request.full_name
                             if request.account_type == "business" {
                                 self.accountType.text = "Бізнес аккаунт"
                             } else if request.account_type == "user" {
                                 self.accountType.text = "Користувач"
                             }
                         }
+                        
+                        self.view.alpha = 1
                     }
                 }
             }
