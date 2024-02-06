@@ -1,25 +1,28 @@
 import UIKit
 import Firebase
+import PhotosUI
+import FirebaseStorage
 
-class ProfileViewController: UIViewController {
+class ProfileViewController: UIViewController, PHPickerViewControllerDelegate {
     @IBOutlet weak var accountType: UILabel!
     @IBOutlet weak var accountUsername: UILabel!
-    @IBOutlet weak var accountLogo: UIImageView!
+    @IBOutlet weak var accountLogo: UIButton!
     @IBOutlet weak var passwordButton: CustomButton!
     @IBOutlet weak var accountButton: CustomButton!
     @IBOutlet weak var supportButton: CustomButton!
     @IBOutlet weak var secureButton: CustomButton!
     @IBOutlet weak var signoutButton: CustomButton!
-    @IBOutlet weak var profileImageView: UIImageView!
 
     let defaults = UserDefaults.standard
     var request: [UserRequest]!
+    var logo: UIImage?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         view.alpha = 0
+        overrideUserInterfaceStyle = .dark
+        accountLogo.layer.cornerRadius = accountLogo.frame.width / 2
         getAccountData()
-        profileImageView.layer.cornerRadius = 75
         passwordButton.setIconImage(UIImage(systemName: "ellipsis.rectangle")!)
         accountButton.setIconImage(UIImage(systemName: "person.crop.circle")!)
         supportButton.setIconImage(UIImage(systemName: "phone.badge.waveform")!)
@@ -27,12 +30,17 @@ class ProfileViewController: UIViewController {
         signoutButton.setIconImage(UIImage(systemName: "nosign")!)
 
         if let navigationController = navigationController {
-            navigationController.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.systemGray3]
             navigationItem.title = "My Profile"
             let settings = UIBarButtonItem(title: nil, image: UIImage(systemName: "gear"), target: self, action: #selector(settingsButtonClicked))
             navigationItem.rightBarButtonItems = [settings]
-            navigationController.navigationBar.tintColor = .systemGray3
+            navigationController.navigationBar.tintColor = .lightGray
         }
+    }
+    
+    @objc func settingsButtonClicked(){
+        let ac = UIAlertController(title: "Settings", message: "Choose option:", preferredStyle: .actionSheet)
+        ac.addAction(UIAlertAction(title: "Cancel", style: .destructive))
+        present(ac, animated: true)
     }
     
     func getAccountData(){
@@ -71,15 +79,56 @@ class ProfileViewController: UIViewController {
             }
         }
     }
-    
-    @objc func settingsButtonClicked(){
-        let ac = UIAlertController(title: "Settings", message: "Choose option:", preferredStyle: .actionSheet)
-        ac.addAction(UIAlertAction(title: "Cancel", style: .destructive))
-        present(ac, animated: true)
-    }
 
     @IBAction func signoutDidTapped(_ sender: UIButton) {
         self.defaults.removeObject(forKey: "email")
         setVCTo(AccountViewController.self)
     }
+    
+    @IBAction func accountLogoDidTapped(_ sender: UIButton) {
+        let ac = UIAlertController(title: "Set profile picture", message: nil, preferredStyle: .actionSheet)
+        ac.addAction(UIAlertAction(title: "Choose from library", style: .default){ _ in
+            var config = PHPickerConfiguration()
+            config.selectionLimit = 1
+            let phPickerVC = PHPickerViewController(configuration: config)
+            phPickerVC.delegate = self
+            self.present(phPickerVC, animated: true)
+        })
+        ac.addAction(UIAlertAction(title: "Delete profile picture", style: .destructive) { _ in
+            
+        })
+        ac.addAction(UIAlertAction(title: "Cancel", style: .cancel))
+        present(ac, animated: true)
+    }
+    
+    func uploadImageToFirebase() {
+        let storage = Storage.storage()
+        guard let imageData = logo!.jpegData(compressionQuality: 0.8) else {
+            return
+        }
+        let storageRef = storage.reference().child("logos").child(defaults.string(forKey: "email")!)
+        _ = storageRef.putData(imageData, metadata: nil) { (metadata, error) in
+            if let error = error {
+                print("Error uploading image: \(error.localizedDescription)")
+            } else {
+                storageRef.downloadURL { (url, error) in
+                    if let error = error {
+                        print("Error getting download URL: \(error.localizedDescription)")
+                    }
+                }
+            }
+        }
+    }
+    
+    func picker(_ picker: PHPickerViewController, didFinishPicking results: [PHPickerResult]) {
+        dismiss(animated: true)
+            for result in results {
+                result.itemProvider.loadObject(ofClass: UIImage.self) { object, error in
+                    if let image = object as? UIImage {
+                        self.logo = image
+                        self.uploadImageToFirebase()
+                    }
+                }
+            }
+        }
 }

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22155" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="1bz-Ly-pc0">
-    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <device id="retina6_12" orientation="portrait" appearance="dark"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22131"/>
         <capability name="Map view configurations" minToolsVersion="14.0"/>
@@ -105,78 +105,89 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="4EC-JK-xJO">
-                                <rect key="frame" x="121.66666666666669" y="100" width="150" height="150"/>
-                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="150" id="Qrj-mo-xaq"/>
-                                    <constraint firstAttribute="width" constant="150" id="oZR-YN-DHq"/>
-                                </constraints>
-                            </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Олександр Балла" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c4u-Bw-PPg">
-                                <rect key="frame" x="92.666666666666686" y="260" width="208" height="28.666666666666686"/>
+                                <rect key="frame" x="92.666666666666686" y="263" width="208" height="28.666666666666686"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Користувач" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XVw-T3-A6Q">
-                                <rect key="frame" x="147.33333333333334" y="293.66666666666669" width="98.333333333333343" height="21.666666666666686"/>
+                                <rect key="frame" x="147.33333333333334" y="296.66666666666669" width="98.333333333333343" height="21.666666666666686"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                <color key="textColor" systemColor="systemGray4Color"/>
+                                <color key="textColor" systemColor="systemGrayColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ITq-ge-iDd" customClass="CustomButton" customModule="UAVolunteer" customModuleProvider="target">
-                                <rect key="frame" x="20" y="365.33333333333331" width="353" height="65"/>
+                                <rect key="frame" x="20" y="368.33333333333331" width="353" height="65"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="65" id="5Ek-3U-jAs"/>
                                 </constraints>
                                 <buttonConfiguration key="configuration" style="gray" title="Пароль">
                                     <fontDescription key="titleFontDescription" type="system" weight="medium" pointSize="18"/>
-                                    <color key="baseForegroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </buttonConfiguration>
                                 <connections>
                                     <segue destination="NAm-yR-AFq" kind="showDetail" id="phy-cZ-cmw"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AUM-f8-YPO" customClass="CustomButton" customModule="UAVolunteer" customModuleProvider="target">
-                                <rect key="frame" x="20" y="440.33333333333331" width="353" height="65"/>
+                                <rect key="frame" x="20" y="443.33333333333331" width="353" height="65"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="65" id="utq-4y-Pdj"/>
                                 </constraints>
                                 <buttonConfiguration key="configuration" style="gray" title="Аккаунт">
                                     <fontDescription key="titleFontDescription" type="system" weight="medium" pointSize="18"/>
-                                    <color key="baseForegroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </buttonConfiguration>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rJl-nY-S1Y" customClass="CustomButton" customModule="UAVolunteer" customModuleProvider="target">
-                                <rect key="frame" x="20" y="515.33333333333337" width="353" height="65"/>
+                                <rect key="frame" x="20" y="518.33333333333337" width="353" height="65"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="65" id="cep-kn-pa0"/>
                                 </constraints>
                                 <buttonConfiguration key="configuration" style="gray" title="Підтримка">
                                     <fontDescription key="titleFontDescription" type="system" weight="medium" pointSize="18"/>
-                                    <color key="baseForegroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </buttonConfiguration>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mx8-7J-wmp" customClass="CustomButton" customModule="UAVolunteer" customModuleProvider="target">
-                                <rect key="frame" x="20" y="590.33333333333337" width="353" height="65"/>
+                                <rect key="frame" x="20" y="593.33333333333337" width="353" height="65"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="65" id="ygn-6M-ln6"/>
                                 </constraints>
                                 <buttonConfiguration key="configuration" style="gray" title="Безпека">
                                     <fontDescription key="titleFontDescription" type="system" weight="medium" pointSize="18"/>
-                                    <color key="baseForegroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </buttonConfiguration>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vwX-yQ-hFR" customClass="CustomButton" customModule="UAVolunteer" customModuleProvider="target">
-                                <rect key="frame" x="20" y="665.33333333333337" width="353" height="65"/>
+                                <rect key="frame" x="20" y="668.33333333333337" width="353" height="65"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="65" id="hht-rT-MOB"/>
                                 </constraints>
                                 <buttonConfiguration key="configuration" style="gray" title="Вийти з аккаунту">
                                     <fontDescription key="titleFontDescription" type="system" weight="medium" pointSize="18"/>
-                                    <color key="baseForegroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <action selector="signoutDidTapped:" destination="f9J-Hb-Bmk" eventType="touchUpInside" id="Exw-bk-u1Q"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AMP-03-yQq">
+                                <rect key="frame" x="121.66666666666669" y="103" width="150" height="150"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="150" id="moz-Kx-ieV"/>
+                                    <constraint firstAttribute="width" constant="150" id="uhN-rI-NHa"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" cornerStyle="capsule">
+                                    <backgroundConfiguration key="background">
+                                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </backgroundConfiguration>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="accountLogoDidTapped:" destination="f9J-Hb-Bmk" eventType="touchUpInside" id="M1S-Cd-bBS"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Kym-ss-QiY"/>
@@ -184,20 +195,20 @@
                             <constraint firstItem="rJl-nY-S1Y" firstAttribute="top" secondItem="AUM-f8-YPO" secondAttribute="bottom" constant="10" id="3Zh-f7-aGP"/>
                             <constraint firstItem="rJl-nY-S1Y" firstAttribute="leading" secondItem="Kym-ss-QiY" secondAttribute="leading" constant="20" id="5ni-cc-7vz"/>
                             <constraint firstItem="XVw-T3-A6Q" firstAttribute="centerX" secondItem="5Eg-E1-uin" secondAttribute="centerX" id="8EK-7q-T9q"/>
+                            <constraint firstItem="AMP-03-yQq" firstAttribute="top" secondItem="Kym-ss-QiY" secondAttribute="top" id="AKk-9r-Q9D"/>
                             <constraint firstItem="XVw-T3-A6Q" firstAttribute="top" secondItem="c4u-Bw-PPg" secondAttribute="bottom" constant="5" id="Cwa-XN-MSx"/>
                             <constraint firstItem="ITq-ge-iDd" firstAttribute="leading" secondItem="Kym-ss-QiY" secondAttribute="leading" constant="20" id="DGz-a9-FQY"/>
                             <constraint firstItem="vwX-yQ-hFR" firstAttribute="leading" secondItem="Kym-ss-QiY" secondAttribute="leading" constant="20" id="EJO-Cf-HUg"/>
-                            <constraint firstItem="4EC-JK-xJO" firstAttribute="top" secondItem="5Eg-E1-uin" secondAttribute="top" constant="100" id="Gxt-y2-TyY"/>
-                            <constraint firstItem="4EC-JK-xJO" firstAttribute="centerX" secondItem="5Eg-E1-uin" secondAttribute="centerX" id="JTr-KG-nTb"/>
+                            <constraint firstItem="c4u-Bw-PPg" firstAttribute="top" secondItem="AMP-03-yQq" secondAttribute="bottom" constant="10" id="JhL-b3-LuA"/>
                             <constraint firstItem="mx8-7J-wmp" firstAttribute="leading" secondItem="Kym-ss-QiY" secondAttribute="leading" constant="20" id="NHj-Sn-bBf"/>
                             <constraint firstItem="ITq-ge-iDd" firstAttribute="top" secondItem="XVw-T3-A6Q" secondAttribute="bottom" constant="50" id="P2i-jM-epI"/>
                             <constraint firstItem="AUM-f8-YPO" firstAttribute="leading" secondItem="Kym-ss-QiY" secondAttribute="leading" constant="20" id="P96-a5-hQR"/>
+                            <constraint firstItem="AMP-03-yQq" firstAttribute="centerX" secondItem="5Eg-E1-uin" secondAttribute="centerX" id="POZ-vq-Mf4"/>
                             <constraint firstItem="Kym-ss-QiY" firstAttribute="trailing" secondItem="ITq-ge-iDd" secondAttribute="trailing" constant="20" id="TXH-5t-4mn"/>
                             <constraint firstItem="Kym-ss-QiY" firstAttribute="trailing" secondItem="AUM-f8-YPO" secondAttribute="trailing" constant="20" id="Vx3-WR-kjG"/>
                             <constraint firstItem="vwX-yQ-hFR" firstAttribute="top" secondItem="mx8-7J-wmp" secondAttribute="bottom" constant="10" id="XKo-ih-DKp"/>
                             <constraint firstItem="Kym-ss-QiY" firstAttribute="trailing" secondItem="rJl-nY-S1Y" secondAttribute="trailing" constant="20" id="aUw-51-0pc"/>
                             <constraint firstItem="Kym-ss-QiY" firstAttribute="trailing" secondItem="mx8-7J-wmp" secondAttribute="trailing" constant="20" id="boj-tK-03W"/>
-                            <constraint firstItem="c4u-Bw-PPg" firstAttribute="top" secondItem="4EC-JK-xJO" secondAttribute="bottom" constant="10" id="cAb-Jf-EsY"/>
                             <constraint firstItem="c4u-Bw-PPg" firstAttribute="centerX" secondItem="5Eg-E1-uin" secondAttribute="centerX" id="eO2-eN-p8g"/>
                             <constraint firstItem="mx8-7J-wmp" firstAttribute="top" secondItem="rJl-nY-S1Y" secondAttribute="bottom" constant="10" id="fMQ-th-A65"/>
                             <constraint firstItem="Kym-ss-QiY" firstAttribute="trailing" secondItem="vwX-yQ-hFR" secondAttribute="trailing" constant="20" id="fmE-dd-IkY"/>
@@ -207,11 +218,10 @@
                     <navigationItem key="navigationItem" title="My Profile" id="xra-bP-sSo"/>
                     <connections>
                         <outlet property="accountButton" destination="AUM-f8-YPO" id="oe7-GD-yeW"/>
-                        <outlet property="accountLogo" destination="4EC-JK-xJO" id="6G8-0o-qwM"/>
+                        <outlet property="accountLogo" destination="AMP-03-yQq" id="LzG-r4-Yv4"/>
                         <outlet property="accountType" destination="XVw-T3-A6Q" id="OMB-Z9-HYg"/>
                         <outlet property="accountUsername" destination="c4u-Bw-PPg" id="oGl-nt-Wd6"/>
                         <outlet property="passwordButton" destination="ITq-ge-iDd" id="wE5-kx-5Qs"/>
-                        <outlet property="profileImageView" destination="4EC-JK-xJO" id="bYH-ol-A3o"/>
                         <outlet property="secureButton" destination="mx8-7J-wmp" id="0hN-GY-EFv"/>
                         <outlet property="signoutButton" destination="vwX-yQ-hFR" id="z1m-BD-qS7"/>
                         <outlet property="supportButton" destination="rJl-nY-S1Y" id="wxF-bt-QGu"/>
@@ -273,22 +283,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vpo-8f-xxd">
-                                <rect key="frame" x="20" y="143" width="353" height="70"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="70" id="xlc-Ro-o5Q"/>
-                                </constraints>
-                                <color key="tintColor" systemColor="systemGrayColor"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="tinted">
-                                    <backgroundConfiguration key="background" image="iCloud-Emblem" imageContentMode="scaleAspectFit"/>
-                                </buttonConfiguration>
-                                <connections>
-                                    <action selector="icloudButtonClicked:" destination="n9o-Z8-gNh" eventType="touchUpInside" id="G7s-FF-cZf"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7cH-3L-6jL">
-                                <rect key="frame" x="20" y="218" width="353" height="70"/>
+                                <rect key="frame" x="20" y="123" width="353" height="70"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="70" id="Fcb-HV-EpP"/>
                                 </constraints>
@@ -301,22 +297,8 @@
                                     <action selector="googleButtonClicked:" destination="n9o-Z8-gNh" eventType="touchUpInside" id="2mf-yO-sS8"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ztt-FZ-j0q">
-                                <rect key="frame" x="20" y="293" width="353" height="70"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="70" id="PgG-MW-sAP"/>
-                                </constraints>
-                                <color key="tintColor" systemColor="systemGrayColor"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="tinted">
-                                    <backgroundConfiguration key="background" image="Yahoo-Emblem" imageContentMode="scaleAspectFit"/>
-                                </buttonConfiguration>
-                                <connections>
-                                    <action selector="yahooButtonClicked:" destination="n9o-Z8-gNh" eventType="touchUpInside" id="YmY-7H-8Qk"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e0t-Sa-q3a">
-                                <rect key="frame" x="20" y="368" width="353" height="70"/>
+                                <rect key="frame" x="20" y="203" width="353" height="70"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="70" id="7eD-cN-SQt"/>
                                 </constraints>
@@ -329,33 +311,24 @@
                                 </buttonConfiguration>
                                 <connections>
                                     <action selector="otherButtonClicked:" destination="n9o-Z8-gNh" eventType="touchUpInside" id="Ixf-3W-nhV"/>
-                                    <action selector="yahooButtonClicked:" destination="n9o-Z8-gNh" eventType="touchUpInside" id="dT9-Ps-GYk"/>
                                 </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="917-69-4YM"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="7cH-3L-6jL" firstAttribute="top" secondItem="Vpo-8f-xxd" secondAttribute="bottom" constant="5" id="1xn-Fa-f8W"/>
-                            <constraint firstItem="Vpo-8f-xxd" firstAttribute="top" secondItem="917-69-4YM" secondAttribute="top" constant="40" id="8BU-Yo-ovR"/>
-                            <constraint firstItem="Vpo-8f-xxd" firstAttribute="leading" secondItem="917-69-4YM" secondAttribute="leading" constant="20" id="8Ix-dE-hES"/>
+                            <constraint firstItem="7cH-3L-6jL" firstAttribute="top" secondItem="917-69-4YM" secondAttribute="top" constant="20" id="3JB-f5-K3K"/>
                             <constraint firstItem="7cH-3L-6jL" firstAttribute="leading" secondItem="917-69-4YM" secondAttribute="leading" constant="20" id="FzS-bb-181"/>
                             <constraint firstItem="e0t-Sa-q3a" firstAttribute="leading" secondItem="917-69-4YM" secondAttribute="leading" constant="20" id="KcU-Lj-32W"/>
                             <constraint firstItem="917-69-4YM" firstAttribute="trailing" secondItem="7cH-3L-6jL" secondAttribute="trailing" constant="20" id="TI8-sd-0oV"/>
-                            <constraint firstItem="e0t-Sa-q3a" firstAttribute="top" secondItem="ztt-FZ-j0q" secondAttribute="bottom" constant="5" id="UkB-bw-d5V"/>
-                            <constraint firstItem="917-69-4YM" firstAttribute="trailing" secondItem="Vpo-8f-xxd" secondAttribute="trailing" constant="20" id="X7P-Ut-QIw"/>
-                            <constraint firstItem="917-69-4YM" firstAttribute="trailing" secondItem="ztt-FZ-j0q" secondAttribute="trailing" constant="20" id="cMW-f5-lhe"/>
                             <constraint firstItem="917-69-4YM" firstAttribute="trailing" secondItem="e0t-Sa-q3a" secondAttribute="trailing" constant="20" id="fQu-AQ-1bL"/>
-                            <constraint firstItem="ztt-FZ-j0q" firstAttribute="top" secondItem="7cH-3L-6jL" secondAttribute="bottom" constant="5" id="hj5-96-8JE"/>
-                            <constraint firstItem="ztt-FZ-j0q" firstAttribute="leading" secondItem="917-69-4YM" secondAttribute="leading" constant="20" id="rFw-H1-gSk"/>
+                            <constraint firstItem="e0t-Sa-q3a" firstAttribute="top" secondItem="7cH-3L-6jL" secondAttribute="bottom" constant="10" id="zba-62-wc2"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Ласкаво просимо до UAVolunteer!" id="sKe-kF-48W"/>
                     <connections>
                         <outlet property="googleButton" destination="7cH-3L-6jL" id="mLn-eh-qI2"/>
-                        <outlet property="icloudButton" destination="Vpo-8f-xxd" id="Ymt-cb-jKC"/>
                         <outlet property="otherButton" destination="e0t-Sa-q3a" id="pJA-pp-IsM"/>
-                        <outlet property="yahooButton" destination="ztt-FZ-j0q" id="GhM-Cn-WXw"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ymk-HI-4Qe" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -486,12 +459,12 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Електронна пошта" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eBk-Sm-9eG">
                                 <rect key="frame" x="20" y="250.66666666666666" width="353" height="21.666666666666657"/>
                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="18"/>
-                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="uav@test.com" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3Ap-bL-NfQ">
                                 <rect key="frame" x="20" y="277.33333333333331" width="353" height="40"/>
-                                <color key="backgroundColor" systemColor="systemGray6Color"/>
+                                <color key="backgroundColor" systemColor="systemGray5Color"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="cbV-OI-A8N"/>
                                 </constraints>
@@ -501,12 +474,12 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Придумайте пароль" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7vO-FK-8Ca">
                                 <rect key="frame" x="20" y="347.33333333333331" width="353" height="21.666666666666686"/>
                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="18"/>
-                                <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="123456789..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zPL-Mq-DkJ">
                                 <rect key="frame" x="20" y="374" width="353" height="40"/>
-                                <color key="backgroundColor" systemColor="systemGray6Color"/>
+                                <color key="backgroundColor" systemColor="systemGray5Color"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="0Ob-zz-p7a"/>
                                 </constraints>
@@ -516,12 +489,12 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Повторіть пароль" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yAw-jG-a4e">
                                 <rect key="frame" x="20" y="444" width="353" height="21.666666666666686"/>
                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="18"/>
-                                <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="123456789..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lkn-t1-zVD">
                                 <rect key="frame" x="20" y="470.66666666666669" width="353" height="40"/>
-                                <color key="backgroundColor" systemColor="systemGray6Color"/>
+                                <color key="backgroundColor" systemColor="systemGray5Color"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="mRS-nZ-gbi"/>
                                 </constraints>
@@ -539,11 +512,12 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="3Zs-3j-ucC"/>
                                 </constraints>
-                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Додати">
                                     <fontDescription key="titleFontDescription" type="system" weight="semibold" pointSize="16"/>
-                                    <color key="baseBackgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <color key="baseBackgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </buttonConfiguration>
                                 <connections>
                                     <action selector="addButtonClicked:" destination="So1-U5-htx" eventType="touchUpInside" id="1S7-Pj-Hve"/>
@@ -551,7 +525,7 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YzW-G2-6Ts">
                                 <rect key="frame" x="20" y="778.66666666666663" width="353" height="34.333333333333371"/>
-                                <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Вже є у UAV?"/>
                                 <connections>
@@ -633,12 +607,12 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Електронна пошта" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="etS-eU-e28">
                                 <rect key="frame" x="20" y="251.33333333333334" width="353" height="21.666666666666657"/>
                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="18"/>
-                                <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="uav@test.com" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="I2C-gh-kGm">
                                 <rect key="frame" x="20" y="278" width="353" height="40"/>
-                                <color key="backgroundColor" systemColor="systemGray6Color"/>
+                                <color key="backgroundColor" systemColor="systemGray5Color"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="5OZ-Ab-eTf"/>
                                 </constraints>
@@ -648,12 +622,12 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Пароль" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8n7-dH-8Su">
                                 <rect key="frame" x="20" y="348" width="353" height="21.666666666666686"/>
                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="18"/>
-                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="123456789..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gUg-NZ-2ek">
                                 <rect key="frame" x="20" y="374.66666666666669" width="353" height="40"/>
-                                <color key="backgroundColor" systemColor="systemGray6Color"/>
+                                <color key="backgroundColor" systemColor="systemGray5Color"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="5PD-Do-FMV"/>
                                 </constraints>
@@ -665,11 +639,12 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="l2S-ad-ako"/>
                                 </constraints>
-                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Увійти">
                                     <fontDescription key="titleFontDescription" type="system" weight="semibold" pointSize="16"/>
-                                    <color key="baseBackgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <color key="baseBackgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </buttonConfiguration>
                                 <connections>
                                     <action selector="logButtonClicked:" destination="FhX-bH-vFn" eventType="touchUpInside" id="l7K-fm-9ig"/>
@@ -677,7 +652,7 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lbk-jR-Jvb">
                                 <rect key="frame" x="20" y="779.66666666666663" width="353" height="33.333333333333371"/>
-                                <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Новий до UAV?">
                                     <fontDescription key="titleFontDescription" type="system" pointSize="16"/>
@@ -710,7 +685,7 @@
                                 <buttonConfiguration key="configuration" style="plain" title="Forgot password?">
                                     <fontDescription key="titleFontDescription" type="system" weight="medium" pointSize="16"/>
                                     <directionalEdgeInsets key="contentInsets" top="0.0" leading="0.0" bottom="0.0" trailing="0.0"/>
-                                    <color key="baseForegroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <color key="baseForegroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </buttonConfiguration>
                             </button>
                         </subviews>
@@ -1348,8 +1323,6 @@
     </scenes>
     <resources>
         <image name="Google-Emblem" width="3840" height="2160"/>
-        <image name="Yahoo-Emblem" width="3840" height="2160"/>
-        <image name="iCloud-Emblem" width="3840" height="2160"/>
         <image name="list.bullet.clipboard.fill" catalog="system" width="98" height="128"/>
         <image name="map.fill" catalog="system" width="128" height="110"/>
         <image name="person.crop.circle.fill" catalog="system" width="128" height="123"/>
@@ -1362,8 +1335,8 @@
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
-        <systemColor name="systemGray4Color">
-            <color red="0.81960784313725488" green="0.81960784313725488" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        <systemColor name="systemGray5Color">
+            <color red="0.89803921568627454" green="0.89803921568627454" blue="0.91764705882352937" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemGray6Color">
             <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
