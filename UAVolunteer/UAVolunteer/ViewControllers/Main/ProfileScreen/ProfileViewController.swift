@@ -95,7 +95,7 @@ class ProfileViewController: UIViewController, PHPickerViewControllerDelegate {
             self.present(phPickerVC, animated: true)
         })
         ac.addAction(UIAlertAction(title: "Delete profile picture", style: .destructive) { _ in
-            
+            self.deleteImageFromFirebase()
         })
         ac.addAction(UIAlertAction(title: "Cancel", style: .cancel))
         present(ac, animated: true)
@@ -114,10 +114,30 @@ class ProfileViewController: UIViewController, PHPickerViewControllerDelegate {
                 storageRef.downloadURL { (url, error) in
                     if let error = error {
                         print("Error getting download URL: \(error.localizedDescription)")
+                    } else {
+                        let ac = UIAlertController(title: "Success", message: "You have successfully uploaded profile picture. Restart the app to see it.", preferredStyle: .alert)
+                        ac.addAction(UIAlertAction(title: "OK", style: .default))
+                        self.present(ac, animated: true)
                     }
                 }
             }
         }
+    }
+    
+    func deleteImageFromFirebase() {
+        let storage = Storage.storage()
+        let storageRef = storage.reference().child("logos").child(defaults.string(forKey: "email")!)
+        storageRef.delete(completion: { error in
+            if error != nil {
+                let ac = UIAlertController(title: "Error", message: "Unable to delete profile image. Try again later.", preferredStyle: .alert)
+                ac.addAction(UIAlertAction(title: "OK", style: .default))
+                self.present(ac, animated: true)
+            } else {
+                let ac = UIAlertController(title: "Success", message: "You have successfully removed profile picture. Restart the app to see it.", preferredStyle: .alert)
+                ac.addAction(UIAlertAction(title: "OK", style: .default))
+                self.present(ac, animated: true)
+            }
+        })
     }
     
     func picker(_ picker: PHPickerViewController, didFinishPicking results: [PHPickerResult]) {
