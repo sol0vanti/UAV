@@ -17,30 +17,53 @@ class ProfileViewController: UIViewController, PHPickerViewControllerDelegate {
     var request: [UserRequest]!
     var logo: UIImage?
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        getAccountData()
+        navigationController?.setNavigationBarHidden(true, animated: animated)
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+            
+        navigationController?.setNavigationBarHidden(false, animated: animated)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.alpha = 0
-        overrideUserInterfaceStyle = .dark
+        
+        tabBarController?.title = "My Profile"
         accountLogo.layer.cornerRadius = accountLogo.frame.width / 2
-        getAccountData()
+        
         passwordButton.setIconImage(UIImage(systemName: "ellipsis.rectangle")!)
         accountButton.setIconImage(UIImage(systemName: "person.crop.circle")!)
         supportButton.setIconImage(UIImage(systemName: "phone.badge.waveform")!)
         secureButton.setIconImage(UIImage(systemName: "shield.lefthalf.filled")!)
         signoutButton.setIconImage(UIImage(systemName: "nosign")!)
-
-        if let navigationController = navigationController {
-            navigationItem.title = "My Profile"
-            let settings = UIBarButtonItem(title: nil, image: UIImage(systemName: "gear"), target: self, action: #selector(settingsButtonClicked))
-            navigationItem.rightBarButtonItems = [settings]
-            navigationController.navigationBar.tintColor = .lightGray
-        }
     }
     
     @objc func settingsButtonClicked(){
         let ac = UIAlertController(title: "Settings", message: "Choose option:", preferredStyle: .actionSheet)
         ac.addAction(UIAlertAction(title: "Cancel", style: .destructive))
         present(ac, animated: true)
+    }
+    
+    func getProfileImage(){
+        let storage = Storage.storage()
+        let storageRef = storage.reference().child("logos").child(defaults.string(forKey: "email")!)
+
+        storageRef.getData(maxSize: 1 * 4096 * 4096) { data, error in
+            if let error = error {
+                print("Error downloading image: \(error.localizedDescription)")
+            } else {
+                if let imageData = data, let image = UIImage(data: imageData) {
+                    self.accountLogo.imageView?.contentMode = .scaleToFill
+                    self.accountLogo.layer.masksToBounds = true
+                    self.accountLogo.setImage(image, for: .normal)
+                }
+            }
+        }
     }
     
     func getAccountData(){
@@ -72,7 +95,7 @@ class ProfileViewController: UIViewController, PHPickerViewControllerDelegate {
                                 self.accountType.text = "Користувач"
                             }
                         }
-                        
+                        self.getProfileImage()
                         self.view.alpha = 1
                     }
                 }
@@ -81,8 +104,13 @@ class ProfileViewController: UIViewController, PHPickerViewControllerDelegate {
     }
 
     @IBAction func signoutDidTapped(_ sender: UIButton) {
-        self.defaults.removeObject(forKey: "email")
-        setVCTo(AccountViewController.self)
+        let ac = UIAlertController(title: "Sign Out", message: nil, preferredStyle: .alert)
+        ac.addAction(UIAlertAction(title: "OK", style: .default){ _ in
+            self.defaults.removeObject(forKey: "email")
+            self.setVCTo(AccountViewController.self)
+        })
+        ac.addAction(UIAlertAction(title: "Cancel", style: .destructive))
+        present(ac, animated: true)
     }
     
     @IBAction func accountLogoDidTapped(_ sender: UIButton) {
@@ -144,11 +172,11 @@ class ProfileViewController: UIViewController, PHPickerViewControllerDelegate {
         dismiss(animated: true)
             for result in results {
                 result.itemProvider.loadObject(ofClass: UIImage.self) { object, error in
-                    if let image = object as? UIImage {
-                        self.logo = image
-                        self.uploadImageToFirebase()
-                    }
+                if let image = object as? UIImage {
+                    self.logo = image
+                    self.uploadImageToFirebase()
                 }
             }
         }
+    }
 }
