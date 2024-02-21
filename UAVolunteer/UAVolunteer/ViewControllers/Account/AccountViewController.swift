@@ -5,11 +5,9 @@ import FirebaseAuth
 import GoogleSignIn
 import Firebase
 
-class AccountViewController: UIViewController, ASAuthorizationControllerDelegate, ASAuthorizationControllerPresentationContextProviding {
-    @IBOutlet weak var yahooButton: UIButton!
+class AccountViewController: UIViewController {
     @IBOutlet weak var otherButton: UIButton!
     @IBOutlet weak var googleButton: UIButton!
-    @IBOutlet weak var icloudButton: UIButton!
     let defaults = UserDefaults.standard
     
     override func viewDidLoad() {
@@ -18,45 +16,6 @@ class AccountViewController: UIViewController, ASAuthorizationControllerDelegate
             setVCTo(MainTabBarController.self)
             return
         }
-    }
-    
-    func authorizationController(controller: ASAuthorizationController, didCompleteWithAuthorization authorization: ASAuthorization) {
-        if let appleIDCredential = authorization.credential as? ASAuthorizationAppleIDCredential {
-            let userIdentifier = appleIDCredential.user
-            let email = appleIDCredential.email
-            let db = Firestore.firestore()
-            db.collection("users").addDocument(data: ["idToken": appleIDCredential, "uid": userIdentifier]) { (error) in
-                if error != nil {
-                    let ac = UIAlertController(title: "Помилка", message: "Помилка сервера. Спробуйте ще раз пізніше.", preferredStyle: .alert)
-                    ac.addAction(UIAlertAction(title: "ОК", style: .default))
-                    self.present(ac, animated: true)
-                    return
-                }
-            }
-            self.defaults.set(email, forKey: "email")
-            setVCTo(MainTabBarController.self)
-        }
-    }
-    
-    func authorizationController(controller: ASAuthorizationController, didCompleteWithError error: Error) {
-        print("Apple ID authorization error: \(error.localizedDescription)")
-        let ac = UIAlertController(title: "Помилка", message: "iCloud сервіси наразі не працюють. Спробуйте ще раз пізніше.", preferredStyle: .alert)
-        ac.addAction(UIAlertAction(title: "ОК", style: .default))
-        self.present(ac, animated: true)
-    }
-    
-    func presentationAnchor(for controller: ASAuthorizationController) -> ASPresentationAnchor {
-        return self.view.window ?? ASPresentationAnchor()
-    }
-    
-    @IBAction func icloudButtonClicked(_ sender: UIButton) {
-        let request = ASAuthorizationAppleIDProvider().createRequest()
-        request.requestedScopes = [.fullName, .email]
-            
-        let controller = ASAuthorizationController(authorizationRequests: [request])
-        controller.delegate = self
-        controller.presentationContextProvider = self
-        controller.performRequests()
     }
     
     @IBAction func googleButtonClicked(_ sender: UIButton) {
@@ -69,17 +28,20 @@ class AccountViewController: UIViewController, ASAuthorizationControllerDelegate
             guard error == nil else {
                 return
             }
-            guard let user = result?.user,
-                  let idToken = user.idToken?.tokenString
-            else {
+            guard let user = result?.user else {
                 return
             }
-            self.defaults.set(idToken, forKey: "idToken")
+            
+            let userEmail = user.profile?.email
+            self.defaults.set(userEmail!, forKey: "email")
+            let db = Firestore.firestore()
+            db.collection("users").addDocument(data: ["email": "\(userEmail!)", "uid": user.userID!, "account_creation_date": "\(Date().string(format: "yyyy-MM-dd"))", "account_type": "user", "full_name": user.profile?.name ?? ""]) { (error) in
+                if error != nil {
+                    fatalError("Error to save email on G")
+                }
+            }
             self.setVCTo(MainTabBarController.self)
         }
-    }
-    
-    @IBAction func yahooButtonClicked(_ sender: UIButton) {
     }
     
     @IBAction func otherButtonClicked(_ sender: UIButton) {
@@ -119,5 +81,13 @@ extension UIViewController {
             textField.layer.borderWidth = 1.0
             textField.layer.borderColor = UIColor.systemPink.cgColor
         }
+    }
+}
+
+extension Date {
+    func string(format: String) -> String {
+        let formatter = DateFormatter()
+        formatter.dateFormat = format
+        return formatter.string(from: self)
     }
 }

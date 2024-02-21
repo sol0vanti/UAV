@@ -14,7 +14,7 @@ class EmailSignViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.navigationController?.navigationBar.tintColor = .black
+        self.navigationController?.navigationBar.tintColor = .white
     }
     
     @IBAction func addButtonClicked(_ sender: UIButton) {
@@ -32,10 +32,9 @@ class EmailSignViewController: UIViewController {
                 self.showError(text: "Error creating user", label: self.errorLabel, textFields: [])
             } else {
                 let db = Firestore.firestore()
-                        
-                db.collection("users").addDocument(data: ["email": email, "uid": result!.user.uid ]) { (error) in
+                db.collection("users").addDocument(data: ["email": "\(email)", "uid": result!.user.uid, "account_creation_date": "\(Date().string(format: "yyyy-MM-dd"))", "account_type": "user", "full_name": "\(email)"]) { (error) in
                     if error != nil {
-                        self.showError(text: "Error saving user data", label: self.errorLabel, textFields: [])
+                        fatalError("Error to save email on G")
                     }
                     UserDefaults.resetStandardUserDefaults()
                     self.defaults.set(self.emailField.text!, forKey: "email")

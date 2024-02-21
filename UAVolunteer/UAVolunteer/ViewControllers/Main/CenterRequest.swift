@@ -1,6 +1,6 @@
 import Foundation
 
-struct Request: Identifiable {
+struct CenterRequest: Identifiable {
     var id: String
     var address: String
     var contact_phone: String
