@@ -37,7 +37,8 @@ class AccountViewController: UIViewController {
             let db = Firestore.firestore()
             db.collection("users").addDocument(data: ["email": "\(userEmail!)", "uid": user.userID!, "account_creation_date": "\(Date().string(format: "yyyy-MM-dd"))", "account_type": "user", "full_name": user.profile?.name ?? ""]) { (error) in
                 if error != nil {
-                    fatalError("Error to save email on G")
+                    self.showACError(text: "Failed to save email on Google Sign-In")
+                    return
                 }
             }
             self.setVCTo(MainTabBarController.self)
@@ -81,6 +82,12 @@ extension UIViewController {
             textField.layer.borderWidth = 1.0
             textField.layer.borderColor = UIColor.systemPink.cgColor
         }
+    }
+    
+    func showACError(text: String) {
+        let ac = UIAlertController(title: "Error", message: text, preferredStyle: .alert)
+        ac.addAction(UIAlertAction(title: "OK", style: .default))
+        present(ac, animated: true)
     }
 }
 

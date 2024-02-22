@@ -31,7 +31,8 @@ class MapScreenViewController: UIViewController, MKMapViewDelegate {
         let database = Firestore.firestore()
         database.collection("locations").getDocuments() {(snapshot, error) in
             if error != nil {
-                print(String(describing: error))
+                self.showACError(text: String(describing: error))
+                return
             } else {
                 if let snapshot = snapshot {
                     DispatchQueue.main.async {
@@ -39,7 +40,7 @@ class MapScreenViewController: UIViewController, MKMapViewDelegate {
                             return CenterRequest(id: d.documentID, address: d["address"] as! String, contact_phone: d["contact_phone"] as! String, description: d["description"] as! String, latitude: d["latitude"] as! String, longitude: d["longitude"] as! String, name: d["name"] as! String, website: d["website"] as! String)
                         }
                         guard self.requests != nil else {
-                            print("Requests is nil")
+                            self.showACError(text: "Requests is nil")
                             return
                         }
                         
