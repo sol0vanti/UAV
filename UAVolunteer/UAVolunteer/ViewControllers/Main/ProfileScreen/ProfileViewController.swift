@@ -55,7 +55,8 @@ class ProfileViewController: UIViewController, PHPickerViewControllerDelegate {
 
         storageRef.getData(maxSize: 1 * 4096 * 4096) { data, error in
             if let error = error {
-                print("Error downloading image: \(error.localizedDescription)")
+                self.showACError(text: "Error downloading image: \(error.localizedDescription)")
+                return
             } else {
                 if let imageData = data, let image = UIImage(data: imageData) {
                     self.accountLogo.imageView?.contentMode = .scaleToFill
@@ -70,7 +71,8 @@ class ProfileViewController: UIViewController, PHPickerViewControllerDelegate {
         let database = Firestore.firestore()
         database.collection("users").whereField("email", isEqualTo: defaults.string(forKey: "email")!).getDocuments() {(snapshot, error) in
             if error != nil {
-                print(String(describing: error))
+                self.showACError(text: String(describing: error))
+                return
             } else {
                 if let snapshot = snapshot {
                     DispatchQueue.main.async {
@@ -137,11 +139,13 @@ class ProfileViewController: UIViewController, PHPickerViewControllerDelegate {
         let storageRef = storage.reference().child("logos").child(defaults.string(forKey: "email")!)
         _ = storageRef.putData(imageData, metadata: nil) { (metadata, error) in
             if let error = error {
-                print("Error uploading image: \(error.localizedDescription)")
+                self.showACError(text: "Error uploading image: \(error.localizedDescription)")
+                return
             } else {
                 storageRef.downloadURL { (url, error) in
                     if let error = error {
-                        print("Error getting download URL: \(error.localizedDescription)")
+                        self.showACError(text: "Error getting download URL: \(error.localizedDescription)")
+                        return
                     } else {
                         let ac = UIAlertController(title: "Success", message: "You have successfully uploaded profile picture. Restart the app to see it.", preferredStyle: .alert)
                         ac.addAction(UIAlertAction(title: "OK", style: .default))

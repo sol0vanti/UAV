@@ -35,7 +35,8 @@ class EventsTableViewController: UIViewController, UITableViewDelegate, UITableV
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "eventCell", for: indexPath) as? EventTableViewCell else {
-            fatalError("unable to dequeue cell")
+            self.showACError(text: "Unable to dequeue cell")
+            return UITableViewCell()
         }
         return cell
     }

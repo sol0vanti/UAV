@@ -26,7 +26,7 @@ class DetailViewController: UIViewController, UICollectionViewDelegate, UICollec
     }
     
     func didSelectAnnotation(title: String?) {
-        print(title ?? fatalError("unable to dequeue title while selecting annotation"))
+        print(title ?? showACError(text: "Unable to dequeue title while selecting annotation"))
         self.navigationItem.title = title
     }
     
@@ -39,10 +39,12 @@ class DetailViewController: UIViewController, UICollectionViewDelegate, UICollec
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as? DetailCollectionViewCell else {
-            fatalError("unable to dequeue a reusable cell")
+            self.showACError(text: "Unable to dequeue a reusable cell")
+            return UICollectionViewCell()
         }
         guard let item = DetailViewController.centerDetail?[indexPath.row] else {
-            fatalError("unable to dequeue an item for cell")
+            self.showACError(text: "unable to dequeue an item for cell")
+            return UICollectionViewCell()
         }
         cell.titleLabel.text = item["title"]
         cell.detailLabel.text = item["detail"]
