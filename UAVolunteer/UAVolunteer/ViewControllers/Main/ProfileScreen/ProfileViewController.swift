@@ -21,12 +21,13 @@ class ProfileViewController: UIViewController, PHPickerViewControllerDelegate {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         getAccountData()
+        tabBarController?.title = "My Profile"
         navigationController?.setNavigationBarHidden(true, animated: animated)
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-            
+        tabBarController?.title = ""
         navigationController?.setNavigationBarHidden(false, animated: animated)
     }
     
@@ -34,7 +35,6 @@ class ProfileViewController: UIViewController, PHPickerViewControllerDelegate {
         super.viewDidLoad()
         view.alpha = 0
         
-        tabBarController?.title = "My Profile"
         accountLogo.layer.cornerRadius = accountLogo.frame.width / 2
         
         passwordButton.setIconImage(UIImage(systemName: "ellipsis.rectangle")!)
@@ -193,14 +193,15 @@ class ProfileViewController: UIViewController, PHPickerViewControllerDelegate {
             ac.addAction(UIAlertAction(title: "Continue", style: .destructive) {_ in 
                 let database = Firestore.firestore()
                 database.collection("users").whereField("email", isEqualTo: self.defaults.string(forKey: "email")!).getDocuments{(querySnapshot, error) in
-                    if let error = error {
+                    if error != nil {
                         self.showACError(text: "Error finding email in users collection")
                     } else {
                         for document in querySnapshot!.documents {
                             database.collection("users").document(document.documentID).updateData([
-                                "account_type": "business"
+                                "account_type": "business",
+                                "business": self.defaults.string(forKey: "email")!
                             ]) { error in
-                                if let error = error {
+                                if error != nil {
                                     self.showACError(text: "Error changing account type")
                                 }
                             }
@@ -210,7 +211,7 @@ class ProfileViewController: UIViewController, PHPickerViewControllerDelegate {
             })
             self.present(ac, animated: true)
         } else if type == "business" {
-            
+            self.pushVCTo(VolunteerListTableViewController.self)
         }
     }
 }
