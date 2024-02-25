@@ -16,6 +16,7 @@ class ProfileViewController: UIViewController, PHPickerViewControllerDelegate {
     let defaults = UserDefaults.standard
     var request: [UserRequest]!
     var logo: UIImage?
+    var type: String?
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -93,8 +94,10 @@ class ProfileViewController: UIViewController, PHPickerViewControllerDelegate {
                             self.accountUsername.text = request.full_name
                             if request.account_type == "business" {
                                 self.accountType.text = "Бізнес аккаунт"
+                                self.type = "business"
                             } else if request.account_type == "user" {
                                 self.accountType.text = "Користувач"
+                                self.type = "user"
                             }
                         }
                         self.getProfileImage()
@@ -181,6 +184,33 @@ class ProfileViewController: UIViewController, PHPickerViewControllerDelegate {
                     self.uploadImageToFirebase()
                 }
             }
+        }
+    }
+    @IBAction func accountButtonClicked(_ sender: UIButton) {
+        if type == "user" {
+            let ac = UIAlertController(title: "Attention!", message: "Your account type is set as user. If you want to registrate a business account, please tap on 'continue'", preferredStyle: .alert)
+            ac.addAction(UIAlertAction(title: "Cancel", style: .cancel){_ in})
+            ac.addAction(UIAlertAction(title: "Continue", style: .destructive) {_ in 
+                let database = Firestore.firestore()
+                database.collection("users").whereField("email", isEqualTo: self.defaults.string(forKey: "email")!).getDocuments{(querySnapshot, error) in
+                    if let error = error {
+                        self.showACError(text: "Error finding email in users collection")
+                    } else {
+                        for document in querySnapshot!.documents {
+                            database.collection("users").document(document.documentID).updateData([
+                                "account_type": "business"
+                            ]) { error in
+                                if let error = error {
+                                    self.showACError(text: "Error changing account type")
+                                }
+                            }
+                        }
+                    }
+                }
+            })
+            self.present(ac, animated: true)
+        } else if type == "business" {
+            
         }
     }
 }
