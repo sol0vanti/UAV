@@ -109,7 +109,7 @@ class ProfileViewController: UIViewController, PHPickerViewControllerDelegate {
         let ac = UIAlertController(title: "Sign Out", message: nil, preferredStyle: .alert)
         ac.addAction(UIAlertAction(title: "OK", style: .default){ _ in
             self.defaults.removeObject(forKey: "email")
-            self.setVCTo(AccountViewController.self)
+            fatalError()
         })
         ac.addAction(UIAlertAction(title: "Cancel", style: .destructive))
         present(ac, animated: true)

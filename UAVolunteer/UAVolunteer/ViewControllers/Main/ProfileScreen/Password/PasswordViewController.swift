@@ -19,7 +19,7 @@ class PasswordViewController: UIViewController {
     @IBAction func saveClicked(_ sender: UIButton) {
         let user = Auth.auth().currentUser
         
-        var error = checkTextFields(errorLabel: errorLabel, textFields: [oldPasswordField, newPasswordField, confirmPasswordField], confirmationField: confirmPasswordField, passwordTextField: newPasswordField)
+        let error = checkTextFields(errorLabel: errorLabel, textFields: [oldPasswordField, newPasswordField, confirmPasswordField], confirmationField: confirmPasswordField, passwordTextField: newPasswordField)
         
         guard error == nil else {
             showError(text: error!, label: errorLabel, textFields: [oldPasswordField,newPasswordField,confirmPasswordField])
@@ -27,25 +27,31 @@ class PasswordViewController: UIViewController {
         }
         
         if let providerData = user?.providerData {
+            var isGoogleUser = false
             for userInfo in providerData {
                 if userInfo.providerID == "google.com" {
-                    let ac = UIAlertController(title: "Fail", message: "You are logged in with Google", preferredStyle: .alert)
-                    ac.addAction(UIAlertAction(title: "OK", style: .default){_ in
-                        return
-                    })
-                    self.present(ac, animated: true)
-                    return
-                        
-                } else {
-                    var credential = EmailAuthProvider.credential(withEmail: (user?.email)!, password: self.oldPasswordField.text!)
+                    isGoogleUser = true
+                    break
+                }
+            }
 
+        if isGoogleUser {
+            let ac = UIAlertController(title: "Fail", message: "You are logged in with Google", preferredStyle: .alert)
+            ac.addAction(UIAlertAction(title: "OK", style: .default){_ in
+                return
+            })
+            self.present(ac, animated: true)
+        } else {
+                if let email = user?.email, let password = self.oldPasswordField.text {
+                    let credential = EmailAuthProvider.credential(withEmail: email, password: password)
+                        
                     Auth.auth().currentUser?.reauthenticate(with: credential) { error, _  in
-                        if let error = error {
-                            self.showACError(text: "Failed to reauthenticate with credential")
+                        if error != nil {
+                            self.showACError(text: "Failed to reauthenticate with credential. \(String(describing:error))")
                             return
                         } else {
                             Auth.auth().currentUser?.updatePassword(to: self.confirmPasswordField.text!) { (error) in
-                                if let error = error {
+                                if error != nil {
                                     self.showACError(text: "Failed to update password to new password")
                                     return
                                 } else {
@@ -63,3 +69,4 @@ class PasswordViewController: UIViewController {
         }
     }
 }
+
