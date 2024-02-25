@@ -42,6 +42,8 @@
 		70B531CA2B3C5D7200634106 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 70B531C92B3C5D7200634106 /* Assets.xcassets */; };
 		70BD08092B89F3620025DFC0 /* PasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70BD08082B89F3620025DFC0 /* PasswordViewController.swift */; };
 		70C267962B5479110088C440 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70C267952B5479110088C440 /* ProfileViewController.swift */; };
+		70CF16492B8B8AA200138DFE /* VolunteerListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70CF16482B8B8AA200138DFE /* VolunteerListTableViewCell.swift */; };
+		70CF164B2B8B8AC500138DFE /* VolunteerListRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70CF164A2B8B8AC500138DFE /* VolunteerListRequest.swift */; };
 		70DD153F2B850ABE00E6591D /* ProfButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70DD153E2B850ABE00E6591D /* ProfButton.swift */; };
 /* End PBXBuildFile section */
 
@@ -92,6 +94,8 @@
 		70B531C92B3C5D7200634106 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		70BD08082B89F3620025DFC0 /* PasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordViewController.swift; sourceTree = "<group>"; };
 		70C267952B5479110088C440 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		70CF16482B8B8AA200138DFE /* VolunteerListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VolunteerListTableViewCell.swift; sourceTree = "<group>"; };
+		70CF164A2B8B8AC500138DFE /* VolunteerListRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VolunteerListRequest.swift; sourceTree = "<group>"; };
 		70DD153E2B850ABE00E6591D /* ProfButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -134,6 +138,8 @@
 			isa = PBXGroup;
 			children = (
 				701421F42B8B53BF006D01DE /* VolunteerListTableViewController.swift */,
+				70CF16482B8B8AA200138DFE /* VolunteerListTableViewCell.swift */,
+				70CF164A2B8B8AC500138DFE /* VolunteerListRequest.swift */,
 			);
 			path = "New Annotation";
 			sourceTree = "<group>";
@@ -448,6 +454,7 @@
 				704955102B53D86A00E8312E /* CenterRequest.swift in Sources */,
 				7076240F2B3DC5AD00CF6703 /* DetailViewController.swift in Sources */,
 				7070CE922B32094E00F8B450 /* AccountViewController.swift in Sources */,
+				70CF16492B8B8AA200138DFE /* VolunteerListTableViewCell.swift in Sources */,
 				70AB89072B6C082D005B5398 /* UserRequest.swift in Sources */,
 				70C267962B5479110088C440 /* ProfileViewController.swift in Sources */,
 				70161F972B459C2700E343A9 /* EventDetailViewController.swift in Sources */,
@@ -463,6 +470,7 @@
 				701421F52B8B53BF006D01DE /* VolunteerListTableViewController.swift in Sources */,
 				705E990E2B60195D006F2937 /* CustomButton.swift in Sources */,
 				70BD08092B89F3620025DFC0 /* PasswordViewController.swift in Sources */,
+				70CF164B2B8B8AC500138DFE /* VolunteerListRequest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -143,6 +143,7 @@
                                 </buttonConfiguration>
                                 <connections>
                                     <action selector="accountButtonClicked:" destination="f9J-Hb-Bmk" eventType="touchUpInside" id="SuU-jR-J7V"/>
+                                    <segue destination="lhe-1y-oKA" kind="presentation" id="kxV-5Y-AXi"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rJl-nY-S1Y" customClass="CustomButton" customModule="UAVolunteer" customModuleProvider="target">
@@ -1087,13 +1088,13 @@
         <!--Volunteer List Table View Controller-->
         <scene sceneID="Dtr-6T-a8q">
             <objects>
-                <tableViewController storyboardIdentifier="VolunteerListTableViewController" id="lhe-1y-oKA" customClass="VolunteerListTableViewController" customModule="UAVolunteer" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="VolunteerListTableViewController" hidesBottomBarWhenPushed="YES" id="lhe-1y-oKA" customClass="VolunteerListTableViewController" customModule="UAVolunteer" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="gyW-KN-SWR">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="85" id="HVI-Or-QcU">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="85" id="HVI-Or-QcU" customClass="VolunteerListTableViewCell" customModule="UAVolunteer" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="50" width="393" height="85"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="HVI-Or-QcU" id="Yqv-EM-vhM">
@@ -1106,8 +1107,8 @@
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Тип" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9sE-uo-RyV">
-                                            <rect key="frame" x="35" y="42" width="28" height="20"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Адреса" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9sE-uo-RyV">
+                                            <rect key="frame" x="35" y="42" width="56" height="20"/>
                                             <fontDescription key="fontDescription" type="system" weight="light" pointSize="16"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
@@ -1129,6 +1130,11 @@
                                         <constraint firstItem="txU-wD-LPx" firstAttribute="top" secondItem="Yqv-EM-vhM" secondAttribute="topMargin" constant="10" id="jwQ-7I-lOm"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="cellAddress" destination="9sE-uo-RyV" id="h3F-zp-Wi9"/>
+                                    <outlet property="cellTitle" destination="txU-wD-LPx" id="yhn-OJ-yTy"/>
+                                    <outlet property="cellimage" destination="1mZ-kb-7CN" id="tXe-MH-Pw2"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -1458,6 +1464,9 @@
             <point key="canvasLocation" x="4270.9923664122134" y="1369.7183098591549"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="kxV-5Y-AXi"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <image name="Google-Emblem" width="3840" height="2160"/>
         <image name="list.bullet.clipboard.fill" catalog="system" width="98" height="128"/>

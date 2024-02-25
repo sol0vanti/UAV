@@ -1,4 +1,4 @@
-import UIKit
+import Foundation
 
 struct UserRequest: Identifiable {
     var id: String

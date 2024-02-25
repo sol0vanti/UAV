@@ -1,6 +1,10 @@
 import UIKit
 
 class VolunteerListTableViewController: UITableViewController {
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
