@@ -1094,7 +1094,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="85" id="HVI-Or-QcU" customClass="VolunteerListTableViewCell" customModule="UAVolunteer" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="VolunteerListTableViewCell" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="VolunteerListTableViewCell" rowHeight="85" id="HVI-Or-QcU" customClass="VolunteerListTableViewCell" customModule="UAVolunteer" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="50" width="393" height="85"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="HVI-Or-QcU" id="Yqv-EM-vhM">
@@ -1108,7 +1108,7 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Адреса" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9sE-uo-RyV">
-                                            <rect key="frame" x="35" y="42" width="56" height="20"/>
+                                            <rect key="frame" x="35" y="42" width="273" height="20"/>
                                             <fontDescription key="fontDescription" type="system" weight="light" pointSize="16"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
@@ -1122,6 +1122,7 @@
                                         </imageView>
                                     </subviews>
                                     <constraints>
+                                        <constraint firstItem="1mZ-kb-7CN" firstAttribute="leading" secondItem="9sE-uo-RyV" secondAttribute="trailing" constant="15" id="DO6-JE-Gi2"/>
                                         <constraint firstItem="9sE-uo-RyV" firstAttribute="top" secondItem="txU-wD-LPx" secondAttribute="bottom" id="Qfj-XM-zCZ"/>
                                         <constraint firstItem="txU-wD-LPx" firstAttribute="leading" secondItem="Yqv-EM-vhM" secondAttribute="leadingMargin" constant="15" id="RAE-V5-THT"/>
                                         <constraint firstAttribute="trailing" secondItem="1mZ-kb-7CN" secondAttribute="trailing" constant="20" id="bk4-3F-pCl"/>
@@ -1143,6 +1144,9 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="DUV-mz-p17"/>
+                    <connections>
+                        <outlet property="table" destination="gyW-KN-SWR" id="zAg-7x-kh2"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qtu-pV-yKF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
