@@ -63,7 +63,40 @@ class VolunteerListTableViewController: UITableViewController {
         return true
     }
     
+    override func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        let deleteAction = UIContextualAction(style: .destructive, title: "Delete") { (_, _, completionHandler) in
+            tableView.beginUpdates()
+            let request = self.requests[indexPath.row]
+            let db = Firestore.firestore()
+            db.collection("locations").whereField("name", isEqualTo: request.name).getDocuments { (querySnapshot, error) in
+                if error != nil {
+                    self.showACError(text: "Unable to delete field. Try again later.")
+                } else {
+                    for document in querySnapshot!.documents {
+                        let documentRef = db.collection("locations").document(document.documentID)
+                        documentRef.delete { error in
+                            if error != nil {
+                                self.showACError(text: "Unable to delete field. Try again later.")
+                            } else {
+                                self.requests.remove(at: indexPath.row)
+                                tableView.deleteRows(at: [indexPath], with: .fade)
+                                tableView.endUpdates()
+                                let ac = UIAlertController(title: "Success", message: "You have successfully removed field", preferredStyle: .alert)
+                                ac.addAction(UIAlertAction(title: "OK", style: .default))
+                                self.present(ac, animated: true)
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        
+        let swipeConfiguration = UISwipeActionsConfiguration(actions: [deleteAction])
+        swipeConfiguration.performsFirstActionWithFullSwipe = false
+        return swipeConfiguration
+    }
+    
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 85
+        return 60
     }
 }
