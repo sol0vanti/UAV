@@ -16,16 +16,18 @@ class ProfileViewController: UIViewController, PHPickerViewControllerDelegate {
     let defaults = UserDefaults.standard
     var request: [UserRequest]!
     var logo: UIImage?
+    var type: String?
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         getAccountData()
+        tabBarController?.title = "My Profile"
         navigationController?.setNavigationBarHidden(true, animated: animated)
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-            
+        tabBarController?.title = ""
         navigationController?.setNavigationBarHidden(false, animated: animated)
     }
     
@@ -33,7 +35,6 @@ class ProfileViewController: UIViewController, PHPickerViewControllerDelegate {
         super.viewDidLoad()
         view.alpha = 0
         
-        tabBarController?.title = "My Profile"
         accountLogo.layer.cornerRadius = accountLogo.frame.width / 2
         
         passwordButton.setIconImage(UIImage(systemName: "ellipsis.rectangle")!)
@@ -93,8 +94,10 @@ class ProfileViewController: UIViewController, PHPickerViewControllerDelegate {
                             self.accountUsername.text = request.full_name
                             if request.account_type == "business" {
                                 self.accountType.text = "Бізнес аккаунт"
+                                self.type = "business"
                             } else if request.account_type == "user" {
                                 self.accountType.text = "Користувач"
+                                self.type = "user"
                             }
                         }
                         self.getProfileImage()
@@ -109,7 +112,7 @@ class ProfileViewController: UIViewController, PHPickerViewControllerDelegate {
         let ac = UIAlertController(title: "Sign Out", message: nil, preferredStyle: .alert)
         ac.addAction(UIAlertAction(title: "OK", style: .default){ _ in
             self.defaults.removeObject(forKey: "email")
-            self.setVCTo(AccountViewController.self)
+            fatalError()
         })
         ac.addAction(UIAlertAction(title: "Cancel", style: .destructive))
         present(ac, animated: true)
@@ -181,6 +184,34 @@ class ProfileViewController: UIViewController, PHPickerViewControllerDelegate {
                     self.uploadImageToFirebase()
                 }
             }
+        }
+    }
+    @IBAction func accountButtonClicked(_ sender: UIButton) {
+        if type == "user" {
+            let ac = UIAlertController(title: "Attention!", message: "Your account type is set as user. If you want to registrate a business account, please tap on 'continue'", preferredStyle: .alert)
+            ac.addAction(UIAlertAction(title: "Cancel", style: .cancel){_ in})
+            ac.addAction(UIAlertAction(title: "Continue", style: .destructive) {_ in 
+                let database = Firestore.firestore()
+                database.collection("users").whereField("email", isEqualTo: self.defaults.string(forKey: "email")!).getDocuments{(querySnapshot, error) in
+                    if error != nil {
+                        self.showACError(text: "Error finding email in users collection")
+                    } else {
+                        for document in querySnapshot!.documents {
+                            database.collection("users").document(document.documentID).updateData([
+                                "account_type": "business",
+                                "business": self.defaults.string(forKey: "email")!
+                            ]) { error in
+                                if error != nil {
+                                    self.showACError(text: "Error changing account type")
+                                }
+                            }
+                        }
+                    }
+                }
+            })
+            self.present(ac, animated: true)
+        } else if type == "business" {
+            
         }
     }
 }
