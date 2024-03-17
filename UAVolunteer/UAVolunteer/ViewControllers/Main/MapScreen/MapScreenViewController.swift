@@ -23,8 +23,12 @@ class MapScreenViewController: UIViewController, MKMapViewDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        getAnnotationData()
         setUpVC()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(true)
+        getAnnotationData()
     }
     
     func getAnnotationData(){
