@@ -151,23 +151,13 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="65" id="cep-kn-pa0"/>
                                 </constraints>
-                                <buttonConfiguration key="configuration" style="gray" title="Підтримка">
-                                    <fontDescription key="titleFontDescription" type="system" weight="medium" pointSize="18"/>
-                                    <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </buttonConfiguration>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mx8-7J-wmp" customClass="CustomButton" customModule="UAVolunteer" customModuleProvider="target">
-                                <rect key="frame" x="20" y="593.33333333333337" width="353" height="65"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="65" id="ygn-6M-ln6"/>
-                                </constraints>
-                                <buttonConfiguration key="configuration" style="gray" title="Безпека">
+                                <buttonConfiguration key="configuration" style="gray" title="Додати Центр">
                                     <fontDescription key="titleFontDescription" type="system" weight="medium" pointSize="18"/>
                                     <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </buttonConfiguration>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vwX-yQ-hFR" customClass="CustomButton" customModule="UAVolunteer" customModuleProvider="target">
-                                <rect key="frame" x="20" y="668.33333333333337" width="353" height="65"/>
+                                <rect key="frame" x="20" y="593.33333333333337" width="353" height="65"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="65" id="hht-rT-MOB"/>
                                 </constraints>
@@ -180,8 +170,9 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AMP-03-yQq">
-                                <rect key="frame" x="184.66666666666666" y="103" width="24" height="150"/>
+                                <rect key="frame" x="121.66666666666669" y="103" width="150" height="150"/>
                                 <constraints>
+                                    <constraint firstAttribute="width" constant="150" id="Lbx-FI-4kz"/>
                                     <constraint firstAttribute="height" constant="150" id="moz-Kx-ieV"/>
                                 </constraints>
                                 <state key="normal" title="Button"/>
@@ -203,19 +194,16 @@
                             <constraint firstItem="ITq-ge-iDd" firstAttribute="leading" secondItem="Kym-ss-QiY" secondAttribute="leading" constant="20" id="DGz-a9-FQY"/>
                             <constraint firstItem="vwX-yQ-hFR" firstAttribute="leading" secondItem="Kym-ss-QiY" secondAttribute="leading" constant="20" id="EJO-Cf-HUg"/>
                             <constraint firstItem="c4u-Bw-PPg" firstAttribute="top" secondItem="AMP-03-yQq" secondAttribute="bottom" constant="10" id="JhL-b3-LuA"/>
-                            <constraint firstItem="mx8-7J-wmp" firstAttribute="leading" secondItem="Kym-ss-QiY" secondAttribute="leading" constant="20" id="NHj-Sn-bBf"/>
                             <constraint firstItem="ITq-ge-iDd" firstAttribute="top" secondItem="XVw-T3-A6Q" secondAttribute="bottom" constant="50" id="P2i-jM-epI"/>
                             <constraint firstItem="AUM-f8-YPO" firstAttribute="leading" secondItem="Kym-ss-QiY" secondAttribute="leading" constant="20" id="P96-a5-hQR"/>
                             <constraint firstItem="AMP-03-yQq" firstAttribute="centerX" secondItem="5Eg-E1-uin" secondAttribute="centerX" id="POZ-vq-Mf4"/>
                             <constraint firstItem="Kym-ss-QiY" firstAttribute="trailing" secondItem="ITq-ge-iDd" secondAttribute="trailing" constant="20" id="TXH-5t-4mn"/>
                             <constraint firstItem="Kym-ss-QiY" firstAttribute="trailing" secondItem="AUM-f8-YPO" secondAttribute="trailing" constant="20" id="Vx3-WR-kjG"/>
-                            <constraint firstItem="vwX-yQ-hFR" firstAttribute="top" secondItem="mx8-7J-wmp" secondAttribute="bottom" constant="10" id="XKo-ih-DKp"/>
                             <constraint firstItem="Kym-ss-QiY" firstAttribute="trailing" secondItem="rJl-nY-S1Y" secondAttribute="trailing" constant="20" id="aUw-51-0pc"/>
-                            <constraint firstItem="Kym-ss-QiY" firstAttribute="trailing" secondItem="mx8-7J-wmp" secondAttribute="trailing" constant="20" id="boj-tK-03W"/>
                             <constraint firstItem="c4u-Bw-PPg" firstAttribute="centerX" secondItem="5Eg-E1-uin" secondAttribute="centerX" id="eO2-eN-p8g"/>
-                            <constraint firstItem="mx8-7J-wmp" firstAttribute="top" secondItem="rJl-nY-S1Y" secondAttribute="bottom" constant="10" id="fMQ-th-A65"/>
                             <constraint firstItem="Kym-ss-QiY" firstAttribute="trailing" secondItem="vwX-yQ-hFR" secondAttribute="trailing" constant="20" id="fmE-dd-IkY"/>
                             <constraint firstItem="AUM-f8-YPO" firstAttribute="top" secondItem="ITq-ge-iDd" secondAttribute="bottom" constant="10" id="oWi-bU-LBA"/>
+                            <constraint firstItem="vwX-yQ-hFR" firstAttribute="top" secondItem="rJl-nY-S1Y" secondAttribute="bottom" constant="10" id="pse-Bc-K1F"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="My Profile" id="xra-bP-sSo"/>
@@ -225,7 +213,6 @@
                         <outlet property="accountType" destination="XVw-T3-A6Q" id="OMB-Z9-HYg"/>
                         <outlet property="accountUsername" destination="c4u-Bw-PPg" id="oGl-nt-Wd6"/>
                         <outlet property="passwordButton" destination="ITq-ge-iDd" id="wE5-kx-5Qs"/>
-                        <outlet property="secureButton" destination="mx8-7J-wmp" id="0hN-GY-EFv"/>
                         <outlet property="signoutButton" destination="vwX-yQ-hFR" id="z1m-BD-qS7"/>
                         <outlet property="supportButton" destination="rJl-nY-S1Y" id="wxF-bt-QGu"/>
                     </connections>

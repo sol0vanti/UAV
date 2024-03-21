@@ -10,7 +10,6 @@ class ProfileViewController: UIViewController, PHPickerViewControllerDelegate {
     @IBOutlet weak var passwordButton: CustomButton!
     @IBOutlet weak var accountButton: CustomButton!
     @IBOutlet weak var supportButton: CustomButton!
-    @IBOutlet weak var secureButton: CustomButton!
     @IBOutlet weak var signoutButton: CustomButton!
 
     let defaults = UserDefaults.standard
@@ -39,8 +38,7 @@ class ProfileViewController: UIViewController, PHPickerViewControllerDelegate {
         
         passwordButton.setIconImage(UIImage(systemName: "ellipsis.rectangle")!)
         accountButton.setIconImage(UIImage(systemName: "person.crop.circle")!)
-        supportButton.setIconImage(UIImage(systemName: "phone.badge.waveform")!)
-        secureButton.setIconImage(UIImage(systemName: "shield.lefthalf.filled")!)
+        supportButton.setIconImage(UIImage(systemName: "antenna.radiowaves.left.and.right")!)
         signoutButton.setIconImage(UIImage(systemName: "nosign")!)
     }
     
@@ -53,15 +51,14 @@ class ProfileViewController: UIViewController, PHPickerViewControllerDelegate {
     func getProfileImage(){
         let storage = Storage.storage()
         let storageRef = storage.reference().child("logos").child(defaults.string(forKey: "email")!)
-
+        self.accountLogo.imageView?.contentMode = .scaleToFill
+        self.accountLogo.layer.masksToBounds = true
+        self.accountLogo.tintColor = .white
         storageRef.getData(maxSize: 1 * 4096 * 4096) { data, error in
-            if let error = error {
-                self.showACError(text: "Error downloading image: \(error.localizedDescription)")
-                return
+            if error != nil {
+                self.accountLogo.setImage(UIImage(systemName: "person.crop.circle"), for: .normal)
             } else {
                 if let imageData = data, let image = UIImage(data: imageData) {
-                    self.accountLogo.imageView?.contentMode = .scaleToFill
-                    self.accountLogo.layer.masksToBounds = true
                     self.accountLogo.setImage(image, for: .normal)
                 }
             }
@@ -110,11 +107,11 @@ class ProfileViewController: UIViewController, PHPickerViewControllerDelegate {
 
     @IBAction func signoutDidTapped(_ sender: UIButton) {
         let ac = UIAlertController(title: "Sign Out", message: nil, preferredStyle: .alert)
-        ac.addAction(UIAlertAction(title: "OK", style: .default){ _ in
+        ac.addAction(UIAlertAction(title: "OK", style: .destructive){ _ in
             self.defaults.removeObject(forKey: "email")
             fatalError()
         })
-        ac.addAction(UIAlertAction(title: "Cancel", style: .destructive))
+        ac.addAction(UIAlertAction(title: "Cancel", style: .cancel))
         present(ac, animated: true)
     }
     
