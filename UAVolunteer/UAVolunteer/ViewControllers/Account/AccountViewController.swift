@@ -20,10 +20,10 @@ class AccountViewController: UIViewController {
     
     @IBAction func googleButtonClicked(_ sender: UIButton) {
         guard let clientID = FirebaseApp.app()?.options.clientID else { return }
-
+        
         let config = GIDConfiguration(clientID: clientID)
         GIDSignIn.sharedInstance.configuration = config
-
+        
         GIDSignIn.sharedInstance.signIn(withPresenting: self) { result, error in
             guard error == nil else {
                 return
@@ -35,25 +35,32 @@ class AccountViewController: UIViewController {
             let userEmail = user.profile?.email
             self.defaults.set(userEmail!, forKey: "email")
             let db = Firestore.firestore()
-            if user.profile?.familyName == nil || user.profile?.name == nil {
-                db.collection("users").addDocument(data: ["email": "\(userEmail!)", "uid": user.userID!, "account_creation_date": "\(Date().string(format: "yyyy-MM-dd"))", "account_type": "user", "full_name": "\(user.profile?.name ?? "Анонім")"]) { (error) in
-                    if error != nil {
-                        self.showACError(text: "Failed to save email on Google Sign-In")
-                        return
+            db.collection("users").whereField("email", isEqualTo: userEmail!).getDocuments() { (snapshot, error) in
+                if error != nil {
+                    self.showACError(text: "Error finding email for an account")
+                }
+                else {
+                    if let snapshot = snapshot {
+                        if snapshot.isEmpty {
+                            db.collection("users").addDocument(data: ["email": "\(userEmail!)", "uid": user.userID!, "account_creation_date": "\(Date().string(format: "yyyy-MM-dd"))", "account_type": "user", "full_name": "\(user.profile?.name ?? "Анонім")"]) { (error) in
+                                if error != nil {
+                                    self.showACError(text: "Failed to save email on Google Sign-In")
+                                    return
+                                } else {
+                                    self.setVCTo(MainTabBarController.self)
+                                }
+                            }
+                        }
+                        else {
+                            self.setVCTo(MainTabBarController.self)
+                        }
                     }
                 }
-                self.setVCTo(MainTabBarController.self)
-            } else {
-                db.collection("users").addDocument(data: ["email": "\(userEmail!)", "uid": user.userID!, "account_creation_date": "\(Date().string(format: "yyyy-MM-dd"))", "account_type": "user", "full_name": user.profile?.name ?? "Anonim"]) { (error) in
-                    if error != nil {
-                        self.showACError(text: "Failed to save email on Google Sign-In")
-                        return
-                    }
-                }
-                self.setVCTo(MainTabBarController.self)
             }
         }
     }
+        
+    
     
     @IBAction func otherButtonClicked(_ sender: UIButton) {
         pushVCTo(EmailSignViewController.self)
