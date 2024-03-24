@@ -14,10 +14,10 @@ class AccountViewController: UIViewController {
         super.viewDidLoad()
         guard defaults.string(forKey: "email") == nil else {
             guard defaults.string(forKey: "center-set") == nil else {
-                setVCTo(AddSelPlaceViewController.self)
+                self.newScreen(MainTabBarController.self)
                 return
             }
-            setVCTo(MainTabBarController.self)
+            self.newScreen(MainTabBarController.self)
             return
         }
     }
@@ -51,12 +51,12 @@ class AccountViewController: UIViewController {
                                     self.showACError(text: "Failed to save email on Google Sign-In")
                                     return
                                 } else {
-                                    self.setVCTo(MainTabBarController.self)
+                                    self.newScreen(MainTabBarController.self)
                                 }
                             }
                         }
                         else {
-                            self.setVCTo(MainTabBarController.self)
+                            self.newScreen(MainTabBarController.self)
                         }
                     }
                 }
@@ -72,6 +72,12 @@ class AccountViewController: UIViewController {
 }
 
 extension UIViewController {
+    func newScreen(_ viewController: UIViewController.Type) {
+        let sceneDelegate = (UIApplication.shared.connectedScenes.first as? UIWindowScene)?.delegate as? SceneDelegate
+        let destVC = UIStoryboard(name: "Main", bundle:nil).instantiateViewController(withIdentifier: "\(viewController)")
+        sceneDelegate?.window?.rootViewController = destVC
+    }
+    
      func setVCTo(_ viewController: UIViewController.Type) {
         let destVC = UIStoryboard(name: "Main", bundle:nil).instantiateViewController(withIdentifier: "\(viewController)")
         self.navigationController?.setViewControllers([destVC], animated: true)
