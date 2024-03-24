@@ -13,8 +13,10 @@
 		70161F932B459B9700E343A9 /* EventsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70161F922B459B9700E343A9 /* EventsTableViewController.swift */; };
 		70161F952B459C1300E343A9 /* EventTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70161F942B459C1300E343A9 /* EventTableViewCell.swift */; };
 		70161F972B459C2700E343A9 /* EventDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70161F962B459C2700E343A9 /* EventDetailViewController.swift */; };
-		701E07D82BAF38F900FC2A43 /* SelPlaceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 701E07D72BAF38F900FC2A43 /* SelPlaceViewController.swift */; };
+		701E07D82BAF38F900FC2A43 /* AddSelPlaceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 701E07D72BAF38F900FC2A43 /* AddSelPlaceViewController.swift */; };
 		704955102B53D86A00E8312E /* CenterRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7049550F2B53D86A00E8312E /* CenterRequest.swift */; };
+		704DD6D72BB03AA8000C60A7 /* AddLogoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 704DD6D62BB03AA8000C60A7 /* AddLogoViewController.swift */; };
+		704DD6D92BB03AB5000C60A7 /* AddDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 704DD6D82BB03AB5000C60A7 /* AddDetailViewController.swift */; };
 		705E990E2B60195D006F2937 /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 705E990D2B60195D006F2937 /* CustomButton.swift */; };
 		7062A20E2B33290800BDD02A /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 7062A20D2B33290800BDD02A /* FirebaseAuth */; };
 		7062A2102B33290800BDD02A /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = 7062A20F2B33290800BDD02A /* FirebaseDatabase */; };
@@ -72,8 +74,10 @@
 		70161F922B459B9700E343A9 /* EventsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsTableViewController.swift; sourceTree = "<group>"; };
 		70161F942B459C1300E343A9 /* EventTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventTableViewCell.swift; sourceTree = "<group>"; };
 		70161F962B459C2700E343A9 /* EventDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventDetailViewController.swift; sourceTree = "<group>"; };
-		701E07D72BAF38F900FC2A43 /* SelPlaceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelPlaceViewController.swift; sourceTree = "<group>"; };
+		701E07D72BAF38F900FC2A43 /* AddSelPlaceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddSelPlaceViewController.swift; sourceTree = "<group>"; };
 		7049550F2B53D86A00E8312E /* CenterRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CenterRequest.swift; sourceTree = "<group>"; };
+		704DD6D62BB03AA8000C60A7 /* AddLogoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddLogoViewController.swift; sourceTree = "<group>"; };
+		704DD6D82BB03AB5000C60A7 /* AddDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddDetailViewController.swift; sourceTree = "<group>"; };
 		705E990D2B60195D006F2937 /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
 		7062A21B2B33343400BDD02A /* MapScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapScreenViewController.swift; sourceTree = "<group>"; };
 		7062A21D2B333A0400BDD02A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -149,7 +153,9 @@
 		701E07D52BAF386D00FC2A43 /* AddAnnotation */ = {
 			isa = PBXGroup;
 			children = (
-				701E07D72BAF38F900FC2A43 /* SelPlaceViewController.swift */,
+				701E07D72BAF38F900FC2A43 /* AddSelPlaceViewController.swift */,
+				704DD6D62BB03AA8000C60A7 /* AddLogoViewController.swift */,
+				704DD6D82BB03AB5000C60A7 /* AddDetailViewController.swift */,
 			);
 			path = AddAnnotation;
 			sourceTree = "<group>";
@@ -480,13 +486,15 @@
 				7070CE8E2B32094E00F8B450 /* AppDelegate.swift in Sources */,
 				7004816B2B39ADF200672DB4 /* EmailSignViewController.swift in Sources */,
 				7070CE902B32094E00F8B450 /* SceneDelegate.swift in Sources */,
-				701E07D82BAF38F900FC2A43 /* SelPlaceViewController.swift in Sources */,
+				701E07D82BAF38F900FC2A43 /* AddSelPlaceViewController.swift in Sources */,
 				7076240D2B3D64C200CF6703 /* MainTabBarController.swift in Sources */,
 				7062A21C2B33343400BDD02A /* MapScreenViewController.swift in Sources */,
 				70161F932B459B9700E343A9 /* EventsTableViewController.swift in Sources */,
+				704DD6D92BB03AB5000C60A7 /* AddDetailViewController.swift in Sources */,
 				707624112B3DC5C700CF6703 /* DetailCollectionViewCell.swift in Sources */,
 				70DD153F2B850ABE00E6591D /* ProfButton.swift in Sources */,
 				700481692B39AC4400672DB4 /* EmailLogViewController.swift in Sources */,
+				704DD6D72BB03AA8000C60A7 /* AddLogoViewController.swift in Sources */,
 				701421F52B8B53BF006D01DE /* VolunteerListTableViewController.swift in Sources */,
 				705E990E2B60195D006F2937 /* CustomButton.swift in Sources */,
 				70BD08092B89F3620025DFC0 /* PasswordViewController.swift in Sources */,

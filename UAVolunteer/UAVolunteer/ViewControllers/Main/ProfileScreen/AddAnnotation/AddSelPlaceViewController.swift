@@ -1,7 +1,7 @@
 import UIKit
 import MapKit
 
-class SelPlaceViewController: UIViewController, MKMapViewDelegate {
+class AddSelPlaceViewController: UIViewController, MKMapViewDelegate {
     @IBOutlet weak var mapView: MKMapView!
     @IBOutlet weak var resetButton: UIButton!
     @IBOutlet weak var continueButton: UIButton!
@@ -34,8 +34,6 @@ class SelPlaceViewController: UIViewController, MKMapViewDelegate {
                 pointSet = true
                 resetButton.isEnabled = true
                 continueButton.isEnabled = true
-                resetButton.backgroundColor = .darkGray
-                continueButton.backgroundColor = .white
                 addAnnotation(at: coordinate)
             }
         }
@@ -43,7 +41,7 @@ class SelPlaceViewController: UIViewController, MKMapViewDelegate {
     func addAnnotation(at coordinate: CLLocationCoordinate2D) {
         let annotation = MKPointAnnotation()
         annotation.coordinate = coordinate
-        annotation.title = "Center"
+        annotation.title = "New Center"
         mapView.addAnnotation(annotation)
     }
     
@@ -52,8 +50,6 @@ class SelPlaceViewController: UIViewController, MKMapViewDelegate {
         pointSet = false
         resetButton.isEnabled = false
         continueButton.isEnabled = false
-        continueButton.backgroundColor = .lightGray
-        resetButton.backgroundColor = .clear
     }
     
     @IBAction func continueButtonClicked(_ sender: UIButton) {

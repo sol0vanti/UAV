@@ -1145,7 +1145,7 @@
         <!--New Annotation-->
         <scene sceneID="cdK-Fr-kS0">
             <objects>
-                <viewController storyboardIdentifier="SelPlaceViewController" id="oRL-N1-hQ7" customClass="SelPlaceViewController" customModule="UAVolunteer" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SelPlaceViewController" id="oRL-N1-hQ7" customClass="AddSelPlaceViewController" customModule="UAVolunteer" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="nMC-Ph-4fV">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1175,11 +1175,9 @@
                                 </constraints>
                                 <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Continue">
-                                    <backgroundConfiguration key="background">
-                                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                    </backgroundConfiguration>
+                                <buttonConfiguration key="configuration" style="filled" title="Далі">
                                     <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <color key="baseBackgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </buttonConfiguration>
                                 <connections>
                                     <action selector="continueButtonClicked:" destination="oRL-N1-hQ7" eventType="touchUpInside" id="tHz-nT-K0n"/>
@@ -1191,8 +1189,9 @@
                                     <constraint firstAttribute="height" constant="40" id="4a2-cB-uAP"/>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="150" id="kGy-SS-SPd"/>
                                 </constraints>
+                                <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="gray" title="Reset">
+                                <buttonConfiguration key="configuration" style="filled" title="Очистити">
                                     <backgroundConfiguration key="background"/>
                                     <color key="baseForegroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </buttonConfiguration>
@@ -1231,10 +1230,10 @@
             </objects>
             <point key="canvasLocation" x="5195" y="2816"/>
         </scene>
-        <!--View Controller-->
+        <!--Add Center Detail View Controller-->
         <scene sceneID="MuM-BQ-GjI">
             <objects>
-                <viewController id="9DW-1Y-LEY" sceneMemberID="viewController">
+                <viewController id="9DW-1Y-LEY" customClass="AddCenterDetailViewController" customModule="UAVolunteer" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="bI1-k5-W79">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1299,7 +1298,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Інформація" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="N1b-ra-Rh3">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="N1b-ra-Rh3">
                                 <rect key="frame" x="10" y="451.33333333333326" width="373" height="200"/>
                                 <color key="backgroundColor" systemColor="systemGray6Color"/>
                                 <constraints>
@@ -1311,15 +1310,16 @@
                             </textView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Is2-2U-Uq2">
                                 <rect key="frame" x="40" y="768" width="313" height="40"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="Qz4-h5-Tqb"/>
                                 </constraints>
                                 <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Далі">
+                                    <backgroundConfiguration key="background">
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </backgroundConfiguration>
                                     <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                    <color key="baseBackgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </buttonConfiguration>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Деталі" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TIu-ck-o8K">
@@ -1368,15 +1368,23 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="r2A-uS-0DD"/>
+                    <connections>
+                        <outlet property="continueButton" destination="Is2-2U-Uq2" id="9PJ-Lt-tc5"/>
+                        <outlet property="descriptionTextView" destination="N1b-ra-Rh3" id="hPx-83-0ao"/>
+                        <outlet property="emailTextField" destination="M5z-uW-SLT" id="LB1-z3-B1q"/>
+                        <outlet property="phoneTextField" destination="te6-MX-AXA" id="Nal-fA-OzK"/>
+                        <outlet property="titleTextField" destination="bFK-8A-xS3" id="Tgl-U5-jH9"/>
+                        <outlet property="typeTextField" destination="wlV-ov-DQ5" id="0if-6X-mQ0"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rtw-55-odL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="6914" y="2816"/>
         </scene>
-        <!--View Controller-->
+        <!--Add Logo View Controller-->
         <scene sceneID="MZO-Ih-8sO">
             <objects>
-                <viewController id="aqx-Xa-X7Q" sceneMemberID="viewController">
+                <viewController id="aqx-Xa-X7Q" customClass="AddLogoViewController" customModule="UAVolunteer" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="xJx-d5-0ct">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1394,8 +1402,8 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hic-RY-r3p">
-                                <rect key="frame" x="20" y="447.66666666666669" width="353" height="26.333333333333314"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Фото додасть впевненості та приверне увагу." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hic-RY-r3p">
+                                <rect key="frame" x="20" y="447.66666666666669" width="353" height="52.666666666666686"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="22"/>
                                 <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -1405,6 +1413,7 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="GfU-ex-U1H"/>
                                 </constraints>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Пропустити"/>
                             </button>
@@ -1440,6 +1449,11 @@
                             <constraint firstItem="p8v-eu-Qkf" firstAttribute="trailing" secondItem="hic-RY-r3p" secondAttribute="trailing" constant="20" id="xta-If-BBN"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="continueButton" destination="xfV-Of-LAJ" id="kC0-dW-g0I"/>
+                        <outlet property="logo" destination="mW8-wX-Dmc" id="87h-ox-FrI"/>
+                        <outlet property="skipButton" destination="5Yq-cP-MS2" id="Vl0-Vc-z6u"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xRI-04-WIb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
