@@ -3,6 +3,7 @@ import MapKit
 
 class SelPlaceViewController: UIViewController, MKMapViewDelegate {
     @IBOutlet weak var mapView: MKMapView!
+    var pointSet = false
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -21,14 +22,19 @@ class SelPlaceViewController: UIViewController, MKMapViewDelegate {
             if gesture.state == .began {
                 let point = gesture.location(in: mapView)
                 let coordinate = mapView.convert(point, toCoordinateFrom: mapView)
-                print("Latitude: \(coordinate.latitude), Longitude: \(coordinate.longitude)")
+                guard pointSet != true else {
+                    mapView.removeAnnotations(mapView.annotations)
+                    addAnnotation(at: coordinate)
+                    return
+                }
+                pointSet = true
                 addAnnotation(at: coordinate)
             }
         }
         
-        func addAnnotation(at coordinate: CLLocationCoordinate2D) {
-            let annotation = MKPointAnnotation()
-            annotation.coordinate = coordinate
-            mapView.addAnnotation(annotation)
-        }
+    func addAnnotation(at coordinate: CLLocationCoordinate2D) {
+        let annotation = MKPointAnnotation()
+        annotation.coordinate = coordinate
+        mapView.addAnnotation(annotation)
+    }
 }
