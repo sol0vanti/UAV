@@ -13,6 +13,10 @@ class AccountViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         guard defaults.string(forKey: "email") == nil else {
+            guard defaults.string(forKey: "center-set") == nil else {
+                setVCTo(AddSelPlaceViewController.self)
+                return
+            }
             setVCTo(MainTabBarController.self)
             return
         }

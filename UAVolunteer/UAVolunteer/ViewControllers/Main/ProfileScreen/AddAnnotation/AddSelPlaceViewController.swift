@@ -8,20 +8,20 @@ class AddSelPlaceViewController: UIViewController, MKMapViewDelegate {
     var pointSet = false
     let defaults = UserDefaults.standard
     var annotationCoordinate: CLLocationCoordinate2D?
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        tabBarController?.title = "Add Center"
-        navigationController?.setNavigationBarHidden(true, animated: animated)
-        resetButton.isEnabled = false
-        continueButton.isEnabled = false
-    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationController?.title = "Add Center"
         let longPressGesture = UILongPressGestureRecognizer(target: self, action: #selector(handleLongPress(gesture:)))
         mapView.addGestureRecognizer(longPressGesture)
         mapView.delegate = self
+        navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "trash.circle.fill"), style: .plain, target: self, action: #selector(exitButtonClicked))
+        navigationItem.rightBarButtonItem?.tintColor = .white
+    }
+    
+    @objc func exitButtonClicked() {
+        tabBarController?.tabBar.isHidden = false
+        setVCTo(MainTabBarController.self)
     }
     
     @objc func handleLongPress(gesture: UILongPressGestureRecognizer) {
