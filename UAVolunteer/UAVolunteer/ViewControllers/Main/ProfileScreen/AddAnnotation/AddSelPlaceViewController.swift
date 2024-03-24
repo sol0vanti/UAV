@@ -21,6 +21,7 @@ class AddSelPlaceViewController: UIViewController, MKMapViewDelegate {
     
     @objc func exitButtonClicked() {
         tabBarController?.tabBar.isHidden = false
+        self.defaults.set(nil, forKey: "center-set")
         setVCTo(MainTabBarController.self)
     }
     
