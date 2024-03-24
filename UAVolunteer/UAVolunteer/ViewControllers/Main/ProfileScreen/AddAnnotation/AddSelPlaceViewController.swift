@@ -6,20 +6,23 @@ class AddSelPlaceViewController: UIViewController, MKMapViewDelegate {
     @IBOutlet weak var resetButton: UIButton!
     @IBOutlet weak var continueButton: UIButton!
     var pointSet = false
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        tabBarController?.title = "Add Center"
-        navigationController?.setNavigationBarHidden(true, animated: animated)
-        resetButton.isEnabled = false
-        continueButton.isEnabled = false
-    }
+    let defaults = UserDefaults.standard
+    var annotationCoordinate: CLLocationCoordinate2D?
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationController?.title = "Add Center"
         let longPressGesture = UILongPressGestureRecognizer(target: self, action: #selector(handleLongPress(gesture:)))
         mapView.addGestureRecognizer(longPressGesture)
         mapView.delegate = self
+        navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "trash.circle.fill"), style: .plain, target: self, action: #selector(exitButtonClicked))
+        navigationItem.rightBarButtonItem?.tintColor = .white
+    }
+    
+    @objc func exitButtonClicked() {
+        tabBarController?.tabBar.isHidden = false
+        self.defaults.set(nil, forKey: "center-set")
+        setVCTo(ProfileViewController.self)
     }
     
     @objc func handleLongPress(gesture: UILongPressGestureRecognizer) {
@@ -42,6 +45,7 @@ class AddSelPlaceViewController: UIViewController, MKMapViewDelegate {
         let annotation = MKPointAnnotation()
         annotation.coordinate = coordinate
         annotation.title = "New Center"
+        annotationCoordinate = coordinate
         mapView.addAnnotation(annotation)
     }
     
@@ -53,6 +57,9 @@ class AddSelPlaceViewController: UIViewController, MKMapViewDelegate {
     }
     
     @IBAction func continueButtonClicked(_ sender: UIButton) {
-        return
+        self.defaults.set(annotationCoordinate?.latitude, forKey: "latitude")
+        self.defaults.set(annotationCoordinate?.longitude, forKey: "longitude")
+        print("data saved")
+        pushVCTo(AddCenterDetailViewController.self)
     }
 }

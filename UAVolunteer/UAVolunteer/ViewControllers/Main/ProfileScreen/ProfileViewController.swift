@@ -208,7 +208,13 @@ class ProfileViewController: UIViewController, PHPickerViewControllerDelegate {
             })
             self.present(ac, animated: true)
         } else if type == "business" {
-            
+            return
         }
+    }
+    
+    @IBAction func addCenterDidTapped(_ sender: UIButton) {
+        tabBarController!.tabBar.isHidden = true
+        self.defaults.set(true, forKey: "center-set")
+        setVCTo(AddSelPlaceViewController.self)
     }
 }
