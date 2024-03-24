@@ -1233,7 +1233,7 @@
         <!--Add Center Detail View Controller-->
         <scene sceneID="MuM-BQ-GjI">
             <objects>
-                <viewController id="9DW-1Y-LEY" customClass="AddCenterDetailViewController" customModule="UAVolunteer" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="AddCenterDetailViewController" id="9DW-1Y-LEY" customClass="AddCenterDetailViewController" customModule="UAVolunteer" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="bI1-k5-W79">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1268,7 +1268,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Номер Телефона (Необов'язково)" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VOt-m7-9dz">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Номер Телефона" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VOt-m7-9dz">
                                 <rect key="frame" x="10" y="271.33333333333331" width="373" height="21.666666666666686"/>
                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="18"/>
                                 <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -1283,7 +1283,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Емейл (Необов'язково)" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xoc-ny-Zov">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Емейл" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xoc-ny-Zov">
                                 <rect key="frame" x="10" y="348" width="373" height="21.666666666666686"/>
                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="18"/>
                                 <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -1328,6 +1328,12 @@
                                 <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Error Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Arj-WS-7KU">
+                                <rect key="frame" x="20" y="742" width="353" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" systemColor="systemRedColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="qge-lJ-R7A"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -1341,11 +1347,13 @@
                             <constraint firstItem="xoc-ny-Zov" firstAttribute="leading" secondItem="qge-lJ-R7A" secondAttribute="leading" constant="10" id="Ijp-Fl-fib"/>
                             <constraint firstItem="qge-lJ-R7A" firstAttribute="trailing" secondItem="Is2-2U-Uq2" secondAttribute="trailing" constant="40" id="NDL-OX-MJH"/>
                             <constraint firstItem="qge-lJ-R7A" firstAttribute="trailing" secondItem="VOt-m7-9dz" secondAttribute="trailing" constant="10" id="NR1-1V-BQQ"/>
+                            <constraint firstItem="Is2-2U-Uq2" firstAttribute="top" secondItem="Arj-WS-7KU" secondAttribute="bottom" constant="5" id="Oey-Fc-aeS"/>
                             <constraint firstItem="qge-lJ-R7A" firstAttribute="trailing" secondItem="xoc-ny-Zov" secondAttribute="trailing" constant="10" id="Onz-De-Ukb"/>
                             <constraint firstItem="xoc-ny-Zov" firstAttribute="top" secondItem="te6-MX-AXA" secondAttribute="bottom" constant="10" id="QA3-eN-0Hd"/>
                             <constraint firstItem="TIu-ck-o8K" firstAttribute="top" secondItem="M5z-uW-SLT" secondAttribute="bottom" constant="10" id="TnA-tw-dRy"/>
                             <constraint firstItem="bFK-8A-xS3" firstAttribute="leading" secondItem="qge-lJ-R7A" secondAttribute="leading" constant="10" id="U9P-49-JEH"/>
                             <constraint firstItem="te6-MX-AXA" firstAttribute="top" secondItem="VOt-m7-9dz" secondAttribute="bottom" constant="5" id="UDb-Ow-5aO"/>
+                            <constraint firstItem="Arj-WS-7KU" firstAttribute="leading" secondItem="qge-lJ-R7A" secondAttribute="leading" constant="20" id="UFi-Nw-pf7"/>
                             <constraint firstItem="qge-lJ-R7A" firstAttribute="trailing" secondItem="wlV-ov-DQ5" secondAttribute="trailing" constant="10" id="YB2-hY-vOI"/>
                             <constraint firstItem="N1b-ra-Rh3" firstAttribute="leading" secondItem="qge-lJ-R7A" secondAttribute="leading" constant="10" id="Zab-4M-bn6"/>
                             <constraint firstItem="VOt-m7-9dz" firstAttribute="top" secondItem="wlV-ov-DQ5" secondAttribute="bottom" constant="10" id="alY-d6-CVw"/>
@@ -1356,6 +1364,7 @@
                             <constraint firstItem="wlV-ov-DQ5" firstAttribute="top" secondItem="N2f-hc-xsz" secondAttribute="bottom" constant="5" id="jyp-cl-ymG"/>
                             <constraint firstItem="N2f-hc-xsz" firstAttribute="top" secondItem="bFK-8A-xS3" secondAttribute="bottom" constant="10" id="lBV-5M-i3X"/>
                             <constraint firstItem="TIu-ck-o8K" firstAttribute="leading" secondItem="qge-lJ-R7A" secondAttribute="leading" constant="10" id="ltm-NF-fBi"/>
+                            <constraint firstItem="qge-lJ-R7A" firstAttribute="trailing" secondItem="Arj-WS-7KU" secondAttribute="trailing" constant="20" id="mLd-8q-ibV"/>
                             <constraint firstItem="te6-MX-AXA" firstAttribute="leading" secondItem="qge-lJ-R7A" secondAttribute="leading" constant="10" id="mwz-n7-ECQ"/>
                             <constraint firstItem="qge-lJ-R7A" firstAttribute="trailing" secondItem="M5z-uW-SLT" secondAttribute="trailing" constant="10" id="n6N-EY-qdC"/>
                             <constraint firstItem="qCa-bX-mft" firstAttribute="leading" secondItem="qge-lJ-R7A" secondAttribute="leading" constant="10" id="oyz-JZ-Xej"/>
@@ -1372,6 +1381,7 @@
                         <outlet property="continueButton" destination="Is2-2U-Uq2" id="9PJ-Lt-tc5"/>
                         <outlet property="descriptionTextView" destination="N1b-ra-Rh3" id="hPx-83-0ao"/>
                         <outlet property="emailTextField" destination="M5z-uW-SLT" id="LB1-z3-B1q"/>
+                        <outlet property="errorLabel" destination="Arj-WS-7KU" id="xNv-PN-17j"/>
                         <outlet property="phoneTextField" destination="te6-MX-AXA" id="Nal-fA-OzK"/>
                         <outlet property="titleTextField" destination="bFK-8A-xS3" id="Tgl-U5-jH9"/>
                         <outlet property="typeTextField" destination="wlV-ov-DQ5" id="0if-6X-mQ0"/>
@@ -1384,7 +1394,7 @@
         <!--Add Logo View Controller-->
         <scene sceneID="MZO-Ih-8sO">
             <objects>
-                <viewController id="aqx-Xa-X7Q" customClass="AddLogoViewController" customModule="UAVolunteer" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="AddLogoViewController" id="aqx-Xa-X7Q" customClass="AddLogoViewController" customModule="UAVolunteer" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="xJx-d5-0ct">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1527,22 +1537,22 @@
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="linkColor">
-            <color red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="systemGray5Color">
-            <color red="0.8980392157" green="0.8980392157" blue="0.91764705879999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.89803921568627454" green="0.89803921568627454" blue="0.91764705882352937" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemGray6Color">
-            <color red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemGrayColor">
-            <color red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemRedColor">
-            <color red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

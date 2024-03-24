@@ -6,6 +6,8 @@ class AddSelPlaceViewController: UIViewController, MKMapViewDelegate {
     @IBOutlet weak var resetButton: UIButton!
     @IBOutlet weak var continueButton: UIButton!
     var pointSet = false
+    let defaults = UserDefaults.standard
+    var annotationCoordinate: CLLocationCoordinate2D?
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -42,6 +44,7 @@ class AddSelPlaceViewController: UIViewController, MKMapViewDelegate {
         let annotation = MKPointAnnotation()
         annotation.coordinate = coordinate
         annotation.title = "New Center"
+        annotationCoordinate = coordinate
         mapView.addAnnotation(annotation)
     }
     
@@ -53,6 +56,9 @@ class AddSelPlaceViewController: UIViewController, MKMapViewDelegate {
     }
     
     @IBAction func continueButtonClicked(_ sender: UIButton) {
-        return
+        self.defaults.set(annotationCoordinate?.latitude, forKey: "latitude")
+        self.defaults.set(annotationCoordinate?.longitude, forKey: "longitude")
+        print("data saved")
+        pushVCTo(AddCenterDetailViewController.self)
     }
 }
