@@ -13,10 +13,6 @@ class AccountViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         guard defaults.string(forKey: "email") == nil else {
-            guard defaults.string(forKey: "center-set") == nil else {
-                self.newScreen(MainTabBarController.self)
-                return
-            }
             self.newScreen(MainTabBarController.self)
             return
         }

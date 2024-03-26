@@ -19,6 +19,17 @@ class ProfileViewController: UIViewController, PHPickerViewControllerDelegate {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        guard defaults.string(forKey: "center-set") == nil else {
+            tabBarController!.tabBar.isHidden = true
+            if defaults.string(forKey: "center-set") == "init" {
+                self.setVCTo(AddSelPlaceViewController.self)
+            } else if defaults.string(forKey: "center-set") == "coordinate-set" {
+                self.setVCTo(AddCenterDetailViewController.self)
+            } else if defaults.string(forKey: "center-set") == "detail-set" {
+                self.setVCTo(AddLogoViewController.self)
+            }
+            return
+        }
         getAccountData()
         tabBarController?.title = "My Profile"
         navigationController?.setNavigationBarHidden(true, animated: animated)
@@ -214,7 +225,7 @@ class ProfileViewController: UIViewController, PHPickerViewControllerDelegate {
     
     @IBAction func addCenterDidTapped(_ sender: UIButton) {
         tabBarController!.tabBar.isHidden = true
-        self.defaults.set(true, forKey: "center-set")
+        self.defaults.set("init", forKey: "center-set")
         setVCTo(AddSelPlaceViewController.self)
     }
 }

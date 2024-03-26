@@ -28,6 +28,7 @@ class AddSelPlaceViewController: UIViewController, MKMapViewDelegate {
             if gesture.state == .began {
                 let point = gesture.location(in: mapView)
                 let coordinate = mapView.convert(point, toCoordinateFrom: mapView)
+                print(coordinate)
                 guard pointSet != true else {
                     mapView.removeAnnotations(mapView.annotations)
                     addAnnotation(at: coordinate)
@@ -58,7 +59,7 @@ class AddSelPlaceViewController: UIViewController, MKMapViewDelegate {
     @IBAction func continueButtonClicked(_ sender: UIButton) {
         self.defaults.set(annotationCoordinate?.latitude, forKey: "latitude")
         self.defaults.set(annotationCoordinate?.longitude, forKey: "longitude")
-        print("data saved")
+        self.defaults.set("coordinate-set", forKey: "center-set")
         pushVCTo(AddCenterDetailViewController.self)
     }
 }

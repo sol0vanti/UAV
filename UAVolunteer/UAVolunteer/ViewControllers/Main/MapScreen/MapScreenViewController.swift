@@ -28,6 +28,18 @@ class MapScreenViewController: UIViewController, MKMapViewDelegate {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(true)
+        guard defaults.string(forKey: "center-set") == nil else {
+            let ac = UIAlertController(title: "Новий центр", message: "При попередньому заході у UAV - ви створювали новий волонтерський центр. Бажаете продовжити?", preferredStyle: .alert)
+            ac.addAction(UIAlertAction(title: "Cancel", style: .cancel){_ in
+                self.defaults.set(nil, forKey: "center-set")
+            })
+            ac.addAction(UIAlertAction(title: "Continue", style: .destructive){_ in
+                self.tabBarController?.selectedIndex = 2
+            })
+            self.present(ac, animated: true)
+            return
+        }
+        
         getAnnotationData()
     }
     
