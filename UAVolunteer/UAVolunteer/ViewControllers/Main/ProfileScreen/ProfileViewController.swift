@@ -188,6 +188,7 @@ class ProfileViewController: UIViewController, PHPickerViewControllerDelegate {
             }
         }
     }
+    
     @IBAction func accountButtonClicked(_ sender: UIButton) {
         if type == "user" {
             let ac = UIAlertController(title: "Attention!", message: "Your account type is set as user. If you want to registrate a business account, please tap on 'continue'", preferredStyle: .alert)

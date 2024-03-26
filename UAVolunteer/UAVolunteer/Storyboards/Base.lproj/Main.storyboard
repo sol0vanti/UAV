@@ -1402,8 +1402,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="mW8-wX-Dmc">
-                                <rect key="frame" x="71.666666666666686" y="134" width="250" height="250"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="homekit" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="mW8-wX-Dmc">
+                                <rect key="frame" x="71.666666666666686" y="133.66666666666663" width="250" height="249.33333333333337"/>
+                                <color key="tintColor" systemColor="systemOrangeColor"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="250" id="0Bg-7f-Go9"/>
                                     <constraint firstAttribute="height" constant="250" id="LCu-wD-MHU"/>
@@ -1429,8 +1430,11 @@
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Пропустити"/>
+                                <connections>
+                                    <action selector="skipClicked:" destination="aqx-Xa-X7Q" eventType="touchUpInside" id="p7L-ZD-kYu"/>
+                                </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xfV-Of-LAJ">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xfV-Of-LAJ">
                                 <rect key="frame" x="20" y="718" width="353" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="SH1-aC-7Al"/>
@@ -1441,6 +1445,9 @@
                                     <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <color key="baseBackgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <action selector="addClicked:" destination="aqx-Xa-X7Q" eventType="touchUpInside" id="vCS-Ag-GDq"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="p8v-eu-Qkf"/>
@@ -1464,7 +1471,7 @@
                     </view>
                     <connections>
                         <outlet property="continueButton" destination="xfV-Of-LAJ" id="kC0-dW-g0I"/>
-                        <outlet property="logo" destination="mW8-wX-Dmc" id="87h-ox-FrI"/>
+                        <outlet property="logoImageView" destination="mW8-wX-Dmc" id="OWY-MP-7Nh"/>
                         <outlet property="skipButton" destination="5Yq-cP-MS2" id="Vl0-Vc-z6u"/>
                     </connections>
                 </viewController>
@@ -1532,6 +1539,7 @@
     </inferredMetricsTieBreakers>
     <resources>
         <image name="Google-Emblem" width="3840" height="2160"/>
+        <image name="homekit" catalog="system" width="128" height="104"/>
         <image name="list.bullet.clipboard.fill" catalog="system" width="98" height="128"/>
         <image name="map.fill" catalog="system" width="128" height="110"/>
         <image name="person.crop.circle.fill" catalog="system" width="128" height="123"/>
@@ -1552,6 +1560,9 @@
         </systemColor>
         <systemColor name="systemGrayColor">
             <color red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemOrangeColor">
+            <color red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemRedColor">
             <color red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

@@ -48,7 +48,7 @@ class MapScreenViewController: UIViewController, MKMapViewDelegate {
     
     func getAnnotationData(){
         let database = Firestore.firestore()
-        database.collection("locations").getDocuments() {(snapshot, error) in
+        database.collection("centers").getDocuments() {(snapshot, error) in
             if error != nil {
                 self.showACError(text: String(describing: error))
                 return
@@ -56,7 +56,7 @@ class MapScreenViewController: UIViewController, MKMapViewDelegate {
                 if let snapshot = snapshot {
                     DispatchQueue.main.async {
                         self.requests = snapshot.documents.map { d in
-                            return CenterRequest(id: d.documentID, address: d["address"] as! String, contact_phone: d["contact_phone"] as! String, description: d["description"] as! String, latitude: d["latitude"] as! String, longitude: d["longitude"] as! String, name: d["name"] as! String, website: d["website"] as! String)
+                            return CenterRequest(id: d.documentID, contact_phone: d["phone"] as! String, description: d["description"] as! String, latitude: d["latitude"] as! String, longitude: d["longitude"] as! String, name: d["name"] as! String, email: d["email"] as! String, business: d["business"] as! String, type: d["type"] as! String)
                         }
                         guard self.requests != nil else {
                             self.showACError(text: "Requests is nil")
@@ -66,9 +66,8 @@ class MapScreenViewController: UIViewController, MKMapViewDelegate {
                         for request in self.requests {
                             let requestAnnotation = CustomAnnotation(coordinate: CLLocationCoordinate2D(latitude: CLLocationDegrees(request.latitude)!, longitude: CLLocationDegrees(request.longitude)!), title: request.name, desc: [
                                 ["title": "Опис", "detail": "\(request.description)"],
-                                ["title": "Адреса", "detail": "\(request.address)"],
                                 ["title": "Телефон", "detail": "\(request.contact_phone)"],
-                                ["title": "Веб-сайт", "detail": "\(request.website)"]
+                                ["title": "Email", "detail": "\(request.email)"]
                             ])
                             self.addAnnotation(requestAnnotation)
                         }
