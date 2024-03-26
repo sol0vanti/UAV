@@ -24,12 +24,8 @@ class AddCenterDetailViewController: UIViewController {
             return
         }
         
-        defaults.set(titleTextField.text, forKey: "center-title")
-        defaults.set(typeTextField.text, forKey: "center-type")
-        defaults.set(phoneTextField.text, forKey: "center-phone")
-        defaults.set(emailTextField.text, forKey: "center-email")
-        defaults.set(descriptionTextView.text, forKey: "center-detail")
-        
+        var centerDictionary = ["center-title": titleTextField.text, "center-type": typeTextField.text, "center-phone": phoneTextField.text, "center-email": emailTextField.text, "center-description": descriptionTextView.text]
+        defaults.set(centerDictionary, forKey: "center-dictionary")
         defaults.set("detail-set", forKey: "center-set")
         
         self.pushVCTo(AddLogoViewController.self)

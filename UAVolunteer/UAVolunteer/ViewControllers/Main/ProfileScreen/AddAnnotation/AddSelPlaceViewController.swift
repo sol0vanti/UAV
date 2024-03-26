@@ -31,8 +31,7 @@ class AddSelPlaceViewController: UIViewController, MKMapViewDelegate {
     
     @objc func exitButtonClicked() {
         tabBarController?.tabBar.isHidden = false
-        self.defaults.removePersistentDomain(forName: Bundle.main.bundleIdentifier!)
-        self.defaults.synchronize()
+        self.defaults.removeObject(forKey: "center-dictionary")
         self.defaults.set(nil, forKey: "center-set")
         setVCTo(ProfileViewController.self)
     }
