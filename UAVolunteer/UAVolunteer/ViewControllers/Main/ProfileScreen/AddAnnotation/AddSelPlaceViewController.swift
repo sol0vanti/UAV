@@ -8,18 +8,31 @@ class AddSelPlaceViewController: UIViewController, MKMapViewDelegate {
     var pointSet = false
     let defaults = UserDefaults.standard
     var annotationCoordinate: CLLocationCoordinate2D?
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         let longPressGesture = UILongPressGestureRecognizer(target: self, action: #selector(handleLongPress(gesture:)))
         mapView.addGestureRecognizer(longPressGesture)
         mapView.delegate = self
         navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "trash.circle.fill"), style: .plain, target: self, action: #selector(exitButtonClicked))
         navigationItem.rightBarButtonItem?.tintColor = .white
+        
+        guard defaults.string(forKey: "center-set") == "init" else {
+            tabBarController!.tabBar.isHidden = true
+            if defaults.string(forKey: "center-set") == "coordinate-set" {
+                self.pushVCTo(AddCenterDetailViewController.self)
+            } else if defaults.string(forKey: "center-set") == "detail-set" {
+                self.pushVCTo(AddLogoViewController.self)
+            }
+            return
+        }
     }
     
     @objc func exitButtonClicked() {
         tabBarController?.tabBar.isHidden = false
+        self.defaults.removePersistentDomain(forName: Bundle.main.bundleIdentifier!)
+        self.defaults.synchronize()
         self.defaults.set(nil, forKey: "center-set")
         setVCTo(ProfileViewController.self)
     }

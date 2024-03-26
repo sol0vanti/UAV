@@ -31,6 +31,8 @@ class MapScreenViewController: UIViewController, MKMapViewDelegate {
         guard defaults.string(forKey: "center-set") == nil else {
             let ac = UIAlertController(title: "Новий центр", message: "При попередньому заході у UAV - ви створювали новий волонтерський центр. Бажаете продовжити?", preferredStyle: .alert)
             ac.addAction(UIAlertAction(title: "Cancel", style: .cancel){_ in
+                self.defaults.removePersistentDomain(forName: Bundle.main.bundleIdentifier!)
+                self.defaults.synchronize()
                 self.defaults.set(nil, forKey: "center-set")
             })
             ac.addAction(UIAlertAction(title: "Continue", style: .destructive){_ in

@@ -17,5 +17,6 @@ class AddLogoViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationController?.navigationBar.tintColor = .white
     }
 }

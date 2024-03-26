@@ -21,13 +21,7 @@ class ProfileViewController: UIViewController, PHPickerViewControllerDelegate {
         super.viewWillAppear(animated)
         guard defaults.string(forKey: "center-set") == nil else {
             tabBarController!.tabBar.isHidden = true
-            if defaults.string(forKey: "center-set") == "init" {
-                self.setVCTo(AddSelPlaceViewController.self)
-            } else if defaults.string(forKey: "center-set") == "coordinate-set" {
-                self.setVCTo(AddCenterDetailViewController.self)
-            } else if defaults.string(forKey: "center-set") == "detail-set" {
-                self.setVCTo(AddLogoViewController.self)
-            }
+            self.setVCTo(AddSelPlaceViewController.self)
             return
         }
         getAccountData()
