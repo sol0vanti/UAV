@@ -32,6 +32,8 @@ class MapScreenViewController: UIViewController, MKMapViewDelegate {
             let ac = UIAlertController(title: "Новий центр", message: "При попередньому заході у UAV - ви створювали новий волонтерський центр. Бажаете продовжити?", preferredStyle: .alert)
             ac.addAction(UIAlertAction(title: "Cancel", style: .cancel){_ in
                 self.defaults.removeObject(forKey: "center-dictionary")
+                self.defaults.removeObject(forKey: "center-latitude")
+                self.defaults.removeObject(forKey: "center-logitude")
                 self.defaults.set(nil, forKey: "center-set")
             })
             ac.addAction(UIAlertAction(title: "Continue", style: .destructive){_ in

@@ -24,7 +24,7 @@ class AddCenterDetailViewController: UIViewController {
             return
         }
         
-        var centerDictionary = ["center-title": titleTextField.text, "center-type": typeTextField.text, "center-phone": phoneTextField.text, "center-email": emailTextField.text, "center-description": descriptionTextView.text]
+        let centerDictionary = ["center-title": titleTextField.text, "center-type": typeTextField.text, "center-phone": phoneTextField.text, "center-email": emailTextField.text, "center-description": descriptionTextView.text]
         defaults.set(centerDictionary, forKey: "center-dictionary")
         defaults.set("detail-set", forKey: "center-set")
         

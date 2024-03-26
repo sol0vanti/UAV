@@ -32,6 +32,8 @@ class AddSelPlaceViewController: UIViewController, MKMapViewDelegate {
     @objc func exitButtonClicked() {
         tabBarController?.tabBar.isHidden = false
         self.defaults.removeObject(forKey: "center-dictionary")
+        self.defaults.removeObject(forKey: "center-laitude")
+        self.defaults.removeObject(forKey: "center-longitude")
         self.defaults.set(nil, forKey: "center-set")
         setVCTo(ProfileViewController.self)
     }
@@ -69,8 +71,8 @@ class AddSelPlaceViewController: UIViewController, MKMapViewDelegate {
     }
     
     @IBAction func continueButtonClicked(_ sender: UIButton) {
-        self.defaults.set(annotationCoordinate?.latitude, forKey: "latitude")
-        self.defaults.set(annotationCoordinate?.longitude, forKey: "longitude")
+        self.defaults.set(annotationCoordinate?.latitude, forKey: "center-latitude")
+        self.defaults.set(annotationCoordinate?.longitude, forKey: "center-longitude")
         self.defaults.set("coordinate-set", forKey: "center-set")
         pushVCTo(AddCenterDetailViewController.self)
     }
