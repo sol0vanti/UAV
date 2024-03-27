@@ -69,12 +69,12 @@ class VolunteerListTableViewController: UITableViewController {
                 tableView.beginUpdates()
                 let request = self.requests[indexPath.row]
                 let db = Firestore.firestore()
-                db.collection("locations").whereField("name", isEqualTo: request.name).getDocuments { (querySnapshot, error) in
+                db.collection("centers").whereField("name", isEqualTo: request.name).getDocuments { (querySnapshot, error) in
                     if error != nil {
                         self.showACError(text: "Unable to delete field. Try again later.")
                     } else {
                         for document in querySnapshot!.documents {
-                            let documentRef = db.collection("locations").document(document.documentID)
+                            let documentRef = db.collection("centers").document(document.documentID)
                             documentRef.delete { error in
                                 if error != nil {
                                     self.showACError(text: "Unable to delete field. Try again later.")

@@ -25,15 +25,38 @@ class AddLogoViewController: UIViewController, PHPickerViewControllerDelegate {
         navigationController?.navigationBar.tintColor = .white
     }
     
-    func uploadDataToFirebase() {
+    func uploadDataToFirebase(logoSet: Bool) {
         let db = Firestore.firestore()
-        if let centerDictionary = defaults.dictionary(forKey: "center-dictionary") as? [String: String] {
-            db.collection("centers").addDocument(data: ["name": centerDictionary["center-title"]!, "type": centerDictionary["center-type"]!, "phone": centerDictionary["center-phone"]!, "email": centerDictionary["center-email"]!, "description": centerDictionary["center-description"]!, "longitude": self.defaults.string(forKey: "center-longitude")!, "latitude": self.defaults.string(forKey: "center-latitude")!, "business": self.defaults.string(forKey: "email")!]) { (error) in
-                if error != nil {
-                    self.showACError(text: "Failed to save center dictionary.")
-                    return
-                } else {
-                    self.setVCTo(ProfileViewController.self)
+        if logoSet {
+            if let centerDictionary = defaults.dictionary(forKey: "center-dictionary") as? [String: String] {
+                db.collection("centers").addDocument(data: ["name": centerDictionary["center-title"]!, "type": centerDictionary["center-type"]!, "phone": centerDictionary["center-phone"]!, "email": centerDictionary["center-email"]!, "description": centerDictionary["center-description"]!, "longitude": self.defaults.string(forKey: "center-longitude")!, "latitude": self.defaults.string(forKey: "center-latitude")!, "business": self.defaults.string(forKey: "email")!, "logo-set": true]) { (error) in
+                    if error != nil {
+                        self.showACError(text: "Failed to save center dictionary.")
+                        return
+                    } else {
+                        self.defaults.removeObject(forKey: "center-dictionary")
+                        self.defaults.removeObject(forKey: "center-laitude")
+                        self.defaults.removeObject(forKey: "center-longitude")
+                        self.defaults.set(nil, forKey: "center-set")
+                        self.tabBarController?.tabBar.isHidden = false
+                        self.setVCTo(ProfileViewController.self)
+                    }
+                }
+            }
+        } else {
+            if let centerDictionary = defaults.dictionary(forKey: "center-dictionary") as? [String: String] {
+                db.collection("centers").addDocument(data: ["name": centerDictionary["center-title"]!, "type": centerDictionary["center-type"]!, "phone": centerDictionary["center-phone"]!, "email": centerDictionary["center-email"]!, "description": centerDictionary["center-description"]!, "longitude": self.defaults.string(forKey: "center-longitude")!, "latitude": self.defaults.string(forKey: "center-latitude")!, "business": self.defaults.string(forKey: "email")!, "logo-set": false]) { (error) in
+                    if error != nil {
+                        self.showACError(text: "Failed to save center dictionary.")
+                        return
+                    } else {
+                        self.defaults.removeObject(forKey: "center-dictionary")
+                        self.defaults.removeObject(forKey: "center-laitude")
+                        self.defaults.removeObject(forKey: "center-longitude")
+                        self.defaults.set(nil, forKey: "center-set")
+                        self.tabBarController?.tabBar.isHidden = false
+                        self.setVCTo(ProfileViewController.self)
+                    }
                 }
             }
         }
@@ -73,7 +96,7 @@ class AddLogoViewController: UIViewController, PHPickerViewControllerDelegate {
                 result.itemProvider.loadObject(ofClass: UIImage.self) { object, error in
                 if let image = object as? UIImage {
                     self.logo = image
-                    self.uploadDataToFirebase()
+                    self.uploadDataToFirebase(logoSet: true)
                     self.uploadImageToFirebase()
                 }
             }
@@ -89,6 +112,6 @@ class AddLogoViewController: UIViewController, PHPickerViewControllerDelegate {
     }
     
     @IBAction func skipClicked(_ sender: UIButton) {
-        
+        uploadDataToFirebase(logoSet: false)
     }
 }

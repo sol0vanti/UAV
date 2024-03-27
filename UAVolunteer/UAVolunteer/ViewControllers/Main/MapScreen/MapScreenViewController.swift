@@ -26,8 +26,8 @@ class MapScreenViewController: UIViewController, MKMapViewDelegate {
         setUpVC()
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(true)
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         guard defaults.string(forKey: "center-set") == nil else {
             let ac = UIAlertController(title: "Новий центр", message: "При попередньому заході у UAV - ви створювали новий волонтерський центр. Бажаете продовжити?", preferredStyle: .alert)
             ac.addAction(UIAlertAction(title: "Cancel", style: .cancel){_ in
@@ -47,6 +47,7 @@ class MapScreenViewController: UIViewController, MKMapViewDelegate {
     }
     
     func getAnnotationData(){
+        mapView.removeAnnotations(mapView.annotations)
         let database = Firestore.firestore()
         database.collection("centers").getDocuments() {(snapshot, error) in
             if error != nil {
