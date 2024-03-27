@@ -26,14 +26,30 @@ class MapScreenViewController: UIViewController, MKMapViewDelegate {
         setUpVC()
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(true)
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        guard defaults.string(forKey: "center-set") == nil else {
+            let ac = UIAlertController(title: "Новий центр", message: "При попередньому заході у UAV - ви створювали новий волонтерський центр. Бажаете продовжити?", preferredStyle: .alert)
+            ac.addAction(UIAlertAction(title: "Cancel", style: .cancel){_ in
+                self.defaults.removeObject(forKey: "center-dictionary")
+                self.defaults.removeObject(forKey: "center-latitude")
+                self.defaults.removeObject(forKey: "center-logitude")
+                self.defaults.set(nil, forKey: "center-set")
+            })
+            ac.addAction(UIAlertAction(title: "Continue", style: .destructive){_ in
+                self.tabBarController?.selectedIndex = 2
+            })
+            self.present(ac, animated: true)
+            return
+        }
+        
         getAnnotationData()
     }
     
     func getAnnotationData(){
+        mapView.removeAnnotations(mapView.annotations)
         let database = Firestore.firestore()
-        database.collection("locations").getDocuments() {(snapshot, error) in
+        database.collection("centers").getDocuments() {(snapshot, error) in
             if error != nil {
                 self.showACError(text: String(describing: error))
                 return
@@ -41,7 +57,7 @@ class MapScreenViewController: UIViewController, MKMapViewDelegate {
                 if let snapshot = snapshot {
                     DispatchQueue.main.async {
                         self.requests = snapshot.documents.map { d in
-                            return CenterRequest(id: d.documentID, address: d["address"] as! String, contact_phone: d["contact_phone"] as! String, description: d["description"] as! String, latitude: d["latitude"] as! String, longitude: d["longitude"] as! String, name: d["name"] as! String, website: d["website"] as! String)
+                            return CenterRequest(id: d.documentID, contact_phone: d["phone"] as! String, description: d["description"] as! String, latitude: d["latitude"] as! String, longitude: d["longitude"] as! String, name: d["name"] as! String, email: d["email"] as! String, business: d["business"] as! String, type: d["type"] as! String)
                         }
                         guard self.requests != nil else {
                             self.showACError(text: "Requests is nil")
@@ -51,9 +67,8 @@ class MapScreenViewController: UIViewController, MKMapViewDelegate {
                         for request in self.requests {
                             let requestAnnotation = CustomAnnotation(coordinate: CLLocationCoordinate2D(latitude: CLLocationDegrees(request.latitude)!, longitude: CLLocationDegrees(request.longitude)!), title: request.name, desc: [
                                 ["title": "Опис", "detail": "\(request.description)"],
-                                ["title": "Адреса", "detail": "\(request.address)"],
                                 ["title": "Телефон", "detail": "\(request.contact_phone)"],
-                                ["title": "Веб-сайт", "detail": "\(request.website)"]
+                                ["title": "Email", "detail": "\(request.email)"]
                             ])
                             self.addAnnotation(requestAnnotation)
                         }

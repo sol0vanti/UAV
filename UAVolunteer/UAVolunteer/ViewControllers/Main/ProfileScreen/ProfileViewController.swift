@@ -19,6 +19,11 @@ class ProfileViewController: UIViewController, PHPickerViewControllerDelegate {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        guard defaults.string(forKey: "center-set") == nil else {
+            tabBarController!.tabBar.isHidden = true
+            self.setVCTo(AddSelPlaceViewController.self)
+            return
+        }
         getAccountData()
         tabBarController?.title = "My Profile"
         navigationController?.setNavigationBarHidden(true, animated: animated)
@@ -183,6 +188,7 @@ class ProfileViewController: UIViewController, PHPickerViewControllerDelegate {
             }
         }
     }
+    
     @IBAction func accountButtonClicked(_ sender: UIButton) {
         if type == "user" {
             let ac = UIAlertController(title: "Attention!", message: "Your account type is set as user. If you want to registrate a business account, please tap on 'continue'", preferredStyle: .alert)
@@ -214,7 +220,7 @@ class ProfileViewController: UIViewController, PHPickerViewControllerDelegate {
     
     @IBAction func addCenterDidTapped(_ sender: UIButton) {
         tabBarController!.tabBar.isHidden = true
-        self.defaults.set(true, forKey: "center-set")
+        self.defaults.set("init", forKey: "center-set")
         setVCTo(AddSelPlaceViewController.self)
     }
 }
