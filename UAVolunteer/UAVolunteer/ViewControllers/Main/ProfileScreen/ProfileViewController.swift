@@ -56,7 +56,7 @@ class ProfileViewController: UIViewController, PHPickerViewControllerDelegate {
     func getProfileImage(){
         let storage = Storage.storage()
         let storageRef = storage.reference().child("logos").child(defaults.string(forKey: "email")!)
-        self.accountLogo.imageView?.contentMode = .scaleToFill
+        self.accountLogo.imageView?.contentMode = .scaleAspectFill
         self.accountLogo.layer.masksToBounds = true
         self.accountLogo.tintColor = .white
         storageRef.getData(maxSize: 1 * 4096 * 4096) { data, error in

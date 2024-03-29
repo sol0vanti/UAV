@@ -24,13 +24,6 @@ class AddLogoViewController: UIViewController, PHPickerViewControllerDelegate {
                     if error != nil {
                         self.showACError(text: "Failed to save center dictionary.")
                         return
-                    } else {
-                        self.defaults.removeObject(forKey: "center-dictionary")
-                        self.defaults.removeObject(forKey: "center-laitude")
-                        self.defaults.removeObject(forKey: "center-longitude")
-                        self.defaults.set(nil, forKey: "center-set")
-                        self.tabBarController?.tabBar.isHidden = false
-                        self.setVCTo(ProfileViewController.self)
                     }
                 }
             }
@@ -40,13 +33,6 @@ class AddLogoViewController: UIViewController, PHPickerViewControllerDelegate {
                     if error != nil {
                         self.showACError(text: "Failed to save center dictionary.")
                         return
-                    } else {
-                        self.defaults.removeObject(forKey: "center-dictionary")
-                        self.defaults.removeObject(forKey: "center-laitude")
-                        self.defaults.removeObject(forKey: "center-longitude")
-                        self.defaults.set(nil, forKey: "center-set")
-                        self.tabBarController?.tabBar.isHidden = false
-                        self.setVCTo(ProfileViewController.self)
                     }
                 }
             }
@@ -81,6 +67,13 @@ class AddLogoViewController: UIViewController, PHPickerViewControllerDelegate {
         }
     }
     
+    func removeDefaultsData() {
+        self.defaults.removeObject(forKey: "center-dictionary")
+        self.defaults.removeObject(forKey: "center-laitude")
+        self.defaults.removeObject(forKey: "center-longitude")
+        self.defaults.set(nil, forKey: "center-set")
+    }
+    
     func picker(_ picker: PHPickerViewController, didFinishPicking results: [PHPickerResult]) {
         dismiss(animated: true)
             for result in results {
@@ -89,6 +82,11 @@ class AddLogoViewController: UIViewController, PHPickerViewControllerDelegate {
                     self.logo = image
                     self.uploadDataToFirebase(logoSet: true)
                     self.uploadImageToFirebase()
+                    self.removeDefaultsData()
+                    DispatchQueue.main.async {
+                        self.tabBarController?.tabBar.isHidden = false
+                        self.setVCTo(ProfileViewController.self)
+                    }
                 }
             }
         }
