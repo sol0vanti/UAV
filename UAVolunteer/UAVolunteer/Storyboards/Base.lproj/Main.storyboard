@@ -388,7 +388,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4qo-0Z-FfL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2805" y="-1167"/>
+            <point key="canvasLocation" x="3730.5343511450378" y="-1167.605633802817"/>
         </scene>
         <!--Ласкаво просимо до UAVolunteer!-->
         <scene sceneID="5bG-y1-fgD">
@@ -770,7 +770,7 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="2zR-rW-Eul" kind="relationship" relationship="rootViewController" id="uEP-qF-mVo"/>
+                        <segue destination="N1m-bX-6Ti" kind="relationship" relationship="rootViewController" id="uEP-qF-mVo"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TWB-m0-pAJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -848,7 +848,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qBx-s0-l5f" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3509" y="-1168"/>
+            <point key="canvasLocation" x="4434.3511450381675" y="-1168.3098591549297"/>
         </scene>
         <!--Detail Table View Controller-->
         <scene sceneID="XKq-aI-L8h">
@@ -900,7 +900,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="j7M-7a-euu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4263" y="-1168"/>
+            <point key="canvasLocation" x="5188.5496183206105" y="-1168.3098591549297"/>
         </scene>
         <!--Event Detail View Controller-->
         <scene sceneID="peH-hb-fgB">
@@ -1499,6 +1499,25 @@
             </objects>
             <point key="canvasLocation" x="4270.9923664122134" y="1369.7183098591549"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="u9Y-n1-0dm">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="N1m-bX-6Ti" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" id="qGG-Cf-qKl"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="rbC-Nb-XHU">
+                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="2zR-rW-Eul" kind="relationship" relationship="rootViewController" id="vTp-Hk-N12"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="AeA-ig-NBu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2803.8167938931297" y="-1167.605633802817"/>
+        </scene>
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="Acm-1n-7Em"/>
@@ -1508,7 +1527,7 @@
         <image name="building.2.crop.circle.fill" catalog="system" width="128" height="123"/>
         <image name="homekit" catalog="system" width="128" height="104"/>
         <image name="list.bullet.clipboard.fill" catalog="system" width="98" height="128"/>
-        <image name="map.fill" catalog="system" width="32" height="32"/>
+        <image name="map.fill" catalog="system" width="128" height="110"/>
         <image name="person.crop.circle.fill" catalog="system" width="128" height="123"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

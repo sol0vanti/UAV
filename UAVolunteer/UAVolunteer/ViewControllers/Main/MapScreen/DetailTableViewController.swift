@@ -10,6 +10,8 @@ class DetailTableViewController: UITableViewController {
             showACError(text: "Cannot get string from title.")
             return
         }
+        title = DetailTableViewController.centerTitle!
+        navigationController?.navigationBar.tintColor = .white
         getData(for: DetailTableViewController.centerTitle!)
     }
     
