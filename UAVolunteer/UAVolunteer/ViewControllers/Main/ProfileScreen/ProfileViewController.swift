@@ -80,7 +80,10 @@ class ProfileViewController: UIViewController, PHPickerViewControllerDelegate {
                 if let snapshot = snapshot {
                     DispatchQueue.main.async {
                         self.request = snapshot.documents.map { d in
-                            return UserRequest(id: d.documentID, full_name: d["full_name"] as! String, account_creation_date: d["account_creation_date"] as! String, account_type: d["account_type"] as! String)
+                            return UserRequest(id: d.documentID, 
+                                               full_name: d["full_name"] as! String,
+                                               account_creation_date: d["account_creation_date"] as! String,
+                                               account_type: d["account_type"] as! String)
                         }
                         
                         guard self.request != nil else {

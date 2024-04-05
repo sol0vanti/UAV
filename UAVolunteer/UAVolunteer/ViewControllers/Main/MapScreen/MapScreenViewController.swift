@@ -55,7 +55,10 @@ class MapScreenViewController: UIViewController, MKMapViewDelegate {
                 if let snapshot = snapshot {
                     DispatchQueue.main.async {
                         self.requests = snapshot.documents.map { d in
-                            return MapAnnotationRequest(id: d.documentID, latitude: d["latitude"] as! String, longitude: d["longitude"] as! String, name: d["name"] as! String)
+                            return MapAnnotationRequest(id: d.documentID, 
+                                                        latitude: d["latitude"] as! String,
+                                                        longitude: d["longitude"] as! String,
+                                                        name: d["name"] as! String)
                         }
                         guard self.requests != nil else {
                             self.showACError(text: "Requests is nil")

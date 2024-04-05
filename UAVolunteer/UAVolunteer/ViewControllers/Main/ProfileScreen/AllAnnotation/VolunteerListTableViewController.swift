@@ -30,7 +30,11 @@ class VolunteerListTableViewController: UITableViewController {
                 if let snapshot = snapshot {
                     DispatchQueue.main.async {
                         self.requests = snapshot.documents.map { d in
-                            return VolunteerListRequest(id: d.documentID, name: d["name"] as! String, business: d["business"] as! String, type: d["type"] as! String, logoSet: d["logo-set"] as! Bool)}
+                            return VolunteerListRequest(id: d.documentID, 
+                                                        name: d["name"] as! String,
+                                                        business: d["business"] as! String,
+                                                        type: d["type"] as! String,
+                                                        logoSet: d["logo-set"] as! Bool)}
                         self.table.reloadData()
                     }
                 }

@@ -21,13 +21,11 @@ class CustomButton: UIButton {
     }
 
     private func setupButton() {
-        // Create and configure the left icon image view
         iconImageView = UIImageView(frame: CGRect(x: 25, y: 0, width: 30, height: bounds.height))
         iconImageView.contentMode = .scaleAspectFit
         iconImageView.tintColor = .lightGray
         addSubview(iconImageView)
 
-        // Calculate the x position for rightIconImageView based on the button's width and margin
         let rightIconX = bounds.width - 25 - 30
         rightIconImageView = UIImageView(frame: CGRect(x: rightIconX, y: 0, width: 15, height: bounds.height))
         rightIconImageView.contentMode = .scaleAspectFit

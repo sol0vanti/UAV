@@ -12,9 +12,7 @@ class PasswordViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        
     }
-    
     
     @IBAction func saveClicked(_ sender: UIButton) {
         let user = Auth.auth().currentUser

@@ -42,7 +42,11 @@ class AccountViewController: UIViewController {
                 else {
                     if let snapshot = snapshot {
                         if snapshot.isEmpty {
-                            db.collection("users").addDocument(data: ["email": "\(userEmail!)", "uid": user.userID!, "account_creation_date": "\(Date().string(format: "yyyy-MM-dd"))", "account_type": "user", "full_name": "\(user.profile?.name ?? "Анонім")"]) { (error) in
+                            db.collection("users").addDocument(data: ["email": "\(userEmail!)", 
+                                                                      "uid": user.userID!,
+                                                                      "account_creation_date": "\(Date().string(format: "yyyy-MM-dd"))",
+                                                                      "account_type": "user",
+                                                                      "full_name": "\(user.profile?.name ?? "Анонім")"]) { (error) in
                                 if error != nil {
                                     self.showACError(text: "Failed to save email on Google Sign-In")
                                     return
