@@ -68,6 +68,11 @@ class AccountViewController: UIViewController {
 }
 
 extension UIViewController {
+    func updateTitle(of viewController: UITableViewController, with titleString: String) {
+        print(titleString)
+        viewController.title = titleString
+    }
+    
     func newScreen(_ viewController: UIViewController.Type) {
         let sceneDelegate = (UIApplication.shared.connectedScenes.first as? UIWindowScene)?.delegate as? SceneDelegate
         let destVC = UIStoryboard(name: "Main", bundle:nil).instantiateViewController(withIdentifier: "\(viewController)")

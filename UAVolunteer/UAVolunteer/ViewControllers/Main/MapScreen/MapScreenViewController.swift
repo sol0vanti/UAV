@@ -5,21 +5,19 @@ import Firebase
 class CustomAnnotation: NSObject, MKAnnotation {
     var coordinate: CLLocationCoordinate2D
     var title: String?
-    var desc: [[String: String]]?
 
-    init(coordinate: CLLocationCoordinate2D, title: String?, desc: [[String: String]]?) {
+    init(coordinate: CLLocationCoordinate2D, title: String?) {
         self.coordinate = coordinate
         self.title = title
-        self.desc = desc
     }
 }
 
 class MapScreenViewController: UIViewController, MKMapViewDelegate {
-    @IBOutlet weak var detailView: UIView!
+    @IBOutlet weak var moreButton: UIButton!
     @IBOutlet weak var mapView: MKMapView!
-    weak var mapScreenDelegate: MapScreenDelegate?
     let defaults = UserDefaults.standard
-    var requests: [CenterRequest]!
+    var requests: [MapAnnotationRequest]!
+    var centerTitle: String = ""
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -57,7 +55,7 @@ class MapScreenViewController: UIViewController, MKMapViewDelegate {
                 if let snapshot = snapshot {
                     DispatchQueue.main.async {
                         self.requests = snapshot.documents.map { d in
-                            return CenterRequest(id: d.documentID, contact_phone: d["phone"] as! String, description: d["description"] as! String, latitude: d["latitude"] as! String, longitude: d["longitude"] as! String, name: d["name"] as! String, email: d["email"] as! String, business: d["business"] as! String, type: d["type"] as! String)
+                            return MapAnnotationRequest(id: d.documentID, latitude: d["latitude"] as! String, longitude: d["longitude"] as! String, name: d["name"] as! String)
                         }
                         guard self.requests != nil else {
                             self.showACError(text: "Requests is nil")
@@ -65,14 +63,9 @@ class MapScreenViewController: UIViewController, MKMapViewDelegate {
                         }
                         
                         for request in self.requests {
-                            let requestAnnotation = CustomAnnotation(coordinate: CLLocationCoordinate2D(latitude: CLLocationDegrees(request.latitude)!, longitude: CLLocationDegrees(request.longitude)!), title: request.name, desc: [
-                                ["title": "Опис", "detail": "\(request.description)"],
-                                ["title": "Телефон", "detail": "\(request.contact_phone)"],
-                                ["title": "Email", "detail": "\(request.email)"]
-                            ])
+                            let requestAnnotation = CustomAnnotation(coordinate: CLLocationCoordinate2D(latitude: CLLocationDegrees(request.latitude)!, longitude: CLLocationDegrees(request.longitude)!), title: request.name)
                             self.addAnnotation(requestAnnotation)
                         }
-                        self.mapScreenDelegate?.updateCollectionViewData()
                     }
                 }
             }
@@ -81,9 +74,6 @@ class MapScreenViewController: UIViewController, MKMapViewDelegate {
     
     func setUpVC(){
         mapView.delegate = self
-        detailView.alpha = 0
-        detailView.layer.cornerRadius = 25.0
-        detailView.layer.masksToBounds = true
     }
 
     func addAnnotation(_ annotation: MKAnnotation) {
@@ -91,25 +81,19 @@ class MapScreenViewController: UIViewController, MKMapViewDelegate {
     }
 
     func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
-        detailView.isHidden = false
-        UIView.animate(withDuration: 0.5) {
-            self.detailView.alpha = 1
+        if let annotation = view.annotation as? CustomAnnotation {
+            centerTitle = annotation.title ?? ""
         }
-        if let selectedAnnotation = view.annotation as? CustomAnnotation {
-            DetailViewController.centerName = selectedAnnotation.title
-            DetailViewController.centerDetail = selectedAnnotation.desc
-            mapScreenDelegate?.didSelectAnnotation(title: DetailViewController.centerName)
-        
-            print(DetailViewController.centerName ?? "Error: Cannot find 'DetailViewController.centerName'")
-            print(DetailViewController.centerDetail ?? "Error: Cannot find 'DetailViewController.centerDetail'")
-            mapScreenDelegate?.updateCollectionViewData()
-        }
+        moreButton.isEnabled = true
     }
-
+    
     func mapView(_ mapView: MKMapView, didDeselect view: MKAnnotationView) {
-        UIView.animate(withDuration: 0.5) {
-            self.detailView.alpha = 0
-        }
-        detailView.isHidden = true
+        centerTitle = ""
+        moreButton.isEnabled = false
+    }
+    
+    @IBAction func moreButtonClicked(_ sender: UIButton) {
+        DetailTableViewController.centerTitle = centerTitle
+        pushVCTo(DetailTableViewController.self)
     }
 }
