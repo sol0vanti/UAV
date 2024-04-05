@@ -103,6 +103,14 @@ class VolunteerListTableViewController: UITableViewController {
         return true
     }
     
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        table.deselectRow(at: indexPath, animated: true)
+    }
+    
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 60
+    }
+    
     override func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         let deleteAction = UIContextualAction(style: .destructive, title: "Delete") { (_, _, completionHandler) in
             let ac = UIAlertController(title: "Warning", message: "Whether you press 'Continue' the center will be deleted forever.", preferredStyle: .alert)
@@ -139,9 +147,5 @@ class VolunteerListTableViewController: UITableViewController {
         let swipeConfiguration = UISwipeActionsConfiguration(actions: [deleteAction])
         swipeConfiguration.performsFirstActionWithFullSwipe = false
         return swipeConfiguration
-    }
-    
-    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 60
     }
 }
