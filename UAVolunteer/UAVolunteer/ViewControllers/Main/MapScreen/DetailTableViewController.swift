@@ -56,11 +56,32 @@ class DetailTableViewController: UITableViewController {
         guard request != nil else {
             return 0
         }
-        return Mirror(reflecting: request!).children.count - 1
+        return Mirror(reflecting: request!).children.count - 2
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "detailCell", for: indexPath) as! DetailTableViewCell
+        guard let request = request else {
+            return cell
+        }
+            
+        switch indexPath.row {
+        case 0:
+            cell.titleLabel.text = "business"
+            cell.detailLabel.text = request.business
+        case 1:
+            cell.titleLabel.text = "description"
+            cell.detailLabel.text = request.description
+        case 2:
+            cell.titleLabel.text = "email"
+            cell.detailLabel.text = request.email
+        case 3:
+            cell.titleLabel.text = "type"
+            cell.detailLabel.text = request.type
+        default:
+            break
+        }
+            
         return cell
     }
     
