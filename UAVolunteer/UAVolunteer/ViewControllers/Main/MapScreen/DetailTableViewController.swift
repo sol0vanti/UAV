@@ -67,17 +67,17 @@ class DetailTableViewController: UITableViewController {
             
         switch indexPath.row {
         case 0:
-            cell.titleLabel.text = "business"
+            cell.titleLabel.text = "Business:"
             cell.detailLabel.text = request.business
         case 1:
-            cell.titleLabel.text = "description"
-            cell.detailLabel.text = request.description
+            cell.titleLabel.text = "Type:"
+            cell.detailLabel.text = request.type
         case 2:
-            cell.titleLabel.text = "email"
+            cell.titleLabel.text = "Email:"
             cell.detailLabel.text = request.email
         case 3:
-            cell.titleLabel.text = "type"
-            cell.detailLabel.text = request.type
+            cell.titleLabel.text = "Description:"
+            cell.detailLabel.text = request.description
         default:
             break
         }
