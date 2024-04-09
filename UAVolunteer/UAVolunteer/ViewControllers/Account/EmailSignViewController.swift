@@ -32,7 +32,11 @@ class EmailSignViewController: UIViewController {
                 self.showError(text: "Error creating user", label: self.errorLabel, textFields: [])
             } else {
                 let db = Firestore.firestore()
-                db.collection("users").addDocument(data: ["email": "\(email)", "uid": result!.user.uid, "account_creation_date": "\(Date().string(format: "yyyy-MM-dd"))", "account_type": "user", "full_name": "\(email)"]) { (error) in
+                db.collection("users").addDocument(data: ["email": "\(email)", 
+                                                          "uid": result!.user.uid,
+                                                          "account_creation_date": "\(Date().string(format: "yyyy-MM-dd"))",
+                                                          "account_type": "user",
+                                                          "full_name": "\(email)"]) { (error) in
                     if error != nil {
                         self.showACError(text: "Failed to save data on Firebase server")
                         return

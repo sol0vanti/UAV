@@ -20,7 +20,14 @@ class AddLogoViewController: UIViewController, PHPickerViewControllerDelegate {
         let db = Firestore.firestore()
         if logoSet {
             if let centerDictionary = defaults.dictionary(forKey: "center-dictionary") as? [String: String] {
-                db.collection("centers").addDocument(data: ["name": centerDictionary["center-title"]!, "type": centerDictionary["center-type"]!, "phone": centerDictionary["center-phone"]!, "email": centerDictionary["center-email"]!, "description": centerDictionary["center-description"]!, "longitude": self.defaults.string(forKey: "center-longitude")!, "latitude": self.defaults.string(forKey: "center-latitude")!, "business": self.defaults.string(forKey: "email")!, "logo-set": true]) { (error) in
+                db.collection("centers").addDocument(data: ["name": centerDictionary["center-title"]!, 
+                                                            "type": centerDictionary["center-type"]!,
+                                                            "phone": centerDictionary["center-phone"]!,
+                                                            "email": centerDictionary["center-email"]!,
+                                                            "description": centerDictionary["center-description"]!,
+                                                            "longitude": self.defaults.string(forKey: "center-longitude")!, 
+                                                            "latitude": self.defaults.string(forKey: "center-latitude")!, 
+                                                            "business": self.defaults.string(forKey: "email")!, "logo-set": true]) { (error) in
                     if error != nil {
                         self.showACError(text: "Failed to save center dictionary.")
                         return
@@ -29,7 +36,15 @@ class AddLogoViewController: UIViewController, PHPickerViewControllerDelegate {
             }
         } else {
             if let centerDictionary = defaults.dictionary(forKey: "center-dictionary") as? [String: String] {
-                db.collection("centers").addDocument(data: ["name": centerDictionary["center-title"]!, "type": centerDictionary["center-type"]!, "phone": centerDictionary["center-phone"]!, "email": centerDictionary["center-email"]!, "description": centerDictionary["center-description"]!, "longitude": self.defaults.string(forKey: "center-longitude")!, "latitude": self.defaults.string(forKey: "center-latitude")!, "business": self.defaults.string(forKey: "email")!, "logo-set": false]) { (error) in
+                db.collection("centers").addDocument(data: ["name": centerDictionary["center-title"]!, 
+                                                            "type": centerDictionary["center-type"]!,
+                                                            "phone": centerDictionary["center-phone"]!,
+                                                            "email": centerDictionary["center-email"]!,
+                                                            "description": centerDictionary["center-description"]!,
+                                                            "longitude": self.defaults.string(forKey: "center-longitude")!,
+                                                            "latitude": self.defaults.string(forKey: "center-latitude")!,
+                                                            "business": self.defaults.string(forKey: "email")!,
+                                                            "logo-set": false]) { (error) in
                     if error != nil {
                         self.showACError(text: "Failed to save center dictionary.")
                         return
