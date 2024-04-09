@@ -77,7 +77,7 @@ class DetailTableViewController: UITableViewController {
             cell.detailLabel.text = request.email
         case 3:
             cell.titleLabel.text = "Description:"
-            cell.detailLabel.text = request.description
+            cell.detailLabel.text = "Click to see decription"
         default:
             break
         }
@@ -86,7 +86,21 @@ class DetailTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        table.deselectRow(at: indexPath, animated: true)
+        guard let request = request else {
+            return
+        }
+        switch indexPath.row {
+        case 0,2:
+            EmailInfoViewController.email = request.email
+            self.pushVCTo(EmailInfoViewController.self)
+        case 3:
+            DescriptionInfoViewController.descriptionText = request.description
+            self.pushVCTo(DescriptionInfoViewController.self)
+        default:
+            table.deselectRow(at: indexPath, animated: true)
+        }
+        
+        
     }
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {

@@ -36,6 +36,8 @@
 		7070CEA52B32094F00F8B450 /* UAVolunteerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7070CEA42B32094F00F8B450 /* UAVolunteerTests.swift */; };
 		7070CEAF2B32094F00F8B450 /* UAVolunteerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7070CEAE2B32094F00F8B450 /* UAVolunteerUITests.swift */; };
 		7070CEB12B32094F00F8B450 /* UAVolunteerUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7070CEB02B32094F00F8B450 /* UAVolunteerUITestsLaunchTests.swift */; };
+		70756B152BC5AE6100525704 /* EmailInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70756B142BC5AE6100525704 /* EmailInfoViewController.swift */; };
+		70756B172BC5AE7200525704 /* DescriptionInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70756B162BC5AE7200525704 /* DescriptionInfoViewController.swift */; };
 		7076240D2B3D64C200CF6703 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7076240C2B3D64C200CF6703 /* MainTabBarController.swift */; };
 		707624112B3DC5C700CF6703 /* DetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 707624102B3DC5C700CF6703 /* DetailTableViewCell.swift */; };
 		70AB89072B6C082D005B5398 /* UserRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70AB89062B6C082D005B5398 /* UserRequest.swift */; };
@@ -89,6 +91,8 @@
 		7070CEAA2B32094F00F8B450 /* UAVolunteerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UAVolunteerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7070CEAE2B32094F00F8B450 /* UAVolunteerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UAVolunteerUITests.swift; sourceTree = "<group>"; };
 		7070CEB02B32094F00F8B450 /* UAVolunteerUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UAVolunteerUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		70756B142BC5AE6100525704 /* EmailInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailInfoViewController.swift; sourceTree = "<group>"; };
+		70756B162BC5AE7200525704 /* DescriptionInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DescriptionInfoViewController.swift; sourceTree = "<group>"; };
 		7076240C2B3D64C200CF6703 /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		707624102B3DC5C700CF6703 /* DetailTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailTableViewCell.swift; sourceTree = "<group>"; };
 		70AB89062B6C082D005B5398 /* UserRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRequest.swift; sourceTree = "<group>"; };
@@ -281,9 +285,19 @@
 			path = Assets;
 			sourceTree = "<group>";
 		};
+		70756B132BC5AE3C00525704 /* DetailInfo */ = {
+			isa = PBXGroup;
+			children = (
+				70756B142BC5AE6100525704 /* EmailInfoViewController.swift */,
+				70756B162BC5AE7200525704 /* DescriptionInfoViewController.swift */,
+			);
+			path = DetailInfo;
+			sourceTree = "<group>";
+		};
 		707624082B3D647C00CF6703 /* MapScreen */ = {
 			isa = PBXGroup;
 			children = (
+				70756B132BC5AE3C00525704 /* DetailInfo */,
 				7062A21B2B33343400BDD02A /* MapScreenViewController.swift */,
 				702F6C452BB6A15800ED5B55 /* DetailTableViewController.swift */,
 				707624102B3DC5C700CF6703 /* DetailTableViewCell.swift */,
@@ -466,6 +480,7 @@
 				70CF16492B8B8AA200138DFE /* VolunteerListTableViewCell.swift in Sources */,
 				70AB89072B6C082D005B5398 /* UserRequest.swift in Sources */,
 				70C267962B5479110088C440 /* ProfileViewController.swift in Sources */,
+				70756B172BC5AE7200525704 /* DescriptionInfoViewController.swift in Sources */,
 				7070CE8E2B32094E00F8B450 /* AppDelegate.swift in Sources */,
 				7004816B2B39ADF200672DB4 /* EmailSignViewController.swift in Sources */,
 				7070CE902B32094E00F8B450 /* SceneDelegate.swift in Sources */,
@@ -482,6 +497,7 @@
 				705E990E2B60195D006F2937 /* CustomButton.swift in Sources */,
 				70BD08092B89F3620025DFC0 /* PasswordViewController.swift in Sources */,
 				70F4A8202BBC55DD006C92D1 /* MapAnnotationRequest.swift in Sources */,
+				70756B152BC5AE6100525704 /* EmailInfoViewController.swift in Sources */,
 				70CF164B2B8B8AC500138DFE /* VolunteerListRequest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
