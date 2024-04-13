@@ -63,8 +63,6 @@ class AccountViewController: UIViewController {
             }
         }
     }
-        
-    
     
     @IBAction func otherButtonClicked(_ sender: UIButton) {
         pushVCTo(EmailSignViewController.self)

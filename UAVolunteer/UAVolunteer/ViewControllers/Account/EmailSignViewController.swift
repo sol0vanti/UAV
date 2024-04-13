@@ -3,7 +3,6 @@ import Firebase
 import FirebaseFirestore
 import FirebaseAuth
 
-
 class EmailSignViewController: UIViewController {
     @IBOutlet weak var emailField: UITextField!
     @IBOutlet weak var passwordField: UITextField!

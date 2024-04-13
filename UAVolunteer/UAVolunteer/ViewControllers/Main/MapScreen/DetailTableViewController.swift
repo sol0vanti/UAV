@@ -40,7 +40,6 @@ class DetailTableViewController: UITableViewController, MFMailComposeViewControl
         }
     }
 
-
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationController?.navigationBar.tintColor = .white
@@ -68,8 +67,6 @@ class DetailTableViewController: UITableViewController, MFMailComposeViewControl
     func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: (any Error)?) {
         controller.dismiss(animated: true)
     }
-
-    // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 1

@@ -3,7 +3,6 @@ import Firebase
 import FirebaseStorage
 
 class VolunteerListTableViewController: UITableViewController {
-    
     @IBOutlet var table: UITableView!
     
     let defaults = UserDefaults.standard
@@ -58,8 +57,6 @@ class VolunteerListTableViewController: UITableViewController {
             }
         }
     }
-
-    // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 1

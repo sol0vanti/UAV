@@ -9,10 +9,7 @@ class PasswordViewController: UIViewController {
     @IBOutlet weak var errorLabel: UILabel!
     @IBOutlet weak var saveButton: UIButton!
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-    }
+    override func viewDidLoad() { super.viewDidLoad() }
     
     @IBAction func saveClicked(_ sender: UIButton) {
         let user = Auth.auth().currentUser

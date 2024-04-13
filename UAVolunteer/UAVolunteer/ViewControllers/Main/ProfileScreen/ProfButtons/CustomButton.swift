@@ -1,7 +1,6 @@
 import UIKit
 
 class CustomButton: UIButton {
-
     private var iconImageView: UIImageView!
     private var rightIconImageView: UIImageView!
 

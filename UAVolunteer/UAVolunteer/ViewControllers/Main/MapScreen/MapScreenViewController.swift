@@ -40,7 +40,6 @@ class MapScreenViewController: UIViewController, MKMapViewDelegate {
             self.present(ac, animated: true)
             return
         }
-        
         getAnnotationData()
     }
     
